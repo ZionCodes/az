@@ -7,6 +7,7 @@
 	import Services from "$lib/Services.svelte";
 	import Steps from "$lib/Steps.svelte";
 	import Tools from "$lib/Tools.svelte";
+	import Project from '$lib/Project.svelte';
 
 	let { data } = $props();
 

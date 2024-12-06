@@ -32,6 +32,7 @@
 		"@tailwindcss/typography": "^0.5.15",
 		"pocketbase": "^0.21.1",
 		"preline": "^2.6.0",
+		"super-sitemap": "^1.0.3",
 		"svelte-inview": "^4.0.4"
 	}
 }
