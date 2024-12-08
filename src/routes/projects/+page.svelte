@@ -1,5 +1,6 @@
 <script>
-  import Project from "$lib/Project.svelte";
+  import Contact from "$lib/Contact.svelte";
+import Project from "$lib/Project.svelte";
   import Cover from '$lib/images/AutomationZion-cover.png'
 import SvelteSeo from "svelte-seo";
 </script>
@@ -24,4 +25,5 @@ import SvelteSeo from "svelte-seo";
 />
 
 <Project />
+<Contact />
 

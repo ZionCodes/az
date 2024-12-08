@@ -2,6 +2,7 @@
 	import SvelteSeo from "svelte-seo";
 	import Blog from "$lib/Blog.svelte";
 	import Cover from '$lib/images/AutomationZion-cover.png'
+	import Newsletter from "$lib/Newsletter.svelte";
 	let { data } = $props();
 
 </script>
@@ -27,3 +28,4 @@
 
 
 <Blog data={data.records} />
+<Newsletter />

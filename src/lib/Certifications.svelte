@@ -1,7 +1,24 @@
+<script lang="ts">
+  import { inview } from 'svelte-inview';
+  import type { ObserverEventDetails, Options } from 'svelte-inview';
+  import { fly } from 'svelte/transition';
+
+  let isInView: boolean = false; // Initialize visibility state
+  const options: Options = {
+    rootMargin: '-50px',
+    unobserveOnEnter: true,
+  };
+
+  const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>) => {
+    isInView = detail.inView; // Update visibility state
+  };
+</script>
+
 <!-- Card Section -->
-<div class="max-w-5xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+<div class="max-w-5xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto" use:inview={options} on:inview_change={handleChange}>
     <!-- Grid -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-1 sm:gap-4">
+     {#if isInView}
+     <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-1 sm:gap-4" transition:fly={{ y: 200, duration: 1000, delay: 1000 }}>
       <!-- Card -->
       <a class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md focus:outline-none focus:shadow-md transition dark:bg-gray-900 dark:border-gray-800" href="#">
         <div class="p-4 md:p-5">
@@ -59,6 +76,8 @@
       </a>
       <!-- End Card -->
     </div>
+     {/if}
+    
     <!-- End Grid -->
   </div>
   <!-- End Card Section -->
