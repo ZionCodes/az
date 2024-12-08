@@ -1,7 +1,7 @@
 <script lang="ts">
   import { inview } from 'svelte-inview';
   import type { ObserverEventDetails, Options } from 'svelte-inview';
-  import { scale } from 'svelte/transition';
+  import { fly } from 'svelte/transition';
 
   let isInView: boolean = false; // Initialize visibility state
   const options: Options = {
@@ -17,7 +17,7 @@
 <!-- Subscribe -->
 <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-16 mx-auto bg-gray-900" use:inview={options} on:inview_change={handleChange}>
   {#if isInView}
-  <div class="grid md:grid-cols-2 gap-8" transition:scale={{ duration: 1000, delay: 1000 }}>
+  <div class="grid md:grid-cols-2 gap-8" transition:fly={{ y:200, duration: 1000, delay: 1000 }}>
     <div class="max-w-md">
       <h2 class="text-2xl font-bold md:text-3xl md:leading-tight dark:text-white">Subscribe</h2>
       <p class="mt-3 text-gray-600 dark:text-neutral-400">
