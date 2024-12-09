@@ -44,22 +44,6 @@
       </a>
       <!-- End Card -->
       <!-- Card -->
-      <a class="group flex flex-col border shadow-sm rounded-xl hover:shadow-md focus:outline-none focus:shadow-md transition dark:bg-gray-800 dark:border-gray-800 hover:translate-x-3" href="/">
-        <div class="p-4 md:p-5">
-          <div class="flex gap-x-5">
-            <img src={Advanced} width="48" height="48" alt="Make Basic Certification">
-  
-            <div class="grow">
-              <h3 class="group-hover:text-blue-600 font-semibold text-gray-800 dark:group-hover:text-neutral-400 dark:text-neutral-200">
-                Make
-              </h3>
-              <p class="text-sm text-gray-500 dark:text-neutral-500">
-                Make Level 4 - Advanced
-              </p>
-            </div>
-          </div>
-        </div>
-      </a>
       <!-- End Card -->
       <!-- Card -->
       <a class="group flex flex-col border shadow-sm rounded-xl hover:shadow-md focus:outline-none focus:shadow-md transition dark:bg-gray-800 dark:border-gray-800 hover:translate-x-3" href="/">
