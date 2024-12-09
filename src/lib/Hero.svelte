@@ -31,7 +31,7 @@
   
       <!-- Buttons -->
       <div class="text-center">
-        <a class="inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl bg-[#ff0] font-medium shadow-lg shadow-transparent hover:shadow-blue-700/50 border border-transparent text-neutral-800 text-sm rounded-full focus:outline-none focus:shadow-blue-700/50 py-3 px-6" href="/about#contact">
+        <a class="inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl bg-[#ff0] font-medium shadow-lg shadow-transparent hover:shadow-blue-700/50 border border-transparent text-neutral-800 text-sm rounded-full focus:outline-none focus:shadow-blue-700/50 py-3 px-6" href="https://airtable.com/apptczz1Z37dJqKHA/pagw800Gw7i9TAPCz/form">
           Contact
           <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
         </a>

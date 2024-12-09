@@ -29,7 +29,7 @@
         <a class="p-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300" href="/projects">Projects</a>
 
         <div>
-          <a class="group inline-flex items-center gap-x-2 py-2 px-3 bg-[#ff0] font-medium text-sm text-neutral-800 rounded-full focus:outline-none" href="/about#contact">
+          <a class="group inline-flex items-center gap-x-2 py-2 px-3 bg-[#ff0] font-medium text-sm text-neutral-800 rounded-full focus:outline-none" href="https://airtable.com/apptczz1Z37dJqKHA/pagw800Gw7i9TAPCz/form">
             Contact
           </a>
         </div>

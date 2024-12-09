@@ -29,4 +29,13 @@
 
 <About />
 <Certifications />
-<Contact />
+
+<div class="flex flex-auto items-center p-4 m-8 justify-center">
+  <a href="https://airtable.com/apptczz1Z37dJqKHA/pagw800Gw7i9TAPCz/form">
+    <button type="button" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium border border-gray-200 bg-[#ff0] shadow-sm hover:scale-110 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:border-neutral-700 rounded-full">
+      Contact
+    </button>
+  </a>
+</div>
+
+
