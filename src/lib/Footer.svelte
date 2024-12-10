@@ -1,12 +1,14 @@
 <script>
-    import logo from "$lib/images/AutomationZion.png"
+    import automationzion from "$lib/images/AutomationZion.png"
 </script>
 
 <footer class="mt-auto w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto bg-gray-800">
   <!-- Grid -->
   <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-5">
     <div>
-      <a class="flex-none text-xl font-semibold text-black focus:outline-none dark:text-white" href="/" aria-label="AutomationZion">AutomationZion</a>
+      <a class="flex-none text-xl font-semibold text-black focus:outline-none dark:text-white" href="/" aria-label="AutomationZion">
+        <img src={automationzion} class="w-28 h-auto" alt="">
+      </a>
     </div>
     <!-- End Col -->
 

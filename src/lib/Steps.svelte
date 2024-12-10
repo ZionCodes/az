@@ -59,7 +59,7 @@
             <div class="grow pt-0.5 pb-8 sm:pb-12">
               <p class="text-sm lg:text-base text-neutral-400">
                 <span class="text-white">Consultation:</span>
-                We begin by understanding your unique needs and challenges, diving into your workflows to identify areas for automation and improvement.
+                I begin by understanding your unique needs and challenges, diving into your workflows to identify areas for automation and improvement.
               </p>
             </div>
             <!-- End Right Content -->
@@ -82,7 +82,7 @@
             <div class="grow pt-0.5 pb-8 sm:pb-12">
               <p class="text-sm lg:text-base text-neutral-400">
                 <span class="text-white">Solution Design:</span>
-                Based on your goals, we design tailored systems and automation solutions that streamline processes, boost efficiency, and save time.
+                Based on your goals, I design tailored systems and automation solutions that streamline processes, boost efficiency, and save time.
               </p>
             </div>
             <!-- End Right Content -->
@@ -105,7 +105,7 @@
             <div class="grow pt-0.5 pb-8 sm:pb-12">
               <p class="text-sm md:text-base text-neutral-400">
                 <span class="text-white">Implementation:</span>
-                We bring your solution to life by seamlessly integrating the systems into your workflow, ensuring minimal disruption and maximum impact.
+                I bring your solution to life by seamlessly integrating the systems into your workflow, ensuring minimal disruption and maximum impact.
               </p>
             </div>
             <!-- End Right Content -->
@@ -128,7 +128,7 @@
             <div class="grow pt-0.5 pb-8 sm:pb-12">
               <p class="text-sm md:text-base text-neutral-400">
                 <span class="text-white">Ongoing Support:</span>
-                After implementation, we provide continuous support and optimization to ensure your systems evolve with your business, staying efficient and effective over time.
+                After implementation, I provide continuous support and optimization to ensure your systems evolve with your business, staying efficient and effective over time.
               </p>
             </div>
             <!-- End Right Content -->
