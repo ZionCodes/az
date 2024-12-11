@@ -85,8 +85,8 @@ import SvelteSeo from "svelte-seo";
         </div>
         <!-- End Avatar Media -->
 
-        <div class="space-y-6">
-          <!-- Media -->
+        <!-- <div class="space-y-6">
+          
           <a class="group flex items-center gap-x-6 focus:outline-none" href="/">
             <div class="grow">
               <span class="text-sm font-bold text-gray-800 group-hover:text-blue-600 group-focus:text-blue-600 dark:text-neutral-200 dark:group-hover:text-blue-500 dark:group-focus:text-blue-500">
@@ -98,8 +98,8 @@ import SvelteSeo from "svelte-seo";
               <img class="size-full absolute top-0 start-0 object-cover rounded-lg" src="https://images.unsplash.com/photo-1567016526105-22da7c13161a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&q=80" alt="Blog">
             </div>
           </a>
-          <!-- End Media -->
-        </div>
+          
+        </div> -->
       </div>
     </div>
     <!-- End Sidebar -->
