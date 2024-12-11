@@ -23,8 +23,12 @@
 <!-- Card Section -->
 <div class="max-w-5xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto" use:inview={options} on:inview_change={handleChange}>
     <!-- Grid -->
+    <div class="max-w-3xl mb-10 lg:mb-14" transition:fly={{ y: 200, duration: 1000, delay: 1000 }}>
+      <h2 class="text-white font-semibold text-2xl md:text-4xl md:leading-tight">Certifications</h2>
+    </div>
      {#if isInView}
      <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-0.5 sm:gap-4" transition:fly={{ y: 200, duration: 1000, delay: 1000 }}>
+      
 
       <!-- Card -->
       <a class="group flex flex-col border shadow-sm rounded-xl hover:shadow-md focus:outline-none focus:shadow-md transition bg-gray-800 dark:border-gray-800 hover:translate-x-3" href="http://verify.skilljar.com/c/b9qgz3xcux95">
