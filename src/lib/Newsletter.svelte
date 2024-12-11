@@ -17,15 +17,18 @@
 <!-- Subscribe -->
 <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-16 mx-auto bg-gray-900" use:inview={options} on:inview_change={handleChange}>
   {#if isInView}
-  <div class="grid md:grid-cols-2 gap-8" transition:fly={{ y:200, duration: 1000, delay: 1000 }}>
-    <div class="max-w-md">
+  <div class="flex justify-center items-center" transition:fly={{ y:200, duration: 1000, delay: 1000 }}>
+    <iframe title="newsletter" src="https://automationzion.substack.com/embed" width="480" height="320" style="border:1px solid #111827; background:gray;" frameborder="0" scrolling="no"></iframe>
+    
+    <!-- <div class="max-w-md">
       <h2 class="text-2xl font-bold md:text-3xl md:leading-tight dark:text-white">Subscribe</h2>
       <p class="mt-3 text-gray-600 dark:text-neutral-400">
         Subscribe and start making the most of every engagement.
       </p>
-    </div>
+    </div> -->
 
-    <form>
+
+    <!-- <form>
       <div class="w-full sm:max-w-lg md:ms-auto">
         <div class="flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
           <div class="w-full">
@@ -40,7 +43,7 @@
           No spam, unsubscribe at any time
         </p>
       </div>
-    </form>
+    </form> -->
   </div>
   {/if}
     
