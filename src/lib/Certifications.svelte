@@ -7,6 +7,7 @@
   import Advanced from '$lib/images/Make-Advanced.png'
   import Intermediate from '$lib/images/Make-Intermediate.png'
   import Airtable from '$lib/images/Airtable-Builder.png'
+  import Hubspot from '$lib/images/hubspot_academy_logo.jpg'
 
   let isInView: boolean = false; // Initialize visibility state
   const options: Options = {
@@ -26,10 +27,10 @@
      <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-0.5 sm:gap-4" transition:fly={{ y: 200, duration: 1000, delay: 1000 }}>
 
       <!-- Card -->
-      <a class="group flex flex-col border shadow-sm rounded-xl hover:shadow-md focus:outline-none focus:shadow-md transition bg-gray-800 dark:border-gray-800 hover:translate-x-3" href="/">
+      <a class="group flex flex-col border shadow-sm rounded-xl hover:shadow-md focus:outline-none focus:shadow-md transition bg-gray-800 dark:border-gray-800 hover:translate-x-3" href="http://verify.skilljar.com/c/b9qgz3xcux95">
         <div class="p-4 md:p-5">
           <div class="flex gap-x-5">
-            <img src={Basic} width="48" height="48" alt="Make Basic Certification">
+            <img src={Airtable} width="48" height="48" alt="Make Basic Certification">
   
             <div class="grow">
               <h3 class="group-hover:text-blue-600 font-semibold text-gray-800 dark:group-hover:text-neutral-400 dark:text-neutral-200">
@@ -44,9 +45,25 @@
       </a>
       <!-- End Card -->
       <!-- Card -->
+      <a class="group flex flex-col border shadow-sm rounded-xl hover:shadow-md focus:outline-none focus:shadow-md transition bg-gray-800 dark:border-gray-800 hover:translate-x-3" href="https://app.hubspot.com/academy/achievements/889q022y/en/1/zion-gonet/email-marketing">
+        <div class="p-4 md:p-5">
+          <div class="flex gap-x-5">
+            <img src={Hubspot} width="48" height="48" alt="Make Basic Certification">
+  
+            <div class="grow">
+              <h3 class="group-hover:text-blue-600 font-semibold text-gray-800 dark:group-hover:text-neutral-400 dark:text-neutral-200">
+                Hubspot
+              </h3>
+              <p class="text-sm text-gray-500 dark:text-neutral-500">
+                Email Marketing
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
       <!-- End Card -->
       <!-- Card -->
-      <a class="group flex flex-col border shadow-sm rounded-xl hover:shadow-md focus:outline-none focus:shadow-md transition dark:bg-gray-800 dark:border-gray-800 hover:translate-x-3" href="/">
+      <a class="group flex flex-col border shadow-sm rounded-xl hover:shadow-md focus:outline-none focus:shadow-md transition dark:bg-gray-800 dark:border-gray-800 hover:translate-x-3" href="https://partnertraining.make.com/certificates/9ytb1mkmdn">
         <div class="p-4 md:p-5">
           <div class="flex gap-x-5">
             <img src={Intermediate} width="48" height="48" alt="Make Basic Certification">
@@ -64,7 +81,7 @@
       </a>
       <!-- End Card -->
       <!-- Card -->
-      <a class="group flex flex-col border shadow-sm rounded-xl hover:shadow-md focus:outline-none focus:shadow-md transition dark:bg-gray-800 dark:border-gray-800 hover:translate-x-3" href="/">
+      <a class="group flex flex-col border shadow-sm rounded-xl hover:shadow-md focus:outline-none focus:shadow-md transition dark:bg-gray-800 dark:border-gray-800 hover:translate-x-3" href="https://partnertraining.make.com/certificates/gavrvtmisf">
         <div class="p-4 md:p-5">
           <div class="flex gap-x-5">
             <img src={Basic} width="48" height="48" alt="Make Basic Certification">
@@ -82,7 +99,7 @@
       </a>
       <!-- End Card -->
       <!-- Card -->
-      <a class="group flex flex-col border shadow-sm rounded-xl hover:shadow-md focus:outline-none focus:shadow-md transition dark:bg-gray-800 dark:border-gray-800 hover:translate-x-3" href="/">
+      <a class="group flex flex-col border shadow-sm rounded-xl hover:shadow-md focus:outline-none focus:shadow-md transition dark:bg-gray-800 dark:border-gray-800 hover:translate-x-3" href="https://partnertraining.make.com/certificates/yuw9flljm5">
         <div class="p-4 md:p-5">
           <div class="flex gap-x-5">
             <img src={Foundation} width="48" height="48" alt="Make Basic Certification">

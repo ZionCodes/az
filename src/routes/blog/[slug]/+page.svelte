@@ -1,5 +1,6 @@
 <script>
-  import SvelteSeo from "svelte-seo";
+  import Newsletter from "$lib/Newsletter.svelte";
+import SvelteSeo from "svelte-seo";
   let { data } = $props();
   const { post } = data;
   console.log(post)
@@ -39,12 +40,12 @@
 
           <h2 class="text-3xl font-bold lg:text-5xl dark:text-white">{post.title}</h2>
 
-          <div class="flex items-center gap-x-5">
+          <!-- <div class="flex items-center gap-x-5">
             <a class="inline-flex items-center gap-1.5 py-1 px-3 sm:py-2 sm:px-4 rounded-full text-xs sm:text-sm bg-gray-100 text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800" href="/">
               Company News
             </a>
             <p class="text-xs sm:text-sm text-gray-800 dark:text-neutral-200">January 18, 2023</p>
-          </div>
+          </div> -->
 
           <p class="text-base prose dark:prose-invert leading-relaxed max-w-none">{@html post.article}</p>
         </div>
@@ -53,7 +54,7 @@
     <!-- End Content -->
 
     <!-- Sidebar -->
-    <div class="lg:col-span-1 lg:w-full lg:h-full lg:bg-gradient-to-r lg:from-gray-50 lg:via-transparent lg:to-transparent dark:from-gray-800">
+    <div class="lg:col-span-1 lg:w-full lg:h-full lg:bg-gradient-to-r lg:from-gray-50 lg:via-transparent lg:to-transparent dark:from-gray-800 mt-8">
       <div class="sticky top-0 start-0 py-8 lg:ps-8">
         <!-- Avatar Media -->
         <div class="group flex items-center gap-x-3 border-b border-gray-200 pb-8 mb-8 dark:border-neutral-700">
@@ -63,10 +64,10 @@
 
           <a class="group grow block focus:outline-none" href="/">
             <h5 class="group-hover:text-gray-600 group-focus:text-gray-600 text-sm font-semibold text-gray-800 dark:group-hover:text-neutral-400 dark:group-focus:text-neutral-400 dark:text-neutral-200">
-              Leyla Ludic
+              Zion
             </h5>
             <p class="text-sm text-gray-500 dark:text-neutral-500">
-              UI/UX enthusiast
+              Automation Specialist
             </p>
           </a>
 
@@ -102,6 +103,8 @@
   </div>
 </div>
 <!-- End Blog Article -->
+
+<Newsletter />
 
 
 

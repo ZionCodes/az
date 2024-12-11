@@ -30,9 +30,11 @@
           <h3 class="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-neutral-300 dark:group-hover:text-white">
             Zion
           </h3>
-          <p class="mt-3 text-gray-600 dark:text-neutral-400">I am a seasoned graphic designer with over 14 years of experience in creating visually appealing and user-centric designs. My expertise spans across UI design, design systems, and custom illustrations, helping clients bring their digital visions to life.
+          <p class="mt-3 text-gray-600 dark:text-neutral-400">My name is Zion Gonet, and I collaborate with businesses and individuals worldwide to design thoughtful, scalable digital systems and automations that save time and amplify impact.
 
-              Currently, I work remotely for Notion, where I design template UIs, convert them into HTML and CSS, and provide comprehensive support to our users. I am passionate about crafting elegant and functional designs that enhance user experiences.
+            With a background in building web applications, I bring a unique blend of technical expertise and a passion for problem-solving to every project. From automating workflows to integrating powerful tools, my mission is to help others work smarter, not harder.
+
+            When I’m not developing solutions, I enjoy exploring new technologies, sharing knowledge with the community, and staying inspired by the ever-evolving world of innovation.
           </p>
         </div>
       </div>

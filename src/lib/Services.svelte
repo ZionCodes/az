@@ -17,12 +17,12 @@
 <!-- Icon Blocks -->
 <div class="max-w-[85rem] px-4 my-10 sm:px-6 lg:px-8 lg:py-14 mx-auto bg-gray-900" use:inview={options} on:inview_change={handleChange}>
   {#if isInView}
-      <div class="max-w-3xl mb-10 lg:mb-14" id="services" transition:fly={{ y: 200, duration: 1000, delay: 1000 }}>
+      <div class="max-w-3xl mb-10 lg:mb-14" id="services" transition:fly={{ y: 200, duration: 1000, delay: 1500 }}>
         <h2 class="text-white font-semibold text-2xl md:text-4xl md:leading-tight">Services</h2>
         <p class="mt-1 text-neutral-400">I create custom automation solutions that simplify workflows, boost efficiency, and save time. Let’s transform your business processes for enhanced productivity.</p>
       </div>
       <!-- End Title -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 items-center gap-6" transition:fly={{ y: 200, duration: 2000, delay: 1000 }}>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 items-center gap-6" transition:fly={{ y: 200, duration: 2000, delay: 1500 }}>
           <!-- Card -->
           <a class="hover:scale-110 group flex gap-y-6 size-full hover:bg-gray-100 focus:outline-none focus:bg-gray-100 rounded-lg p-5 dark:hover:bg-gray-800 dark:focus:bg-gray-800" href="#services">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 size-8 text-gray-800 mt-0.5 me-6 dark:text-neutral-200"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>

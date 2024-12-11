@@ -2,6 +2,7 @@
   import { inview } from 'svelte-inview';
   import type { ObserverEventDetails, Options } from 'svelte-inview';
   import { fly } from 'svelte/transition';
+  import image from '$lib/images/strategy.png'
 
   let isInView: boolean = false; // Initialize visibility state
   const options: Options = {
@@ -22,14 +23,14 @@
       <!-- Title -->
       <div class="max-w-3xl mb-10 lg:mb-14" transition:fly={{ y: 200, duration: 1000, delay: 1000 }}>
         <h2 class="text-white font-semibold text-2xl md:text-4xl md:leading-tight">Approach</h2>
-        <p class="mt-1 text-neutral-400">Here’s how we operate to ensure your business gets the best results through effective systems and automation.</p>
+        <p class="mt-1 text-neutral-400">Here’s how I operate to ensure your business gets the best results through effective systems and automation.</p>
       </div>
       <!-- End Title -->
   
       <!-- Grid -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 lg:items-center" transition:fly={{ y: 200, duration: 2000, delay: 1000 }}>
         <div class="aspect-w-16 aspect-h-9 lg:aspect-none">
-          <img class="w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1587614203976-365c74645e83?q=80&w=480&h=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" transition:fly={{ y: 200, duration: 2000, delay:1000 }} alt="Features">
+          <img class="w-full object-cover rounded-xl" src={image} transition:fly={{ y: 200, duration: 2000, delay:1000 }} alt="Features">
         </div>
         <!-- End Col -->
   
