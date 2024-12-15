@@ -26,7 +26,7 @@ export const GET = async () => {
 
   // Return the sitemap response
   return await sitemap.response({
-    origin: 'http://localhost:3000', // Replace with your local or production URL
+    origin: 'http://automationzion.com', // Replace with your local or production URL
     paramValues: {
       '/blog/[slug]': blogSlugs, // Use generated slugs for the /blog/[slug] route
     },
