@@ -7,7 +7,7 @@ export async function load() {
 
     // Fetch all records
     const records = await pb.collection('posts').getFullList({
-        sort: '-title',
+        sort: '-created',
     });
 
     // Add slug field to each record with the title and id
