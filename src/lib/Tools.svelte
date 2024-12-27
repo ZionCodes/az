@@ -4,6 +4,7 @@
     import { scale } from 'svelte/transition';
     import airtable from '$lib/images/airtable.webp'
     import make from '$lib/images/make.png'
+    import n8n from '$lib/images/n8n.png'
     import monday from '$lib/images/monday.avif'
     import softr from '$lib/images/softr.png'
     import zapier from '$lib/images/zapier.png'
@@ -33,8 +34,8 @@
             <span class="text-white text-lg">Make</span>
         </div>
         <div class="p-4 md:p-7 bg-gray-800 rounded-lg hover:scale-110 flex justify-center items-center" transition:scale={{ duration: 1000, delay: 1000 }}>
-            <img src={monday} alt="Description" class="w-12 h-12 object-contain mr-4" />
-            <span class="text-white text-lg">Monday</span>
+            <img src={n8n} alt="Description" class="w-12 h-12 object-contain mr-4" />
+            <span class="text-white text-lg">n8n</span>
         </div>
         <div class="p-4 md:p-7 bg-gray-800 rounded-lg hover:scale-110 flex justify-center items-center" transition:scale={{ duration: 1000, delay: 1000 }}>
             <img src={softr} alt="Description" class="w-12 h-12 object-contain mr-4" />
