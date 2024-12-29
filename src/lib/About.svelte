@@ -2,6 +2,7 @@
   import { inview } from 'svelte-inview';
   import type { ObserverEventDetails, Options } from 'svelte-inview';
   import { fly } from 'svelte/transition';
+  import automationzion from '$lib/images/automationzion profile.webp'
 
   let isInView: boolean = false; // Initialize visibility state
   const options: Options = {
@@ -23,18 +24,18 @@
     <a class="group block rounded-xl overflow-hidden focus:outline-none max-w-3xl" href="/">
       <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
         <div class="shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44">
-          <img class="group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out size-full absolute top-0 start-0 object-cover rounded-xl" src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&q=80" alt="Zion">
+          <img class="group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out size-full absolute top-0 start-0 object-cover rounded-xl" src={automationzion} alt="Zion">
         </div>
 
         <div class="grow">
           <h3 class="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-neutral-300 dark:group-hover:text-white">
             Zion
           </h3>
-          <p class="mt-3 text-gray-600 dark:text-neutral-400">My name is Zion Gonet, and I collaborate with businesses and individuals worldwide to design thoughtful, scalable digital systems and automations that save time and amplify impact.
+          <p class="mt-3 text-gray-600 dark:text-neutral-400">Hi, I’m Zion Gonet, and I work with businesses and individuals to create practical, scalable digital systems and automations that help save time, reduce costs, and eliminate tedious manual tasks.
 
-            With a background in building web applications, I bring a unique blend of technical expertise and a passion for problem-solving to every project. From automating workflows to integrating powerful tools, my mission is to help others work smarter, not harder.
-
-            When I’m not developing solutions, I enjoy exploring new technologies, sharing knowledge with the community, and staying inspired by the ever-evolving world of innovation.
+            With a background in web development, I bring a mix of technical know-how and a passion for solving real-world problems. Whether it’s automating workflows or connecting tools to work seamlessly together, my goal is to make your work life easier and more efficient.
+            
+            When I’m not crafting solutions, I’m pursuing entrepreneurship, exploring new technologies, and staying inspired by the constantly evolving business and tech world.
           </p>
         </div>
       </div>
