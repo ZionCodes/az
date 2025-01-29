@@ -3,13 +3,14 @@
 import SvelteSeo from "svelte-seo";
   let { data } = $props();
   const { post } = data;
-  console.log(post)
+  console.log(data)
 </script>
 
 
 <SvelteSeo
   title={post.title}
   description={post.introduction}
+  canonical="https://www.automationzion.com/blog/{post.title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '')}-{post.id}"
   openGraph={{
     title: `${post.title}`,
     description:`${post.introduction}`,

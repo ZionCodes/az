@@ -10,6 +10,7 @@
 <SvelteSeo
   title='Automation Zion Blog | Workflow Automation Tips'
   description="Explore tutorials, insights, and ideas on systems and workflow automation."
+  canonical="https://www.automationzion.com/blog"
   openGraph={{
     title: `Automation Zion Blog | Workflow Automation Tips`,
     description:`Explore tutorials, insights, and ideas on systems and workflow automation.`,

@@ -7,6 +7,7 @@ import SvelteSeo from "svelte-seo";
 <SvelteSeo
   title='Automation Zion | My Projects'
   description="Explore my portfolio of automation projects, showcasing how I create efficient systems that save time and drive growth."
+  canonical="https://www.automationzion.com/projects"
   openGraph={{
     title: `Automation Zion | My Projects`,
     description:`Explore my portfolio of automation projects, showcasing how I create efficient systems that save time and drive growth.`,

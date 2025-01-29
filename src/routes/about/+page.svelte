@@ -9,6 +9,7 @@
 <SvelteSeo
   title='About Automation Zion | Your Workflow Automation Partner'
   description="Discover how Automation Zion helps businesses optimize operations, save time, and achieve growth with tailored workflow automation solutions."
+  canonical="https://www.automationzion.com/about"
   openGraph={{
     title: `About Automation Zion | Your Workflow Automation Partner`,
     description:`Discover how Automation Zion helps businesses optimize operations, save time, and achieve growth with tailored workflow automation solutions.`,

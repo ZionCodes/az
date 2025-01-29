@@ -16,6 +16,7 @@
 <SvelteSeo
   title='Automation Zion | Workflow Automation Specialist'
   description="I create systems and workflow automations to save you time, eliminate busywork, and help your business scale effortlessly."
+  canonical="https://www.automationzion.com/"
   openGraph={{
     title: `Automation Zion | Workflow Automation Specialist`,
     description:`I create systems and workflow automations to save you time, eliminate busywork, and help your business scale effortlessly.`,
