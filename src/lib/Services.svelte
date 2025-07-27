@@ -30,7 +30,7 @@
             <div>
               <div>
                 <h3 class="block font-bold text-gray-800 dark:text-white">Workflow Automation</h3>
-                <p class="text-gray-600 dark:text-neutral-400">Automate repetitive tasks and streamline your processes to improve efficiency, reduce errors, and save valuable time.</p>
+                <p class="text-gray-600 dark:text-neutral-400">I automate the boring stuff so you can focus on what matters. From hands-free workflows to systems that run on autopilot.</p>
               </div>
             </div>
           </a>
@@ -38,12 +38,24 @@
       
           <!-- Card -->
           <a class="hover:scale-110 group flex gap-y-6 size-full hover:bg-gray-100 focus:outline-none focus:bg-gray-100 rounded-lg p-5 dark:hover:bg-gray-800 dark:focus:bg-gray-800" href="#services">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 size-8 text-gray-800 mt-0.5 me-6 dark:text-neutral-200"><path d="M12 17v4"/><path d="m15.2 4.9-.9-.4"/><path d="m15.2 7.1-.9.4"/><path d="m16.9 3.2-.4-.9"/><path d="m16.9 8.8-.4.9"/><path d="m19.5 2.3-.4.9"/><path d="m19.5 9.7-.4-.9"/><path d="m21.7 4.5-.9.4"/><path d="m21.7 7.5-.9-.4"/><path d="M22 13v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"/><path d="M8 21h8"/><circle cx="18" cy="6" r="3"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 size-8 text-gray-800 mt-0.5 me-6 dark:text-neutral-200"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>
       
             <div>
               <div>
-                <h3 class="block font-bold text-gray-800 dark:text-white">Custom System Design</h3>
-                <p class="text-gray-600 dark:text-neutral-400">Tailor-made solutions that integrate seamlessly with your existing tools, enhancing productivity and simplifying complex workflows.</p>
+                <h3 class="block font-bold text-gray-800 dark:text-white">Consulting & Strategy</h3>
+                <p class="text-gray-600 dark:text-neutral-400">Work with me to pinpoint automation opportunities across your systems and design scalable setups that grow with your business.</p>
+              </div>
+            </div>
+          </a>
+          <!-- End Card -->
+           <!-- Card -->
+          <a class="hover:scale-110 group flex gap-y-6 size-full hover:bg-gray-100 focus:outline-none focus:bg-gray-100 rounded-lg p-5 dark:hover:bg-gray-800 dark:focus:bg-gray-800" href="#services">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 size-8 text-gray-800 mt-0.5 me-6 dark:text-neutral-200"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+            
+            <div>
+              <div>
+                <h3 class="block font-bold text-gray-800 dark:text-white">AI Agents & Smart Automation</h3>
+                <p class="text-gray-600 dark:text-neutral-400">I build intelligent AI agents that understand, decide, and execute, making your workflows smarter, faster, and fully autonomous.</p>
               </div>
             </div>
           </a>
@@ -56,7 +68,7 @@
             <div>
               <div>
                 <h3 class="block font-bold text-gray-800 dark:text-white">Data Analytics</h3>
-                <p class="text-gray-600 dark:text-neutral-400">Gain valuable insights from your data. I help you analyze and visualize key metrics to make data-driven decisions that drive growth and improve performance.</p>
+                <p class="text-gray-600 dark:text-neutral-400">Gain valuable insights from your data. I help you uncover trends, track key metrics, and make faster, smarter decisions.</p>
               </div>
             </div>
           </a>
@@ -67,20 +79,8 @@
       
             <div>
               <div>
-                <h3 class="block font-bold text-gray-800 dark:text-white">API Integrations</h3>
-                <p class="text-gray-600 dark:text-neutral-400">Connect your tools and platforms with seamless API integrations, improving data flow and automating your operations for greater efficiency.</p>
-              </div>
-            </div>
-          </a>
-          <!-- End Card -->
-          <!-- Card -->
-          <a class="hover:scale-110 group flex gap-y-6 size-full hover:bg-gray-100 focus:outline-none focus:bg-gray-100 rounded-lg p-5 dark:hover:bg-gray-800 dark:focus:bg-gray-800" href="#services">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 size-8 text-gray-800 mt-0.5 me-6 dark:text-neutral-200"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>
-      
-            <div>
-              <div>
-                <h3 class="block font-bold text-gray-800 dark:text-white">Consulting & Strategy</h3>
-                <p class="text-gray-600 dark:text-neutral-400">Work with me to develop actionable strategies for improving your workflows, implementing automation, and achieving your business goals.</p>
+                <h3 class="block font-bold text-gray-800 dark:text-white">API & App Integrations</h3>
+                <p class="text-gray-600 dark:text-neutral-400">Connect your tools and platforms with seamless API and webhook integrations, so your systems talk to each other effortlessly.</p>
               </div>
             </div>
           </a>
@@ -92,7 +92,7 @@
             <div>
               <div>
                 <h3 class="block font-bold text-gray-800 dark:text-white">Ongoing Support & Optimization</h3>
-                <p class="text-gray-600 dark:text-neutral-400">After implementation, I provide continuous support to optimize your systems and ensure they grow and evolve with your business.</p>
+                <p class="text-gray-600 dark:text-neutral-400">Beyond implementation, we work with you to continuously improve and scale your systems to ensure they grow and evolve with your business.</p>
               </div>
             </div>
           </a>
