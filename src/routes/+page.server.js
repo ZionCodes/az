@@ -3,24 +3,31 @@ import { SECRET_EMAIL, SECRET_PASSWORD, PB_URL } from '$env/static/private';
 
 export async function load() {
     const pb = new PocketBase(PB_URL);
-    await pb.admins.authWithPassword(SECRET_EMAIL, SECRET_PASSWORD);
+    let records = [];
 
-    // Fetch the first 3 posts
-    const response = await pb.collection('posts').getList(1, 2, {
-        sort: '-created',
-    });
+    try {
+        // Try to authenticate
+        await pb.admins.authWithPassword(SECRET_EMAIL, SECRET_PASSWORD);
 
-    // Add slug field to each record, appending the id to the slug
-    const records = response.items.map(record => {
-        // Create slug from title and append the post's id
-        record.slug = record.title
-            .toLowerCase()            // Convert to lowercase
-            .replace(/\s+/g, '-')     // Replace spaces with hyphens
-            .replace(/[^\w-]+/g, '')  // Remove special characters
-            + `-${record.id}`;       // Append the post's id to the slug
+        // Fetch the first 2 posts (sorted by newest)
+        const response = await pb.collection('posts').getList(1, 2, {
+            sort: '-created',
+        });
 
-        return record;
-    });
+        // Create slug for each record
+        records = response.items.map(record => {
+            record.slug = record.title
+                .toLowerCase()
+                .replace(/\s+/g, '-')      // spaces → hyphens
+                .replace(/[^\w-]+/g, '')   // remove special chars
+                + `-${record.id}`;         // append id
+            return record;
+        });
+    } catch (error) {
+        console.error('⚠️ PocketBase fetch failed:', error);
+        // Continue rendering the page without blog data
+        records = [];
+    }
 
     return {
         records

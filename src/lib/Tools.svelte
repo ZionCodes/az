@@ -10,6 +10,7 @@
     import zapier from '$lib/images/zapier.png';
     import python from '$lib/images/python-logo-only.png';
     import javascript from '$lib/images/javascript.png';
+    import supabase from '$lib/images/supabase-logo-icon.png';
   
     let isInView: boolean = false;
     const options: Options = {
@@ -29,7 +30,8 @@
       { img: softr, label: 'Softr' },
       { img: zapier, label: 'Zapier' },
       { img: javascript, label: 'Javascript' },
-      { img: python, label: 'Python' }
+      { img: python, label: 'Python' },
+      { img: supabase, label: 'Supabase' }
     ];
   </script>
   
