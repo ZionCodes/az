@@ -26,12 +26,11 @@
       { img: airtable, label: 'Airtable' },
       { img: make, label: 'Make' },
       { img: n8n, label: 'n8n' },
-      { img: monday, label: 'Monday' },
-      { img: softr, label: 'Softr' },
       { img: zapier, label: 'Zapier' },
+      { img: supabase, label: 'Supabase' },
       { img: javascript, label: 'Javascript' },
-      { img: python, label: 'Python' },
-      { img: supabase, label: 'Supabase' }
+      { img: python, label: 'Python' }
+      
     ];
   </script>
   
