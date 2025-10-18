@@ -5,8 +5,6 @@
     import airtable from '$lib/images/airtable.webp';
     import make from '$lib/images/make.png';
     import n8n from '$lib/images/n8n.png';
-    import monday from '$lib/images/monday.avif';
-    import softr from '$lib/images/softr.png';
     import zapier from '$lib/images/zapier.png';
     import python from '$lib/images/python-logo-only.png';
     import javascript from '$lib/images/javascript.png';
@@ -26,8 +24,8 @@
       { img: airtable, label: 'Airtable' },
       { img: make, label: 'Make' },
       { img: n8n, label: 'n8n' },
-      { img: zapier, label: 'Zapier' },
       { img: supabase, label: 'Supabase' },
+      { img: zapier, label: 'Zapier' },
       { img: javascript, label: 'Javascript' },
       { img: python, label: 'Python' }
       

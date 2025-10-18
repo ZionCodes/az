@@ -23,6 +23,19 @@
       </div>
       <!-- End Title -->
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 items-center gap-6" transition:fly={{ y: 200, duration: 2000, delay: 1500 }}>
+
+        <!-- Card -->
+        <a class="hover:scale-110 group flex gap-y-6 size-full hover:bg-gray-100 focus:outline-none focus:bg-gray-100 rounded-lg p-5 dark:hover:bg-gray-800 dark:focus:bg-gray-800" href="#services">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 size-8 text-gray-800 mt-0.5 me-6 dark:text-neutral-200"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>
+    
+          <div>
+            <div>
+              <h3 class="block font-bold text-gray-800 dark:text-white">Consulting & Strategy</h3>
+              <p class="text-gray-600 dark:text-neutral-400">Work with me to pinpoint automation opportunities across your systems and design scalable setups that grow with your business.</p>
+            </div>
+          </div>
+        </a>
+        <!-- End Card -->
           <!-- Card -->
           <a class="hover:scale-110 group flex gap-y-6 size-full hover:bg-gray-100 focus:outline-none focus:bg-gray-100 rounded-lg p-5 dark:hover:bg-gray-800 dark:focus:bg-gray-800" href="#services">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 size-8 text-gray-800 mt-0.5 me-6 dark:text-neutral-200"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>
@@ -36,18 +49,7 @@
           </a>
           <!-- End Card -->
       
-          <!-- Card -->
-          <a class="hover:scale-110 group flex gap-y-6 size-full hover:bg-gray-100 focus:outline-none focus:bg-gray-100 rounded-lg p-5 dark:hover:bg-gray-800 dark:focus:bg-gray-800" href="#services">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 size-8 text-gray-800 mt-0.5 me-6 dark:text-neutral-200"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>
-      
-            <div>
-              <div>
-                <h3 class="block font-bold text-gray-800 dark:text-white">Consulting & Strategy</h3>
-                <p class="text-gray-600 dark:text-neutral-400">Work with me to pinpoint automation opportunities across your systems and design scalable setups that grow with your business.</p>
-              </div>
-            </div>
-          </a>
-          <!-- End Card -->
+          
            <!-- Card -->
           <a class="hover:scale-110 group flex gap-y-6 size-full hover:bg-gray-100 focus:outline-none focus:bg-gray-100 rounded-lg p-5 dark:hover:bg-gray-800 dark:focus:bg-gray-800" href="#services">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 size-8 text-gray-800 mt-0.5 me-6 dark:text-neutral-200"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>

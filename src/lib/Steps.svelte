@@ -6,7 +6,7 @@
 
   let isInView: boolean = false; // Initialize visibility state
   const options: Options = {
-    rootMargin: '-50px',
+    rootMargin: '-80px',
     unobserveOnEnter: true,
   };
 
@@ -23,7 +23,7 @@
       <!-- Title -->
       <div class="max-w-3xl mb-10 lg:mb-14" transition:fly={{ y: 200, duration: 1000, delay: 1000 }}>
         <h2 class="text-white font-semibold text-2xl md:text-4xl md:leading-tight">Approach</h2>
-        <p class="mt-1 text-neutral-400">Here’s how I operate to ensure your business gets the best results through effective systems and automation.</p>
+        <p class="mt-1 text-neutral-400">Here’s how I design and build efficient and scalable systems that scale with your business.</p>
       </div>
       <!-- End Title -->
   
@@ -59,8 +59,8 @@
             <!-- Right Content -->
             <div class="grow pt-0.5 pb-8 sm:pb-12">
               <p class="text-sm lg:text-base text-neutral-400">
-                <span class="text-white">Consultation:</span>
-                I begin by understanding your unique needs and challenges, diving into your workflows to identify areas for automation and improvement.
+                <span class="text-white">Discovery & Consultation:</span>
+                We begin by understanding your business, processes, challenges, and goals to uncover the biggest opportunities for automation and improvement.
               </p>
             </div>
             <!-- End Right Content -->
@@ -82,8 +82,8 @@
             <!-- Right Content -->
             <div class="grow pt-0.5 pb-8 sm:pb-12">
               <p class="text-sm lg:text-base text-neutral-400">
-                <span class="text-white">Solution Design:</span>
-                Based on your goals, I design tailored systems and automation solutions that streamline processes, boost efficiency, and save time.
+                <span class="text-white">System Design:</span>
+                Based on your goals, I design tailored systems and automation solutions that simplify your processes, improve efficiency, and save time.
               </p>
             </div>
             <!-- End Right Content -->
@@ -106,7 +106,7 @@
             <div class="grow pt-0.5 pb-8 sm:pb-12">
               <p class="text-sm md:text-base text-neutral-400">
                 <span class="text-white">Implementation:</span>
-                I bring your solution to life by seamlessly integrating the systems into your workflow, ensuring minimal disruption and maximum impact.
+                I bring the solution to life by seamlessly integrating the systems into your workflow, ensuring minimal disruption and maximum impact.
               </p>
             </div>
             <!-- End Right Content -->
@@ -128,8 +128,8 @@
             <!-- Right Content -->
             <div class="grow pt-0.5 pb-8 sm:pb-12">
               <p class="text-sm md:text-base text-neutral-400">
-                <span class="text-white">Ongoing Support:</span>
-                After implementation, I provide continuous support and optimization to ensure your systems evolve with your business, staying efficient and effective over time.
+                <span class="text-white">Optimization & Support:</span>
+                Once your system is live, I provide ongoing support and optimization so your setup evolves as your business grows, staying efficient and reliable.
               </p>
             </div>
             <!-- End Right Content -->
