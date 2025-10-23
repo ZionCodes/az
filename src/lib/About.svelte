@@ -17,34 +17,46 @@
 
 
 <!-- Card Blog -->
-<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto" use:inview={options} on:inview_change={handleChange}>
+<div
+  class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto"
+  use:inview={options}
+  on:inview_change={handleChange}
+>
   {#if isInView}
-  <div class="flex justify-center" transition:fly={{ y: 200, duration: 2000, delay: 1000 }}>
-    <!-- Card -->
-    <a class="group block rounded-xl overflow-hidden focus:outline-none max-w-3xl" href="/">
-      <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
-        <div class="shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44">
-          <img class="group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out size-full absolute top-0 start-0 object-cover rounded-xl" src={automationzion} alt="Zion">
-        </div>
+    <div
+      class="flex justify-center"
+      transition:fly={{ y: 200, duration: 2000, delay: 1000 }}
+    >
+      <!-- Card -->
+      <a
+        class="group block rounded-xl overflow-hidden focus:outline-none max-w-4xl w-full"
+        href="/"
+      >
+        <div class="flex flex-col sm:flex-row sm:items-stretch gap-6">
+          <!-- Image -->
+          <div class="relative mx-auto rounded-xl overflow-hidden w-3/4 sm:w-1/2 aspect-square sm:aspect-auto sm:h-auto"
+          >
+            <img
+              class="group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out absolute inset-0 w-full h-full object-cover rounded-xl"
+              src={automationzion}
+              alt="Zion"
+            />
+          </div>
 
-        <div class="grow">
-          <h3 class="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-neutral-300 dark:group-hover:text-white">
-            Zion
-          </h3>
-          <p class="mt-3 text-gray-600 dark:text-neutral-400">Hi, I’m Zion Gonet, and I work with businesses and individuals to create practical, scalable digital systems and automations that help save time, reduce costs, and eliminate tedious manual tasks.
-
-            With a background in web development, I bring a mix of technical know-how and a passion for solving real-world problems. Whether it’s automating workflows or connecting tools to work seamlessly together, my goal is to make your work life easier and more efficient.
-            
-            When I’m not crafting solutions, I’m pursuing entrepreneurship, exploring new technologies, and staying inspired by the constantly evolving business and tech world.
-          </p>
+          <!-- Text -->
+          <div class="w-full sm:w-1/2 flex flex-col justify-center">
+            <p class="text-base md:text-lg leading-relaxed text-gray-700 dark:text-neutral-400">
+              Hi, I’m Zion Gonet, a generalist and systems thinker who thrives on turning chaos into order. With a background in web development, I bring a unique blend of technical expertise and strategic thinking to solve complex problems. My focus is on creating practical, scalable digital systems and AI agents that eliminate manual tasks, reduce costs, and boost operational efficiency.
+              <br /><br />
+              When I’m not building systems or web apps, I’m an avid reader constantly exploring new ideas and technologies that shape our world, and the principles and laws that govern our lives.
+            </p>
+          </div>
         </div>
-      </div>
-    </a>
-    <!-- End Card -->
-  </div>
+      </a>
+      <!-- End Card -->
+    </div>
   {/if}
-    <!-- Grid -->
-    
-    <!-- End Grid -->
 </div>
+
+
 <!-- End Card Blog -->

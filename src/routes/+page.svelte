@@ -3,11 +3,14 @@
 	import SvelteSeo from "svelte-seo";
 	import Blog from "$lib/Blog.svelte";
     import Hero from "$lib/Hero.svelte";
+    import Clients from "$lib/Clients.svelte";
 	import Newsletter from "$lib/Newsletter.svelte";
 	import Services from "$lib/Services.svelte";
 	import Steps from "$lib/Steps.svelte";
 	import Tools from "$lib/Tools.svelte";
-
+	import ExampleTimeline from '$lib/ExampleTimeline.svelte';
+	import WobbleCard from '$lib/WobbleCard.svelte';
+	import MVP from '$lib/MVP.svelte';
 	let { data } = $props();
 
 </script>
@@ -34,8 +37,10 @@
 
 
 <Hero />
-<Tools />
-<Steps />
+<Clients />
+<ExampleTimeline />
 <Services />
+<Tools />
+<MVP />
 <Blog data={data.records}/>
 <Newsletter />

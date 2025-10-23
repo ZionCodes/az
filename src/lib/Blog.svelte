@@ -6,7 +6,7 @@
   let isInView: boolean = false; // Initialize visibility state
   const options: Options = {
     rootMargin: '-50px',
-    unobserveOnEnter: true,
+    unobserveOnEnter: false,
   };
 
   const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>) => {
@@ -20,13 +20,13 @@
 <!-- svelte-ignore event_directive_deprecated -->
 <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto bg-gray-900" use:inview={options} on:inview_change={handleChange}>
   {#if inview}
-  <div class="max-w-3xl mb-10 lg:mb-14" transition:fly={{ y: 200, duration: 1000, delay: 1000 }}>
+  <div class="max-w-3xl mb-10 lg:mb-14" transition:fly={{ y: 200, duration: 1000, delay: 1500 }}>
     <h2 class="text-white font-semibold text-2xl md:text-4xl md:leading-tight">Blog</h2>
     <p class="mt-1 text-neutral-400">Discover tips and insights on automation, workflow optimization, and system design to help your business grow.</p>
   </div>
   <!-- End Title -->
     <!-- Grid -->
-    <div class="grid lg:grid-cols-2 lg:gap-y-16 gap-10" transition:fly={{ y: 200, duration: 2000, delay: 1000 }}>
+    <div class="grid lg:grid-cols-2 lg:gap-y-16 gap-10" transition:fly={{ y: 200, duration: 2000, delay: 500 }}>
       <!-- Card -->
        {#each data as post}
        <a class="group block rounded-xl overflow-hidden focus:outline-none" href="/blog/{post.slug}">

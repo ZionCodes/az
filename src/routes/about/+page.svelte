@@ -28,7 +28,6 @@
 
 
 <About />
-<Certifications />
 
 <div class="flex flex-auto items-center p-4 m-8 justify-center">
   <a href="https://airtable.com/apptczz1Z37dJqKHA/pagw800Gw7i9TAPCz/form">
