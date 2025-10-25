@@ -16,7 +16,7 @@
     description:`Explore tutorials, insights, and ideas on systems and workflow automation.`,
     image: `${Cover}`,
     type: "website",
-    site_name: "Relocate for Work",
+    site_name: "Automation Zion",
   }}
   twitter={{
     card: "summary",

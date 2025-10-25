@@ -3,7 +3,7 @@
   import type { ObserverEventDetails, Options } from 'svelte-inview';
   import { fly } from 'svelte/transition';
 
-  let isInView: boolean = false; // Initialize visibility state
+  let isInView = $state(false); // Initialize visibility state
   const options: Options = {
     rootMargin: '-50px',
     unobserveOnEnter: false,
@@ -19,7 +19,7 @@
 <!-- Card Blog -->
 <!-- svelte-ignore event_directive_deprecated -->
 <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto bg-gray-900" use:inview={options} on:inview_change={handleChange}>
-  {#if inview}
+  {#if isInView}
   <div class="max-w-3xl mb-10 lg:mb-14" transition:fly={{ y: 200, duration: 1000, delay: 1500 }}>
     <h2 class="text-white font-semibold text-2xl md:text-4xl md:leading-tight">Blog</h2>
     <p class="mt-1 text-neutral-400">Discover tips and insights on automation, workflow optimization, and system design to help your business grow.</p>

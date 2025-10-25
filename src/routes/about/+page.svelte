@@ -7,12 +7,12 @@
 </script>
 
 <SvelteSeo
-  title='About Automation Zion | Your Workflow Automation Partner'
-  description="Discover how Automation Zion helps businesses optimize operations, save time, and achieve growth with tailored workflow automation solutions."
+  title='About Automation Zion | Systems Thinker & AI Automation Specialist'
+  description="Zion Gonet, a systems thinker and builder with a background in web development, creates scalable digital solutions and AI agents that simplify work and enhance business efficiency."
   canonical="https://www.automationzion.com/about"
   openGraph={{
-    title: `About Automation Zion | Your Workflow Automation Partner`,
-    description:`Discover how Automation Zion helps businesses optimize operations, save time, and achieve growth with tailored workflow automation solutions.`,
+    title: `About Automation Zion | Systems Thinker & AI Automation Specialist`,
+    description:`Zion Gonet, a systems thinker and builder with a background in web development, creates scalable digital solutions and AI agents that simplify work and enhance business efficiency.`,
     image: `${Cover}`,
     type: "website",
     site_name: "Automation Zion",
@@ -20,8 +20,8 @@
   twitter={{
     card: "summary",
     site: "@AutomationZion",
-    title: `About Automation Zion | Your Workflow Automation Partner`,
-    description:`Discover how Automation Zion helps businesses optimize operations, save time, and achieve growth with tailored workflow automation solutions.`,
+    title: `About Automation Zion | Systems Thinker & AI Automation Specialist`,
+    description:`Zion Gonet, a systems thinker and builder with a background in web development, creates scalable digital solutions and AI agents that simplify work and enhance business efficiency.`,
     image: `${Cover}`,
   }}
 />

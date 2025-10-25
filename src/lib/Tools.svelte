@@ -85,8 +85,4 @@
 	.animate-scroll-left {
 		animation: scroll-left 30s linear infinite;
 	}
-
-	.animate-scroll-right {
-		animation: scroll-right 30s linear infinite;
-	}
 </style>

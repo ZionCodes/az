@@ -16,12 +16,12 @@
 </script>
 
 <SvelteSeo
-  title='Automation Zion | Workflow Automation Specialist'
-  description="I create systems and workflow automations to save you time, eliminate busywork, and help your business scale effortlessly."
+  title='Automation Zion | Systems & AI Automation Specialist'
+  description="I create scalable systems, automations, and AI agents that help your business run smoothly and grow efficiently."
   canonical="https://www.automationzion.com/"
   openGraph={{
-    title: `Automation Zion | Workflow Automation Specialist`,
-    description:`I create systems and workflow automations to save you time, eliminate busywork, and help your business scale effortlessly.`,
+    title: `Automation Zion | Systems & AI Automation Specialist`,
+    description:`I create scalable systems, automations, and AI agents that help your business run smoothly and grow efficiently.`,
     image: `${Cover}`,
     type: "website",
     site_name: "Automation Zion",
@@ -29,8 +29,8 @@
   twitter={{
     card: "summary",
     site: "@AutomationZion",
-    title: `Automation Zion | Workflow Automation Specialist`,
-    description:`I create systems and workflow automations to save you time, eliminate busywork, and help your business scale effortlessly.`,
+    title: `Automation Zion | Systems & AI Automation Specialist`,
+    description:`I create scalable systems, automations, and AI agents that help your business run smoothly and grow efficiently.`,
     image: `${Cover}`,
   }}
 />
