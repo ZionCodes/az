@@ -2,7 +2,6 @@
 	import SvelteSeo from "svelte-seo";
 	import Cover from '$lib/images/AutomationZion-cover.png'
 	import About from "$lib/About.svelte";
-	import Certifications from "$lib/Certifications.svelte";
 
 </script>
 
