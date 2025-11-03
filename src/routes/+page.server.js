@@ -11,6 +11,7 @@ export async function load() {
 
         // Fetch the first 2 posts (sorted by newest)
         const response = await pb.collection('posts').getList(1, 2, {
+            filter: 'category = "Case study"',
             sort: '-created',
         });
 

@@ -6,7 +6,6 @@
     import Clients from "$lib/Clients.svelte";
 	import Newsletter from "$lib/Newsletter.svelte";
 	import Services from "$lib/Services.svelte";
-	import Steps from "$lib/Steps.svelte";
 	import Tools from "$lib/Tools.svelte";
 	import ExampleTimeline from '$lib/ExampleTimeline.svelte';
 	import WobbleCard from '$lib/WobbleCard.svelte';
