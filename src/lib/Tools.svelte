@@ -8,7 +8,7 @@
 	import hubspot from '$lib/images/hubspot.png'
 	import make from '$lib/images/make.png';
 	import n8n from '$lib/images/n8n.png';
-	import salesforce from '$lib/images/salesforce.png'
+	import salesforce from '$lib/images/Salesforce.png'
 	import supabase from '$lib/images/supabase-logo-icon.png';
 	import zapier from '$lib/images/zapier.png';
 	import javascript from '$lib/images/javascript.png';
