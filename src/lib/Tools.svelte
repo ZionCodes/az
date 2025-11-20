@@ -4,12 +4,15 @@
 	import { fly } from 'svelte/transition';
 
 	import airtable from '$lib/images/airtable.webp';
+	import clay from '$lib/images/Clay Arch Marque.png';
+	import hubspot from '$lib/images/hubspot.png'
 	import make from '$lib/images/make.png';
 	import n8n from '$lib/images/n8n.png';
-	import zapier from '$lib/images/zapier.png';
-	import python from '$lib/images/python-logo-only.png';
-	import javascript from '$lib/images/javascript.png';
+	import salesforce from '$lib/images/salesforce.png'
 	import supabase from '$lib/images/supabase-logo-icon.png';
+	import zapier from '$lib/images/zapier.png';
+	import javascript from '$lib/images/javascript.png';
+	import python from '$lib/images/python-logo-only.png';	
 	import uipath from '$lib/images/UiPath.png'
 
 	let isInView: boolean = false;
@@ -25,8 +28,11 @@
 
 	const tools = [
 		{ img: airtable, label: 'Airtable' },
+		{ img: clay, label: 'Clay' },
+		{ img: hubspot, label: 'Hubspot' },
 		{ img: make, label: 'Make' },
 		{ img: n8n, label: 'n8n' },
+		{ img: salesforce, label: 'Salesforce' },
 		{ img: supabase, label: 'Supabase' },
 		{ img: zapier, label: 'Zapier' },
 		{ img: javascript, label: 'JavaScript' },

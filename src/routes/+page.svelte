@@ -1,7 +1,7 @@
 <script>
 	import Cover from '$lib/images/AutomationZion-cover.png'
 	import SvelteSeo from "svelte-seo";
-	import Blog from "$lib/Blog.svelte";
+	import CaseStudies from "$lib/CaseStudies.svelte";
     import Hero from "$lib/Hero.svelte";
     import Clients from "$lib/Clients.svelte";
 	import Newsletter from "$lib/Newsletter.svelte";
@@ -41,5 +41,5 @@
 <Services />
 <Tools />
 <MVP />
-<Blog data={data.records}/>
+<CaseStudies data={data.records}/>
 <Newsletter />
