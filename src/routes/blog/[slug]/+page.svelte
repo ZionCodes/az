@@ -157,26 +157,14 @@ import SvelteSeo from "svelte-seo";
         {@html post.article}
       </div>
 
-      <div>
+      <!-- <div>
         <a
           class="m-1 inline-flex items-center gap-1.5 py-2 px-3 rounded-full text-sm bg-gray-100 text-gray-800 hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:bg-[#ff0] dark:text-neutral-800 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
           href="#"
         >
           Plan
         </a>
-        <a
-          class="m-1 inline-flex items-center gap-1.5 py-2 px-3 rounded-full text-sm bg-gray-100 hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:bg-[#ff0] text-neutral-800 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
-          href="#"
-        >
-          Web development
-        </a>
-        <a
-          class="m-1 inline-flex items-center gap-1.5 py-2 px-3 rounded-full text-sm bg-gray-100 hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:bg-[#ff0] text-neutral-800 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
-          href="#"
-        >
-          Web development
-        </a>
-      </div>
+      </div> -->
     </div>
     </div>
 </div>

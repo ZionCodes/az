@@ -30,7 +30,7 @@
   
   <div class="flex max-w-5xl mx-auto flex-col gap-4 h-[250px] lg:flex-row" transition:fly={{ y: 200, duration: 2000, delay: 500 }}>
     <MagicCard
-      class="cursor-pointer flex-col items-center justify-center shadow-2xl whitespace-nowrap text-4xl group hover:border-[#ff770094] transition-all duration-300"
+      class="cursor-pointer flex-col items-center justify-center shadow-2xl whitespace-nowrap text-4xl group hover:border-[#ff770094] transition-all duration-300 py-12 md:py-0"
       gradientColor="#4D2506"
     >
       <div
@@ -44,7 +44,7 @@
     </p>
     </MagicCard>
     <MagicCard
-      class="cursor-pointer flex-col items-center justify-center shadow-2xl whitespace-nowrap text-4xl group hover:border-[#2effbd9e] transition-all duration-300"
+      class="cursor-pointer flex-col items-center justify-center shadow-2xl whitespace-nowrap text-4xl group hover:border-[#2effbd9e] transition-all duration-300 py-12 md:py-0"
       gradientColor="#043634"
       gradientSize={300}
     >

@@ -9,6 +9,7 @@
 	import make from '$lib/images/make.png';
 	import n8n from '$lib/images/n8n.png';
 	import salesforce from '$lib/images/Salesforce.png'
+	import sql from '$lib/images/Sql.png';
 	import supabase from '$lib/images/supabase-logo-icon.png';
 	import zapier from '$lib/images/zapier.png';
 	import javascript from '$lib/images/javascript.png';
@@ -33,6 +34,7 @@
 		{ img: make, label: 'Make' },
 		{ img: n8n, label: 'n8n' },
 		{ img: salesforce, label: 'Salesforce' },
+		{ img: sql, label: 'SQL' },
 		{ img: supabase, label: 'Supabase' },
 		{ img: zapier, label: 'Zapier' },
 		{ img: javascript, label: 'JavaScript' },
