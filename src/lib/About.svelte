@@ -46,7 +46,7 @@
           <!-- Text -->
           <div class="w-full sm:w-1/2 flex flex-col justify-center">
             <p class="text-base md:text-lg leading-relaxed text-gray-700 dark:text-neutral-400">
-              Hi, I’m Zion Gonet, a generalist and systems thinker who thrives on turning chaos into order. With a background in web development, I bring a unique blend of technical expertise and strategic thinking to solve complex problems. My focus is on creating practical, scalable digital systems and AI agents that eliminate manual tasks, reduce costs boost operational efficiency and increase revenue growth.
+              Hi, I’m Zion Gonet, a generalist and systems thinker who thrives on turning chaos into order. With a background in web development, I bring a unique blend of technical expertise and strategic thinking to solve complex problems. My focus is on creating practical, scalable digital systems and AI agents that eliminate manual tasks, reduce costs, boost operational efficiency and increase revenue growth.
               <br /><br />
               When I’m not building systems or web apps, I’m an avid reader constantly exploring new ideas and technologies that shape our world, and the principles and laws that govern our lives.
             </p>
