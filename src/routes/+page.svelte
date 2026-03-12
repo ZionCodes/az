@@ -4,32 +4,30 @@
 	import CaseStudies from "$lib/CaseStudies.svelte";
     import Hero from "$lib/Hero.svelte";
     import Clients from "$lib/Clients.svelte";
-	import Newsletter from "$lib/Newsletter.svelte";
 	import Services from "$lib/Services.svelte";
 	import Tools from "$lib/Tools.svelte";
-	import ExampleTimeline from '$lib/ExampleTimeline.svelte';
-	import WobbleCard from '$lib/WobbleCard.svelte';
-	import MVP from '$lib/MVP.svelte';
+	import Process from "$lib/Process.svelte";
+	import CTA from "$lib/CTA.svelte";
 	let { data } = $props();
 
 </script>
 
 <SvelteSeo
-  title='Automation Zion | Systems & AI Automation Specialist'
-  description="I create scalable systems, automations, and AI agents that help your business run smoothly and grow efficiently."
+  title='Zion Gonet | Automation Engineer'
+  description="I design and build automation systems that eliminate manual work, connect your tools, and let your business scale without adding headcount."
   canonical="https://www.automationzion.com/"
   openGraph={{
-    title: `Automation Zion | Systems & AI Automation Specialist`,
-    description:`I create scalable systems, automations, and AI agents that help your business run smoothly and grow efficiently.`,
+    title: `Zion Gonet | Automation Engineer`,
+    description: `I design and build automation systems that eliminate manual work, connect your tools, and let your business scale without adding headcount.`,
     image: `${Cover}`,
     type: "website",
     site_name: "Automation Zion",
   }}
   twitter={{
-    card: "summary",
+    card: "summary_large_image",
     site: "@AutomationZion",
-    title: `Automation Zion | Systems & AI Automation Specialist`,
-    description:`I create scalable systems, automations, and AI agents that help your business run smoothly and grow efficiently.`,
+    title: `Zion Gonet | Automation Engineer`,
+    description: `I design and build automation systems that eliminate manual work, connect your tools, and let your business scale without adding headcount.`,
     image: `${Cover}`,
   }}
 />
@@ -37,9 +35,8 @@
 
 <Hero />
 <Clients />
-<ExampleTimeline />
 <Services />
 <Tools />
-<MVP />
 <CaseStudies data={data.records}/>
-<Newsletter />
+<Process />
+<CTA />

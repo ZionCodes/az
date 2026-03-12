@@ -17,8 +17,8 @@
         
          
         <BoxReveal boxColor="#ff0" duration={0.5}>
-          <span>
-            I Build <span class="text-[#ff0]">Systems that Scale</span>
+          <span class="pb-3 block">
+            I automate the work <span class="text-[#ff0]">slowing you down</span>
           </span>
         </BoxReveal>
       </h1>        
@@ -27,8 +27,8 @@
     <div class="max-w-3xl text-center mx-auto">
       <BoxReveal boxColor="#ff0" duration={0.5}>
         <p class="text-lg text-white/70">
-        I create efficient systems that bring clarity, save time, and help your business grow with confidence.
-      </p>
+          I design and build automation systems that eliminate manual work, connect your tools, and let your business scale without adding headcount.
+        </p>
       </BoxReveal>
       
     </div>

@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { inview } from 'svelte-inview';
-	import type { ObserverEventDetails, Options } from 'svelte-inview';
 	import { fly } from 'svelte/transition';
 
 	import airtable from '$lib/images/airtable.webp';
+	import notion from '$lib/images/notion.png';
 	import clay from '$lib/images/Clay Arch Marque.png';
 	import hubspot from '$lib/images/hubspot.png'
 	import make from '$lib/images/make.png';
@@ -14,32 +14,37 @@
 	import zapier from '$lib/images/zapier.png';
 	import javascript from '$lib/images/javascript.png';
 	import python from '$lib/images/python-logo-only.png';	
-	import uipath from '$lib/images/UiPath.png'
+	import uipath from '$lib/images/UiPath.png';
+	import apify from '$lib/images/apify.svg';
 
-	let isInView: boolean = false;
+	let isInView = false;
 
-	const options: Options = {
+	const options = {
 		rootMargin: '-50px',
 		unobserveOnEnter: true
 	};
 
-	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>) => {
+	const handleChange = ({ detail }) => {
 		isInView = detail.inView;
 	};
 
 	const tools = [
 		{ img: airtable, label: 'Airtable' },
+		{ img: n8n, label: 'n8n' },
+		{ img: notion, label: 'Notion' },
 		{ img: clay, label: 'Clay' },
 		{ img: hubspot, label: 'Hubspot' },
+		{ img: apify, label: 'Apify' },
+		{ img: zapier, label: 'Zapier' },
 		{ img: make, label: 'Make' },
-		{ img: n8n, label: 'n8n' },
 		{ img: salesforce, label: 'Salesforce' },
 		{ img: sql, label: 'SQL' },
 		{ img: supabase, label: 'Supabase' },
-		{ img: zapier, label: 'Zapier' },
 		{ img: javascript, label: 'JavaScript' },
 		{ img: python, label: 'Python' },
-		{ img: uipath, label: 'UiPath' }
+		{ img: uipath, label: 'UiPath' },
+		
+		
 	];
 </script>
 
@@ -51,13 +56,18 @@
 >
 	{#if isInView}
 		<div class="space-y-8">
-			<div class="max-w-3xl mb-10 lg:mb-14" transition:fly={{ y: 200, duration: 1000, delay: 1500 }}>
-				<h2 class="text-white font-semibold text-2xl md:text-4xl md:leading-tight">Tools</h2>
-				<p class="mt-1 text-neutral-400">My go-to toolkit for building efficient, automated systems.</p>
+			<div class="max-w-3xl mb-10 lg:mb-14" transition:fly={{ y: 200, duration: 800, delay: 500 }}>
+				<p class="text-xs font-mono text-[#ff0] uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
+				  <span class="inline-block w-8 h-px bg-[#ff0]"></span>
+				  Tech Stack
+				</p>
+				<h2 class="text-white font-semibold text-2xl md:text-4xl md:leading-tight">
+				  Tools I use<br>every day
+				</h2>
 			  </div>
 			<div class="relative w-full">
 				<div class="flex animate-scroll-left gap-6 w-max">
-					{#each [...tools, ...tools] as tool, i}
+					{#each [...tools, ...tools] as tool}
 						<div
 							class="flex-shrink-0 min-w-[200px] bg-gray-800 rounded-lg p-4 md:p-6 flex items-center justify-center hover:scale-110 transition-transform duration-300"
 						>
