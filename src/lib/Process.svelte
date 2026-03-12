@@ -45,7 +45,7 @@
   >
     {#if isInView}
   
-      <div class="max-w-3xl mb-10 lg:mb-14" transition:fly={{ y: 200, duration: 1000, delay: 1500 }}>
+      <div class="max-w-3xl mb-10 lg:mb-14" transition:fly={{ y: 200, duration: 800, delay: 500 }}>
         <p class="text-xs font-mono text-[#ff0] uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
           <span class="inline-block w-8 h-px bg-[#ff0]"></span>
           How I Work
@@ -57,7 +57,7 @@
   
       <div
         class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
-        transition:fly={{ y: 200, duration: 2000, delay: 500 }}
+        transition:fly={{ y: 200, duration: 800, delay: 500 }}
       >
         {#each steps as step}
           <WobbleCard containerClass="h-full hover:bg-gray-700" class="!p-5">
