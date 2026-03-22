@@ -19,7 +19,7 @@
       </li>
       <li class="inline-block relative pe-8 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300 dark:before:text-neutral-600">
         <a class="inline-flex gap-x-2 text-sm text-neutral-500 hover:text-[#ff0] transition-colors focus:outline-none" href="/blog">
-          Case Studies
+          Blog
         </a>
       </li>
       <li class="inline-block relative pe-8 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300 dark:before:text-neutral-600">

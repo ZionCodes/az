@@ -36,7 +36,7 @@
 <Hero />
 <Clients />
 <Services />
-<Tools />
 <CaseStudies data={data.records}/>
+<Tools />
 <Process />
 <CTA />

@@ -2,7 +2,7 @@
   import { inview } from 'svelte-inview';
   import { cubicOut } from 'svelte/easing';
   import { fly } from 'svelte/transition';
-  import automationzion from '$lib/images/automationzion profile.webp'
+  import automationzion from '$lib/images/automationzion profile.webp?enhanced';
 
   let isInView = false;
   const options = {
@@ -15,6 +15,7 @@
   };
 </script>
 
+<!-- svelte-ignore event_directive_deprecated -->
 <div
   class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto"
   use:inview={options}
@@ -30,10 +31,12 @@
 
           <!-- Image -->
           <div class="relative mx-auto rounded-xl overflow-hidden w-3/4 sm:w-1/2 aspect-square sm:aspect-auto sm:h-auto">
-            <img
-              class="transition-transform duration-500 ease-in-out absolute inset-0 w-full h-full object-cover rounded-xl"
+            <enhanced:img
               src={automationzion}
-              alt="Zion Gonet"
+              alt="Zion Gonet — Automation Engineer"
+              sizes="(min-width: 640px) 50vw, 75vw"
+              fetchpriority="high"
+              class="transition-transform duration-500 ease-in-out absolute inset-0 w-full h-full object-cover rounded-xl"
             />
           </div>
 

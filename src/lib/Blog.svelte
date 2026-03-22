@@ -2,6 +2,7 @@
   import { inview } from 'svelte-inview';
   import { fly } from 'svelte/transition';
   import { cubicOut } from 'svelte/easing';
+  import WobbleCard from '$lib/WobbleCard.svelte';
 
   let isInView = $state(false);
   const options = {
@@ -32,38 +33,40 @@
 
     <div class="grid lg:grid-cols-2 gap-6" transition:fly={{ y: 40, duration: 500, delay: 150, easing: cubicOut }}>
       {#each data as post}
-        <a class="group block focus:outline-none" href="/blog/{post.slug}">
-          <div class="bg-gray-800 border border-white/5 hover:border-[#ff0]/20 transition-colors duration-300 rounded-xl overflow-hidden flex flex-col sm:flex-row sm:items-stretch">
+        <WobbleCard containerClass="h-full hover:bg-gray-700" class="!p-0">
+          <a class="group block focus:outline-none h-full" href="/blog/{post.slug}">
+            <div class="flex flex-col sm:flex-row sm:items-stretch h-full">
 
-            <!-- Thumbnail -->
-            <div class="shrink-0 relative w-full sm:w-48 h-44 sm:h-auto overflow-hidden">
-              <img
-                class="group-hover:scale-105 transition-transform duration-500 ease-in-out size-full absolute top-0 start-0 object-cover"
-                src={`https://call-until.pockethost.io/api/files/posts/${post.id}/${post.thumbnail}`}
-                alt={post.title}
-              />
-            </div>
-
-            <!-- Content -->
-            <div class="p-6 flex flex-col justify-between grow">
-              <div>
-                <h3 class="text-base font-bold text-white group-hover:text-[#ff0] transition-colors duration-200 leading-snug mb-2">
-                  {post.title}
-                </h3>
-                <p class="text-neutral-400 text-sm leading-relaxed line-clamp-2">
-                  {post.introduction}
-                </p>
+              <!-- Thumbnail -->
+              <div class="shrink-0 relative w-full sm:w-48 h-44 sm:h-auto overflow-hidden rounded-tl-2xl rounded-bl-2xl">
+                <img
+                  class="group-hover:scale-105 transition-transform duration-500 ease-in-out size-full absolute top-0 start-0 object-cover"
+                  src={`https://call-until.pockethost.io/api/files/posts/${post.id}/${post.thumbnail}`}
+                  alt={post.title} loading="lazy"
+                />
               </div>
-              <div class="mt-4 inline-flex items-center gap-1 text-sm font-mono text-[#ff0]">
-                Read more
-                <svg class="shrink-0 size-4 group-hover:translate-x-1 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="m9 18 6-6-6-6"/>
-                </svg>
-              </div>
-            </div>
 
-          </div>
-        </a>
+              <!-- Content -->
+              <div class="p-6 flex flex-col justify-between grow">
+                <div>
+                  <h3 class="text-base font-bold text-white group-hover:text-[#ff0] transition-colors duration-200 leading-snug mb-2">
+                    {post.title}
+                  </h3>
+                  <p class="text-neutral-400 text-sm leading-relaxed line-clamp-2">
+                    {post.introduction}
+                  </p>
+                </div>
+                <div class="mt-4 inline-flex items-center gap-1 text-sm font-mono text-[#ff0]">
+                  Read more
+                  <svg class="shrink-0 size-4 group-hover:translate-x-1 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m9 18 6-6-6-6"/>
+                  </svg>
+                </div>
+              </div>
+
+            </div>
+          </a>
+        </WobbleCard>
       {/each}
     </div>
 
