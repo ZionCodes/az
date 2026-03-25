@@ -2,7 +2,7 @@
   import { inview } from 'svelte-inview';
   import { cubicOut } from 'svelte/easing';
   import { fly } from 'svelte/transition';
-  import automationzion from '$lib/images/automationzion profile.jpg?enhanced';
+  import automationzion from '$lib/images/automationzion profile1.jpg?enhanced';
 
   let isInView = false;
   const options = {

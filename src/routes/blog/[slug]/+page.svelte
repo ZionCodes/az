@@ -1,6 +1,6 @@
 <script>
   import SvelteSeo from "svelte-seo";
-  import automationzion from '$lib/images/automationzion profile.webp';
+  import automationzion from '$lib/images/automationzion profile1.jpg?enhanced';
   let { data } = $props();
   const { post } = data;
 </script>
