@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__svelte__get-documentation",
+      "mcp__svelte__svelte-autofixer",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:5173/)",
+      "Bash(chromium-cli --help)",
+      "Bash(npx --no-install playwright --version)",
+      "Bash(node -e \"require.resolve\\('playwright'\\)\")",
+      "Bash(npm ls *)",
+      "Bash(curl -s -o /dev/null -w \"status:%{http_code}\\\\n\" http://localhost:5173/)",
+      "Bash(node \"C:\\\\Users\\\\NEWUSE~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-NEW-USER-Desktop-az\\\\09b60c14-4213-4be5-a5a6-0bd6286c1574\\\\scratchpad\\\\shot.js\")",
+      "Bash(npm init *)",
+      "Bash(node shot.js)",
+      "Bash(ls -la \"/c/Users/NEWUSE~1/AppData/Local/Temp/claude/\" | grep hero)",
+      "Read(//c/Users/NEWUSE~1/AppData/Local/Temp/claude//**)",
+      "Bash(node shot2.js)",
+      "Bash(node -e ' *)",
+      "Bash(node shot3.js)",
+      "Bash(node shot4.js)"
+    ]
+  }
+}
