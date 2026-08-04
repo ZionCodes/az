@@ -18,7 +18,11 @@
       "Bash(node shot2.js)",
       "Bash(node -e ' *)",
       "Bash(node shot3.js)",
-      "Bash(node shot4.js)"
+      "Bash(node shot4.js)",
+      "WebFetch(domain:codepen.io)",
+      "Bash(curl -sL -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0 Safari/537.36\" \"https://codepen.io/GreenSock/pen/pomvabo\" -o \"C:/Users/NEWUSE~1/AppData/Local/Temp/claude/codepen.html\" -w \"status:%{http_code}\\\\n\")",
+      "Read(//c/Users/NEWUSE~1/AppData/Local/Temp/claude/**)",
+      "Bash(grep -o 'class=\"box[^\"]*\"\\\\|gsap\\\\.[a-zA-Z.]*\\(' \"C:/Users/NEWUSE~1/AppData/Local/Temp/claude/codepen-rendered.html\" | head -50 *)"
     ]
   }
 }
