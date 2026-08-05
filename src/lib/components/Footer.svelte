@@ -36,8 +36,7 @@
 					{@html logoMarkup}
 				</a>
 				<p class="mt-4 max-w-xs text-sm text-muted-foreground">
-					GTM systems, CRM operations, and automation built for B2B teams that want to move
-					faster.
+					AI Automation and GTM Systems Engineer
 				</p>
 				<div class="mt-6 -ml-2 flex">
 					{#each social as item (item.label)}
@@ -65,7 +64,7 @@
 			</nav>
 			<div class="overflow-hidden border-t pt-8 select-none" aria-hidden="true">
 				<span
-					class="block text-[12.3cqw] leading-none font-bold tracking-tight whitespace-nowrap text-foreground/5"
+					class="block font-heading text-[12.3cqw] leading-none font-bold tracking-tight whitespace-nowrap text-foreground/5"
 				>
 					AutomationZion
 				</span>

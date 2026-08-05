@@ -18,9 +18,9 @@
 									fill="currentColor"
 								/>
 							</svg>
-							<span class="mx-auto block w-fit text-5xl font-semibold">100%</span>
+							<span class="mx-auto block w-fit font-heading text-5xl font-semibold">100%</span>
 						</div>
-						<h2 class="mt-6 text-center text-3xl font-semibold">Bespoke GTM Systems</h2>
+						<h2 class="mt-6 text-center font-heading text-3xl font-semibold">Bespoke GTM Systems</h2>
 					</div>
 				</div>
 
@@ -47,7 +47,7 @@
 							</svg>
 						</div>
 						<div class="relative z-10 mt-6 space-y-2 text-center">
-							<h2 class="text-lg font-medium transition">CRM Setup & Admin</h2>
+							<h2 class="font-heading text-lg font-medium transition">CRM Setup & Admin</h2>
 							<p class="text-sm text-muted-foreground">
 								Salesforce and HubSpot, configured, managed and tailored for your GTM model. Clean data, validation and pipelines so your CRM actually supports revenue.
 							</p>
@@ -135,7 +135,7 @@
 							</svg>
 						</div>
 						<div class="relative z-10 mt-14 space-y-2 text-center">
-							<h2 class="text-lg font-medium transition">Data Foundation & Reporting</h2>
+							<h2 class="font-heading text-lg font-medium transition">Data Foundation & Reporting</h2>
 							<p class="text-sm text-muted-foreground">
 								Full visibility across the funnel, with dashboards and reporting that hold up in front of leadership because the data underneath them is actually right. 
 							</p>
@@ -167,7 +167,7 @@
 								</svg>
 							</div>
 							<div class="space-y-2">
-								<h2 class="text-lg font-medium transition">Systems Integration</h2>
+								<h2 class="font-heading text-lg font-medium transition">Systems Integration</h2>
 								<p class="text-sm text-muted-foreground">
 									Every tool in the GTM stack connected and kept in sync, whatever runs the business, with Python and SQL doing the heavy lifting behind the scenes.
 								</p>
@@ -251,7 +251,7 @@
 								</svg>
 							</div>
 							<div class="space-y-2">
-								<h2 class="text-lg font-medium transition">AI Systems & Workflows</h2>
+								<h2 class="font-heading text-lg font-medium transition">AI Systems & Workflows</h2>
 								<p class="text-sm text-muted-foreground">
 									The manual work your team has accepted as normal, automated. Custom AI agents and automations that take manual work off the team's plate. 
 								</p>
