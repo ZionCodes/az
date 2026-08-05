@@ -10,7 +10,12 @@
 	const scrollVh = items.length * 50;
 
 	let wrapper = $state();
+	let contentEl = $state();
+	let listEl = $state();
 	let progress = $state(0);
+	let listHeight = $state(0);
+	let fillLeft = $state(0);
+	let fillTop = $state(0);
 
 	$effect(() => {
 		function update() {
@@ -18,6 +23,13 @@
 			const scrollable = wrapper.offsetHeight - window.innerHeight;
 			const scrolled = -wrapper.getBoundingClientRect().top;
 			progress = scrollable > 0 ? Math.min(1, Math.max(0, scrolled / scrollable)) : 0;
+
+			if (contentEl && listEl) {
+				const listRect = listEl.getBoundingClientRect();
+				const contentRect = contentEl.getBoundingClientRect();
+				fillLeft = listRect.left - contentRect.left - 10;
+				fillTop = listRect.top - contentRect.top;
+			}
 		}
 
 		update();
@@ -40,13 +52,16 @@
 
 <div class="pin-wrapper" bind:this={wrapper} style="height: calc(100vh + {scrollVh}vh)">
 	<section class="section pin-section">
-		<div class="content">
-			<ul class="list">
+		<div class="content" bind:this={contentEl}>
+			<ul class="list" bind:this={listEl} bind:clientHeight={listHeight}>
 				{#each items as item, i (item)}
 					<li class:active={i === activeIndex}>{item}</li>
 				{/each}
 			</ul>
-			<div class="fill" style="transform: scaleY({fillScale})"></div>
+			<div
+				class="fill"
+				style="left: {fillLeft}px; top: {fillTop}px; height: {listHeight}px; transform: scaleY({fillScale})"
+			></div>
 			<div class="right">
 				{#each images as src, i (src)}
 					<div class="slide" class:visible={i === activeIndex}>
@@ -61,19 +76,19 @@
 <section class="section outro"></section>
 
 <style>
+	* {
+		box-sizing: border-box;
+	}
+
 	.section {
 		width: 100%;
 		height: 100vh;
+		height: 100dvh;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background: #0b0b0d;
-		color: #fffce1;
-	}
-
-	.intro h3,
-	.outro {
-		color: #fffce1;
+		background: var(--background);
+		color: var(--foreground);
 	}
 
 	.pin-wrapper {
@@ -83,8 +98,8 @@
 	.pin-section {
 		position: sticky;
 		top: 0;
-		border-top: dashed 2px rgba(255, 255, 255, 0.15);
-		border-bottom: dashed 2px rgba(255, 255, 255, 0.15);
+		border-top: dashed 2px var(--border);
+		border-bottom: dashed 2px var(--border);
 	}
 
 	.content {
@@ -98,7 +113,7 @@
 
 	.list {
 		font-size: 30px;
-		color: #fffce1;
+		color: var(--muted-foreground);
 		margin: 0;
 		padding: 0;
 		padding-right: 10px;
@@ -111,7 +126,7 @@
 	}
 
 	.list li.active {
-		color: #0ae448;
+		color: #16a34a;
 	}
 
 	.fill {
@@ -119,8 +134,7 @@
 		top: 0;
 		left: 0;
 		width: 2px;
-		height: 100%;
-		background-color: #0ae448;
+		background-color: #16a34a;
 		transform-origin: top left;
 		transition: transform 0.1s linear;
 	}
@@ -155,25 +169,36 @@
 		border-radius: var(--radius);
 	}
 
+	@media (max-width: 1023px) {
+		.list {
+			font-size: 24px;
+		}
+	}
+
 	@media (max-width: 640px) {
 		.content {
 			flex-direction: column;
 			align-items: center;
-			gap: 1.5rem;
+			justify-content: center;
+			gap: 2rem;
+			height: 100%;
 		}
 
 		.list {
+			font-size: 20px;
 			padding-right: 0;
 		}
 
 		.right {
-			width: 100%;
-			height: 200px;
+			flex-grow: 0;
+			width: min(70vw, 280px);
+			aspect-ratio: 3 / 4;
+			margin: 0 auto;
 		}
 
 		.right .slide {
-			right: 50%;
-			transform: translate(50%, -50%);
+			width: 100%;
+			right: 0;
 		}
 	}
 </style>

@@ -1,26 +1,43 @@
-<section class="py-12 md:py-20">
-	<div class="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
-		<div class="relative z-10 mx-auto max-w-xl space-y-6 text-center">
-			<h2 class="text-4xl font-medium lg:text-5xl">Tailus UI in numbers</h2>
-			<p>
-				Gemini is evolving to be more than just the models. It supports an entire to the APIs and
-				platforms helping developers and businesses innovate.
+<section class="@container bg-background py-24">
+	<div class="mx-auto max-w-2xl px-6">
+		<div class="space-y-4">
+			<h2 class="font-serif text-4xl font-medium text-balance">Trusted by Teams Worldwide</h2>
+			<p class="text-balance text-muted-foreground">
+				Our platform delivers measurable results that help businesses scale faster and work
+				smarter.
 			</p>
 		</div>
-
-		<div class="grid gap-12 divide-y *:text-center md:grid-cols-3 md:gap-2 md:divide-x md:divide-y-0">
-			<div class="space-y-4">
-				<div class="text-5xl font-bold">+1200</div>
-				<p>Stars on GitHub</p>
+		<div class="mt-12 grid grid-cols-2 gap-6 text-sm @xl:grid-cols-3">
+			<div class="border-y py-6">
+				<p class="text-xl text-muted-foreground">
+					<span class="font-medium text-foreground">99.9%</span> Uptime guarantee.
+				</p>
 			</div>
-			<div class="space-y-4">
-				<div class="text-5xl font-bold">22 Million</div>
-				<p>Active Users</p>
+			<div class="border-y py-6">
+				<p class="text-xl text-muted-foreground">
+					<span class="font-medium text-foreground">10M+</span> API requests processed daily.
+				</p>
 			</div>
-			<div class="space-y-4">
-				<div class="text-5xl font-bold">+500</div>
-				<p>Powered Apps</p>
+			<div class="border-y py-6">
+				<p class="text-xl text-muted-foreground">
+					<span class="font-medium text-foreground">500+</span> Enterprise customers.
+				</p>
 			</div>
 		</div>
+	</div>
+	<div
+		aria-hidden={true}
+		class="mx-auto flex h-72 max-w-5xl items-end justify-between gap-0.5 px-6"
+	>
+		{#each { length: 48 } as _, i}
+			{@const progress = i / 47}
+			{@const base = Math.pow(progress, 2.2)}
+			{@const noise = Math.sin(i * 0.7) * 0.08 + Math.sin(i * 1.3) * 0.05}
+			{@const height = Math.min(1, Math.max(0.05, base + noise * (0.3 + progress * 0.7)))}
+			<div
+				class="relative h-full w-px rounded-full duration-200 before:absolute before:inset-0 before:-inset-x-6 after:absolute after:inset-0 after:mt-auto after:h-(--line-height) after:bg-foreground/15 hover:mx-2 hover:after:bg-primary"
+				style="--line-height: {height * 100}%"
+			></div>
+		{/each}
 	</div>
 </section>
