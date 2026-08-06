@@ -91,6 +91,19 @@
 @theme inline {
 	--font-sans: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
 	--font-heading: 'Clash Display', 'Satoshi', ui-sans-serif, system-ui, sans-serif;
+	--animate-orbit: orbit calc(var(--duration) * 1s) linear infinite;
+
+	@keyframes orbit {
+		0% {
+			transform: rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px))
+				rotate(calc(var(--angle) * -1deg));
+		}
+		100% {
+			transform: rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px))
+				rotate(calc((var(--angle) * -1deg) - 360deg));
+		}
+	}
+
 	--radius-sm: calc(var(--radius) - 4px);
 	--radius-md: calc(var(--radius) - 2px);
 	--radius-lg: var(--radius);
@@ -120,6 +133,11 @@
 
 	body {
 		background-color: var(--background);
+		background-image: radial-gradient(
+			color-mix(in oklch, var(--foreground) 12%, transparent) 1px,
+			transparent 1px
+		);
+		background-size: 28px 28px;
 		color: var(--foreground);
 	}
 }

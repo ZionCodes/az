@@ -61,7 +61,7 @@
 				{/each}
 			</div>
 			<a
-				href="/contact"
+				href="mailto:ziongonet@gmail.com"
 				class="inline-flex h-8 items-center justify-center gap-1.5 rounded-md bg-primary px-3 text-sm font-medium text-primary-foreground shadow-xs transition-all hover:bg-primary/90"
 			>
 				Get in touch
@@ -127,7 +127,7 @@
 					</div>
 					<div class="mt-12 flex flex-col gap-2">
 						<a
-							href="/contact"
+							href="mailto:ziongonet@gmail.com"
 							onclick={closeMobileNav}
 							class="flex h-9 w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-xs transition-all hover:bg-primary/90"
 						>

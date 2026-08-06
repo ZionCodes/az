@@ -24,7 +24,11 @@
       "Read(//c/Users/NEWUSE~1/AppData/Local/Temp/claude/**)",
       "Bash(grep -o 'class=\"box[^\"]*\"\\\\|gsap\\\\.[a-zA-Z.]*\\(' \"C:/Users/NEWUSE~1/AppData/Local/Temp/claude/codepen-rendered.html\" | head -50 *)",
       "Bash(curl -s https://sv-blocks.vercel.app/r/stats-two.json)",
-      "Bash(curl -s https://sv-blocks.vercel.app/r/stats-two.json -o \"C:/Users/NEWUSE~1/AppData/Local/Temp/claude/stats-two.json\")"
+      "Bash(curl -s https://sv-blocks.vercel.app/r/stats-two.json -o \"C:/Users/NEWUSE~1/AppData/Local/Temp/claude/stats-two.json\")",
+      "Bash(curl -s -o /dev/null -w \"status:%{http_code}\\\\n\" http://localhost:5173/ --max-time 5)",
+      "Bash(curl -s -o /dev/null -w \"status:%{http_code}\\\\n\" http://localhost:5173/about --max-time 5)",
+      "Bash(curl -s -o /dev/null -w \"home:%{http_code}\\\\n\" http://localhost:5173/ --max-time 5)",
+      "Bash(curl -s -o /dev/null -w \"case-studies:%{http_code}\\\\n\" http://localhost:5173/case-studies --max-time 5)"
     ]
   }
 }

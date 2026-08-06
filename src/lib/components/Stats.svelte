@@ -1,6 +1,10 @@
-<section class="@container bg-background py-24">
+<section class="@container py-24">
 	<div class="mx-auto max-w-2xl px-6">
 		<div class="space-y-4">
+			<p class="flex items-center gap-2 text-xs tracking-[0.2em] text-muted-foreground uppercase">
+				<span class="inline-block h-px w-8 bg-foreground/30"></span>
+				By the Numbers
+			</p>
 			<h2 class="font-heading text-4xl font-medium text-balance">Trusted by Teams Worldwide</h2>
 			<p class="text-balance text-muted-foreground">
 				Our platform delivers measurable results that help businesses scale faster and work
