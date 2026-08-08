@@ -54,6 +54,18 @@
 						<p class="line-clamp-2 text-sm leading-relaxed text-muted-foreground">
 							{post.introduction}
 						</p>
+						<ul class="flex gap-x-3 text-xs text-muted-foreground">
+							{#if post.created}
+								<li>
+									{new Date(post.created).toLocaleDateString('en-US', {
+										month: 'short',
+										day: 'numeric',
+										year: 'numeric'
+									})}
+								</li>
+							{/if}
+							<li>{post.readingTime} min read</li>
+						</ul>
 					</div>
 				</a>
 			{/each}

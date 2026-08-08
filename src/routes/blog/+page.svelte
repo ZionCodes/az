@@ -7,26 +7,27 @@
 </script>
 
 <svelte:head>
-	<title>Blog — AutomationZion</title>
+	<title>Blog | Zion Gonet</title>
 	<meta
 		name="description"
 		content="Breakdowns, walkthroughs, and honest takes on GTM systems, outbound engineering, CRM architecture, and building revenue infrastructure that actually works."
 	/>
-	<meta property="og:title" content="Blog — AutomationZion" />
+	<meta property="og:title" content="Blog | Zion Gonet" />
 	<meta
 		property="og:description"
 		content="Breakdowns, walkthroughs, and honest takes on GTM systems, outbound engineering, CRM architecture, and building revenue infrastructure that actually works."
 	/>
+	<link rel="canonical" href="https://www.automationzion.com/blog" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.automationzion.com/blog" />
 	<meta property="og:image" content="https://www.automationzion.com/og/og-blog.png" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="Blog — AutomationZion" />
+	<meta name="twitter:title" content="Blog | Zion Gonet" />
 	<meta
 		name="twitter:description"
-		content="Honest takes on GTM systems, outbound engineering, and CRM architecture."
+		content="Honest takes on GTM systems, outbound engineering and CRM architecture."
 	/>
 	<meta name="twitter:image" content="https://www.automationzion.com/og/og-blog.png" />
 </svelte:head>

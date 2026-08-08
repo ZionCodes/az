@@ -4,6 +4,20 @@
 
 <section class="bg-gray-50 py-16 md:py-32 dark:bg-transparent">
 	<div class="mx-auto max-w-5xl px-6">
+		<div class="mx-auto mb-12 max-w-2xl space-y-4 text-center" use:reveal>
+			<p
+				class="flex items-center justify-center gap-2 text-xs tracking-[0.2em] text-muted-foreground uppercase"
+			>
+				<span class="inline-block h-px w-8 bg-foreground/30"></span>
+				What I Do
+				<span class="inline-block h-px w-8 bg-foreground/30"></span>
+			</p>
+			<h2 class="font-heading text-3xl font-semibold lg:text-4xl">GTM Systems, Built End to End</h2>
+			<p class="text-muted-foreground">
+				From CRM setup to the AI and automation running quietly behind it, everything your GTM
+				stack needs, built and maintained by one engineer.
+			</p>
+		</div>
 		<div class="relative">
 			<div class="relative z-10 grid grid-cols-6 gap-3">
 				<div

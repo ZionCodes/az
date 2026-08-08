@@ -7,23 +7,24 @@
 </script>
 
 <svelte:head>
-	<title>Case Studies — AutomationZion</title>
+	<title>Case Studies | Zion Gonet</title>
 	<meta
 		name="description"
-		content="Real GTM systems built and shipped. Outbound infrastructure, CRM architecture, AI agents, and automation pipelines with measurable outcomes."
+		content="Real GTM systems built and shipped. Outbound infrastructure, CRM architecture, AI agents and automation pipelines with measurable outcomes."
 	/>
-	<meta property="og:title" content="Case Studies — AutomationZion" />
+	<meta property="og:title" content="Case Studies | Zion Gonet" />
 	<meta
 		property="og:description"
-		content="Real GTM systems built and shipped. Outbound infrastructure, CRM architecture, AI agents, and automation pipelines with measurable outcomes."
+		content="Real GTM systems built and shipped. Outbound infrastructure, CRM architecture, AI agents and automation pipelines with measurable outcomes."
 	/>
+	<link rel="canonical" href="https://www.automationzion.com/case-studies" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.automationzion.com/case-studies" />
 	<meta property="og:image" content="https://www.automationzion.com/og/og-case-studies.png" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="Case Studies — AutomationZion" />
+	<meta name="twitter:title" content="Case Studies | Zion Gonet" />
 	<meta
 		name="twitter:description"
 		content="Real GTM systems built and shipped, with measurable outcomes."

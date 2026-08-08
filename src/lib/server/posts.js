@@ -33,7 +33,8 @@ function toSummary(post, pb, thumbSize = '400x300') {
 		stat: post.stat || null,
 		created: post.created,
 		slug: slugify(post),
-		thumbnailUrl: post.thumbnail ? pb.files.getURL(post, post.thumbnail, { thumb: thumbSize }) : null
+		thumbnailUrl: post.thumbnail ? pb.files.getURL(post, post.thumbnail, { thumb: thumbSize }) : null,
+		readingTime: estimateReadingTime(post.article)
 	};
 }
 
@@ -52,7 +53,6 @@ export async function getPostBySlug(pb, slug) {
 
 	return {
 		...toSummary(post, pb, '800x450'),
-		article: post.article,
-		readingTime: estimateReadingTime(post.article)
+		article: post.article
 	};
 }
