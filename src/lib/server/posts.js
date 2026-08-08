@@ -24,7 +24,7 @@ export function estimateReadingTime(html = '') {
 	return Math.max(1, Math.round(words / 200));
 }
 
-function toSummary(post, pb) {
+function toSummary(post, pb, thumbSize = '400x300') {
 	return {
 		id: post.id,
 		title: post.title,
@@ -33,7 +33,7 @@ function toSummary(post, pb) {
 		stat: post.stat || null,
 		created: post.created,
 		slug: slugify(post),
-		thumbnailUrl: post.thumbnail ? pb.files.getURL(post, post.thumbnail) : null
+		thumbnailUrl: post.thumbnail ? pb.files.getURL(post, post.thumbnail, { thumb: thumbSize }) : null
 	};
 }
 
@@ -51,7 +51,7 @@ export async function getPostBySlug(pb, slug) {
 	const post = await pb.collection('posts').getOne(idFromSlug(slug));
 
 	return {
-		...toSummary(post, pb),
+		...toSummary(post, pb, '800x450'),
 		article: post.article,
 		readingTime: estimateReadingTime(post.article)
 	};

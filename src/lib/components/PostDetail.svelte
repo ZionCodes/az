@@ -1,6 +1,6 @@
 <script>
 	import CallToAction from '$lib/components/CallToAction.svelte';
-	import automationzion from '$lib/assets/images/automationzion profile.jpg';
+	import automationzion from '$lib/assets/images/automationzion-profile.webp';
 
 	let { post, backHref, backLabel } = $props();
 </script>
@@ -62,7 +62,12 @@
 	</div>
 
 	{#if post.thumbnailUrl}
-		<img src={post.thumbnailUrl} alt={post.title} class="mt-10 w-full rounded-2xl object-cover" />
+		<img
+			src={post.thumbnailUrl}
+			alt={post.title}
+			fetchpriority="high"
+			class="mt-10 aspect-video w-full rounded-2xl object-cover"
+		/>
 	{/if}
 
 	<div class="article-content mt-10 leading-relaxed text-foreground/80">

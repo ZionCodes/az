@@ -1,30 +1,34 @@
+<script>
+	import { reveal } from '$lib/actions/reveal.js';
+</script>
+
 <section class="@container py-24">
 	<div class="mx-auto max-w-2xl px-6">
-		<div class="space-y-4">
+		<div class="space-y-4" use:reveal>
 			<p class="flex items-center gap-2 text-xs tracking-[0.2em] text-muted-foreground uppercase">
 				<span class="inline-block h-px w-8 bg-foreground/30"></span>
 				By the Numbers
 			</p>
-			<h2 class="font-heading text-4xl font-medium text-balance">Trusted by Teams Worldwide</h2>
+			<h2 class="font-heading text-4xl font-medium text-balance">Built on Real Experience</h2>
 			<p class="text-balance text-muted-foreground">
-				Our platform delivers measurable results that help businesses scale faster and work
-				smarter.
+				Years spent deep in GTM systems and automation, with the depth of tooling to back it up.
 			</p>
 		</div>
-		<div class="mt-12 grid grid-cols-2 gap-6 text-sm @xl:grid-cols-3">
+		<div class="mt-12 grid grid-cols-2 gap-6 text-sm @xl:grid-cols-3" use:reveal={{ delay: 150 }}>
 			<div class="border-y py-6">
 				<p class="text-xl text-muted-foreground">
-					<span class="font-medium text-foreground">99.9%</span> Uptime guarantee.
+					<span class="font-medium text-foreground">3+</span> Years building automation and GTM
+					systems.
 				</p>
 			</div>
 			<div class="border-y py-6">
 				<p class="text-xl text-muted-foreground">
-					<span class="font-medium text-foreground">10M+</span> API requests processed daily.
+					<span class="font-medium text-foreground">20+</span> Systems shipped, end to end.
 				</p>
 			</div>
 			<div class="border-y py-6">
 				<p class="text-xl text-muted-foreground">
-					<span class="font-medium text-foreground">500+</span> Enterprise customers.
+					<span class="font-medium text-foreground">10+</span> Tools across the GTM stack.
 				</p>
 			</div>
 		</div>

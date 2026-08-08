@@ -1,6 +1,10 @@
+<script>
+	import { reveal } from '$lib/actions/reveal.js';
+</script>
+
 <section class="@container bg-background py-24">
 	<div class="mx-auto max-w-2xl px-6">
-		<div class="text-center">
+		<div class="text-center" use:reveal>
 			<h2 class="font-heading text-4xl font-medium text-balance">
 				Open to Full-Time Roles & Client Work
 			</h2>

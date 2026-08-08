@@ -1,7 +1,5 @@
 <script>
-	let { posts = [], loading = false } = $props();
-
-	const skeletonCount = 4;
+	let { posts = [] } = $props();
 </script>
 
 <section class="mx-auto max-w-5xl px-6 py-16 md:py-24">
@@ -23,25 +21,12 @@
 	</div>
 
 	<div class="mt-12 grid gap-4 lg:grid-cols-2">
-		{#if loading}
-			{#each Array(skeletonCount) as _, i (i)}
-				<div class="flex flex-col gap-4 rounded-xl border bg-card p-4 sm:flex-row sm:items-center">
-					<div
-						class="aspect-video w-full flex-shrink-0 animate-pulse rounded-lg bg-muted sm:aspect-auto sm:h-36 sm:w-48"
-					></div>
-					<div class="flex w-full min-w-0 flex-col gap-3">
-						<div class="h-4 w-3/4 animate-pulse rounded bg-muted"></div>
-						<div class="h-3 w-full animate-pulse rounded bg-muted"></div>
-						<div class="h-3 w-2/3 animate-pulse rounded bg-muted"></div>
-					</div>
-				</div>
-			{/each}
-		{:else if posts.length === 0}
+		{#if posts.length === 0}
 			<p class="col-span-full py-12 text-center text-muted-foreground">
 				No posts yet, check back soon.
 			</p>
 		{:else}
-			{#each posts as post (post.id)}
+			{#each posts as post, i (post.id)}
 				<a
 					href="/blog/{post.slug}"
 					class="group flex flex-col gap-4 rounded-xl border bg-card p-4 transition-all hover:-translate-y-0.5 hover:shadow-md sm:flex-row sm:items-center"
@@ -50,7 +35,7 @@
 						<img
 							src={post.thumbnailUrl}
 							alt={post.title}
-							loading="lazy"
+							loading={i < 2 ? 'eager' : 'lazy'}
 							width="192"
 							height="144"
 							class="aspect-video w-full flex-shrink-0 rounded-lg object-cover transition-transform duration-500 group-hover:scale-105 sm:aspect-auto sm:h-36 sm:w-48"
@@ -63,9 +48,9 @@
 						</div>
 					{/if}
 					<div class="flex min-w-0 flex-col gap-2">
-						<h3 class="font-heading text-base leading-snug font-semibold text-foreground">
+						<h2 class="font-heading text-base leading-snug font-semibold text-foreground">
 							{post.title}
-						</h3>
+						</h2>
 						<p class="line-clamp-2 text-sm leading-relaxed text-muted-foreground">
 							{post.introduction}
 						</p>

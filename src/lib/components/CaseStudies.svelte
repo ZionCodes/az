@@ -1,12 +1,12 @@
 <script>
-	let { studies = [], loading = false, showViewAll = false, headingTag = 'h2' } = $props();
+	import { reveal } from '$lib/actions/reveal.js';
 
-	const skeletonCount = 2;
+	let { studies = [], showViewAll = false, headingTag = 'h2' } = $props();
 </script>
 
 <section class="py-16 md:py-32">
 	<div class="mx-auto max-w-5xl px-6">
-		<div class="mx-auto max-w-xl space-y-4 text-center">
+		<div class="mx-auto max-w-xl space-y-4 text-center" use:reveal>
 			<p
 				class="flex items-center justify-center gap-2 text-xs tracking-[0.2em] text-muted-foreground uppercase"
 			>
@@ -23,28 +23,15 @@
 		</div>
 
 		<div class="mt-12 grid gap-6 md:grid-cols-2">
-			{#if loading}
-				{#each Array(skeletonCount) as _, i (i)}
-					<div class="flex flex-col gap-6 rounded-xl border bg-card p-8">
-						<div class="flex items-start justify-between gap-4">
-							<div class="h-4 w-1/3 animate-pulse rounded bg-muted"></div>
-							<div class="h-8 w-14 animate-pulse rounded bg-muted"></div>
-						</div>
-						<div class="space-y-2">
-							<div class="h-5 w-3/4 animate-pulse rounded bg-muted"></div>
-							<div class="h-3 w-full animate-pulse rounded bg-muted"></div>
-							<div class="h-3 w-2/3 animate-pulse rounded bg-muted"></div>
-						</div>
-					</div>
-				{/each}
-			{:else if studies.length === 0}
+			{#if studies.length === 0}
 				<p class="col-span-full py-8 text-center text-muted-foreground">
 					No case studies published yet, check back soon.
 				</p>
 			{:else}
-				{#each studies as study (study.id)}
+				{#each studies as study, i (study.id)}
 					<a
 						href="/case-studies/{study.slug}"
+						use:reveal={{ delay: i * 100 }}
 						class="group flex flex-col gap-6 rounded-xl border bg-card p-8 text-card-foreground shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
 					>
 						<div class="flex items-start justify-between gap-4">
@@ -56,7 +43,7 @@
 							{/if}
 						</div>
 						<div class="space-y-2">
-							<h3 class="font-heading text-xl font-semibold">{study.title}</h3>
+							<h2 class="font-heading text-xl font-semibold">{study.title}</h2>
 							<p class="text-sm text-muted-foreground">{study.introduction}</p>
 						</div>
 						<span

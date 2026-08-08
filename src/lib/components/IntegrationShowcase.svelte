@@ -1,51 +1,71 @@
 <script>
-	import { OrbitingCircles } from '$lib/components/magic/orbiting-circles';
-	import { reveal } from '$lib/actions/reveal.js';
 	import clayLogo from '$lib/assets/images/clay.webp';
 </script>
 
-<section class="py-16 md:py-32">
-	<div class="mx-auto max-w-2xl space-y-4 px-6 text-center" use:reveal>
-		<p
-			class="flex items-center justify-center gap-2 text-xs tracking-[0.2em] text-muted-foreground uppercase"
-		>
-			<span class="inline-block h-px w-8 bg-foreground/30"></span>
-			The Stack
-			<span class="inline-block h-px w-8 bg-foreground/30"></span>
-		</p>
-		<h2 class="font-heading text-3xl font-semibold lg:text-4xl">Tools I Work With</h2>
-		<p class="text-muted-foreground">
-			CRM, enrichment, and AI, wired together into one connected GTM stack instead of sitting in
-			silos.
-		</p>
-	</div>
+<section>
+	<div class="bg-muted py-24 md:py-32 dark:bg-background">
+		<div class="mx-auto max-w-5xl px-6">
+			<div class="grid items-center sm:grid-cols-2">
+				<div class="relative mx-auto w-fit dark:bg-muted/50">
+					<div
+						class="absolute inset-0 z-10 bg-radial from-transparent to-muted to-75% dark:to-background"
+					></div>
+					<div class="mx-auto mb-2 flex w-fit justify-center gap-2">
+						{@render badge(hubspot)}
+						{@render badge(salesforce)}
+					</div>
+					<div class="mx-auto my-2 flex w-fit justify-center gap-2">
+						{@render badge(clay)}
+						{@render badge(grid, true)}
+						{@render badge(n8n)}
+					</div>
+					<div class="mx-auto flex w-fit justify-center gap-2">
+						{@render badge(python)}
+						{@render badge(sql)}
+					</div>
+				</div>
 
-	<div
-		class="relative flex h-125 w-full flex-col items-center justify-center overflow-hidden"
-		use:reveal={{ delay: 150 }}
-	>
-		<span
-			class="pointer-events-none bg-linear-to-b from-black to-gray-300/80 bg-clip-text text-center text-7xl leading-none font-semibold whitespace-pre-wrap text-transparent dark:from-white dark:to-slate-900/10"
-		>
-			GTM
-		</span>
-		<OrbitingCircles iconSize={40} duration={20} radius={80}>
-			{@render hubspot()}
-		</OrbitingCircles>
-		<OrbitingCircles iconSize={40} duration={20} radius={80} delay={-10} path>
-			{@render salesforce()}
-		</OrbitingCircles>
-		<OrbitingCircles iconSize={40} radius={160} duration={20} reverse>
-			{@render clay()}
-		</OrbitingCircles>
-		<OrbitingCircles iconSize={40} radius={160} duration={20} reverse delay={-10} path>
-			{@render claude()}
-		</OrbitingCircles>
+				<div class="mx-auto mt-6 max-w-lg space-y-6 text-center sm:mt-0 sm:text-left">
+					<h2 class="text-3xl font-semibold text-balance md:text-4xl">
+						Built Into Your Existing Stack
+					</h2>
+					<p class="text-muted-foreground">
+						No rip and replace. I connect HubSpot, Salesforce, Clay, and the rest of your GTM
+						tools into one working system instead of another silo.
+					</p>
+
+					<a
+						href="mailto:ziongonet@gmail.com"
+						class="inline-flex h-8 items-center justify-center gap-1.5 rounded-md border border-foreground/15 bg-background px-3 text-xs font-medium text-foreground shadow-xs transition-all hover:bg-foreground/5"
+					>
+						Get in touch
+					</a>
+				</div>
+			</div>
+		</div>
 	</div>
 </section>
 
+{#snippet badge(icon, featured = false)}
+	<div
+		class="relative flex size-20 rounded-xl bg-background dark:bg-transparent {featured
+			? 'dark:bg-white/10'
+			: ''}"
+	>
+		<div
+			role="presentation"
+			class="absolute inset-0 rounded-xl border {featured
+				? 'border-black/25 shadow-xl shadow-black/10 dark:border-white/25'
+				: 'border-black/20 dark:border-white/25'}"
+		></div>
+		<div class="relative z-20 m-auto size-8">
+			{@render icon()}
+		</div>
+	</div>
+{/snippet}
+
 {#snippet hubspot()}
-	<svg width="100" height="100" viewBox="0 0 24 24" fill="#FF7A59">
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FF7A59" class="size-full">
 		<path
 			d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.978v-.067A2.2 2.2 0 0017.238.845h-.067a2.2 2.2 0 00-2.193 2.193v.067a2.196 2.196 0 001.252 1.973l.013.006v2.852a6.22 6.22 0 00-2.969 1.31l.012-.01-7.828-6.095A2.497 2.497 0 104.3 4.656l-.012.006 7.697 5.991a6.176 6.176 0 00-1.038 3.446c0 1.343.425 2.588 1.147 3.607l-.013-.02-2.342 2.343a1.968 1.968 0 00-.58-.095h-.002a2.033 2.033 0 102.033 2.033 1.978 1.978 0 00-.1-.595l.005.014 2.317-2.317a6.247 6.247 0 104.782-11.134l-.036-.005zm-.964 9.378a3.206 3.206 0 113.215-3.207v.002a3.206 3.206 0 01-3.207 3.207z"
 		/>
@@ -53,7 +73,7 @@
 {/snippet}
 
 {#snippet salesforce()}
-	<svg width="100" height="100" viewBox="0.5 0.5 999 699.242">
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 0.5 999 699.242" class="size-full">
 		<path
 			fill="#00A1E0"
 			d="M416.224 76.763c32.219-33.57 77.074-54.391 126.682-54.391 65.946 0 123.48 36.772 154.12 91.361 26.626-11.896 56.098-18.514 87.106-18.514 118.94 0 215.368 97.268 215.368 217.247 0 119.993-96.428 217.261-215.368 217.261a213.735 213.735 0 0 1-42.422-4.227c-26.981 48.128-78.397 80.646-137.412 80.646-24.705 0-48.072-5.706-68.877-15.853-27.352 64.337-91.077 109.448-165.348 109.448-77.344 0-143.261-48.939-168.563-117.574-11.057 2.348-22.513 3.572-34.268 3.572C75.155 585.74.5 510.317.5 417.262c0-62.359 33.542-116.807 83.378-145.937-10.26-23.608-15.967-49.665-15.967-77.06C67.911 87.25 154.79.5 261.948.5c62.914 0 118.827 29.913 154.276 76.263"
@@ -70,13 +90,109 @@
 {/snippet}
 
 {#snippet clay()}
-	<img src={clayLogo} alt="Clay" width="100" height="100" loading="lazy" class="rounded-full" />
+	<img
+		src={clayLogo}
+		alt="Clay"
+		width="32"
+		height="32"
+		loading="lazy"
+		class="size-full rounded-full object-cover"
+	/>
 {/snippet}
 
-{#snippet claude()}
-	<svg width="100" height="100" viewBox="0 0 24 24" fill="#D97757">
+{#snippet grid()}
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 24 24"
+		fill="none"
+		role="img"
+		class="size-full text-foreground"
+	>
 		<path
-			d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"
+			d="M22 18C22 19.4001 22 20.1002 21.7275 20.635C21.4878 21.1054 21.1054 21.4878 20.635 21.7275C20.1002 22 19.4001 22 18 22C16.5999 22 15.8998 22 15.365 21.7275C14.8946 21.4878 14.5122 21.1054 14.2725 20.635C14 20.1002 14 19.4001 14 18C14 16.5999 14 15.8998 14.2725 15.365C14.5122 14.8946 14.8946 14.5122 15.365 14.2725C15.8998 14 16.5999 14 18 14C19.4001 14 20.1002 14 20.635 14.2725C21.1054 14.5122 21.4878 14.8946 21.7275 15.365C22 15.8998 22 16.5999 22 18Z"
+			stroke="currentColor"
+			stroke-width="1.5"
+		/>
+		<path
+			d="M22 10C22 11.4001 22 12.1002 21.7275 12.635C21.4878 13.1054 21.1054 13.4878 20.635 13.7275C20.1002 14 19.4001 14 18 14C16.5999 14 15.8998 14 15.365 13.7275C14.8946 13.4878 14.5122 13.1054 14.2725 12.635C14 12.1002 14 11.4001 14 10C14 8.59987 14 7.8998 14.2725 7.36502C14.5122 6.89462 14.8946 6.51217 15.365 6.27248C15.8998 6 16.5999 6 18 6C19.4001 6 20.1002 6 20.635 6.27248C21.1054 6.51217 21.4878 6.89462 21.7275 7.36502C22 7.8998 22 8.59987 22 10Z"
+			stroke="currentColor"
+			stroke-width="1.5"
+		/>
+		<path
+			d="M14 18C14 19.4001 14 20.1002 13.7275 20.635C13.4878 21.1054 13.1054 21.4878 12.635 21.7275C12.1002 22 11.4001 22 10 22C8.59987 22 7.8998 22 7.36502 21.7275C6.89462 21.4878 6.51217 21.1054 6.27248 20.635C6 20.1002 6 19.4001 6 18C6 16.5999 6 15.8998 6.27248 15.365C6.51217 14.8946 6.89462 14.5122 7.36502 14.2725C7.8998 14 8.59987 14 10 14C11.4001 14 12.1002 14 12.635 14.2725C13.1054 14.5122 13.4878 14.8946 13.7275 15.365C14 15.8998 14 16.5999 14 18Z"
+			stroke="currentColor"
+			stroke-width="1.5"
+		/>
+		<path
+			opacity="0.4"
+			d="M10 6C10 7.40013 10 8.1002 9.72752 8.63497C9.48783 9.10538 9.10538 9.48783 8.63498 9.72752C8.1002 10 7.40013 10 6 10C4.59987 10 3.8998 10 3.36502 9.72751C2.89462 9.48783 2.51217 9.10538 2.27248 8.63497C2 8.10019 2 7.40013 2 6C2 4.59987 2 3.8998 2.27248 3.36502C2.51217 2.89462 2.89462 2.51217 3.36502 2.27248C3.8998 2 4.59987 2 6 2C7.40013 2 8.1002 2 8.63498 2.27248C9.10538 2.51217 9.48783 2.89462 9.72752 3.36502C10 3.8998 10 4.59987 10 6Z"
+			stroke="currentColor"
+			stroke-width="1.5"
 		/>
 	</svg>
 {/snippet}
+
+{#snippet n8n()}
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#EA4B71" class="size-full">
+		<path
+			d="M21.4737 5.6842c-1.1772 0-2.1663.8051-2.4468 1.8947h-2.8955c-1.235 0-2.289.893-2.492 2.111l-.1038.623a1.263 1.263 0 0 1-1.246 1.0555H11.289c-.2805-1.0896-1.2696-1.8947-2.4468-1.8947s-2.1663.8051-2.4467 1.8947H4.973c-.2805-1.0896-1.2696-1.8947-2.4468-1.8947C1.1311 9.4737 0 10.6047 0 12s1.131 2.5263 2.5263 2.5263c1.1772 0 2.1663-.8051 2.4468-1.8947h1.4223c.2804 1.0896 1.2696 1.8947 2.4467 1.8947 1.1772 0 2.1663-.8051 2.4468-1.8947h1.0008a1.263 1.263 0 0 1 1.2459 1.0555l.1038.623c.203 1.218 1.257 2.111 2.492 2.111h.3692c.2804 1.0895 1.2696 1.8947 2.4468 1.8947 1.3952 0 2.5263-1.131 2.5263-2.5263s-1.131-2.5263-2.5263-2.5263c-1.1772 0-2.1664.805-2.4468 1.8947h-.3692a1.263 1.263 0 0 1-1.246-1.0555l-.1037-.623A2.52 2.52 0 0 0 13.9607 12a2.52 2.52 0 0 0 .821-1.4794l.1038-.623a1.263 1.263 0 0 1 1.2459-1.0555h2.8955c.2805 1.0896 1.2696 1.8947 2.4468 1.8947 1.3952 0 2.5263-1.131 2.5263-2.5263s-1.131-2.5263-2.5263-2.5263m0 1.2632a1.263 1.263 0 0 1 1.2631 1.2631 1.263 1.263 0 0 1-1.2631 1.2632 1.263 1.263 0 0 1-1.2632-1.2632 1.263 1.263 0 0 1 1.2632-1.2631M2.5263 10.7368A1.263 1.263 0 0 1 3.7895 12a1.263 1.263 0 0 1-1.2632 1.2632A1.263 1.263 0 0 1 1.2632 12a1.263 1.263 0 0 1 1.2631-1.2632m6.3158 0A1.263 1.263 0 0 1 10.1053 12a1.263 1.263 0 0 1-1.2632 1.2632A1.263 1.263 0 0 1 7.579 12a1.263 1.263 0 0 1 1.2632-1.2632m10.1053 3.7895a1.263 1.263 0 0 1 1.2631 1.2632 1.263 1.263 0 0 1-1.2631 1.2631 1.263 1.263 0 0 1-1.2632-1.2631 1.263 1.263 0 0 1 1.2632-1.2632"
+		/>
+	</svg>
+{/snippet}
+
+{#snippet python()}
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" class="size-full">
+		<linearGradient
+			id="python-blue"
+			gradientUnits="userSpaceOnUse"
+			x1="70.252"
+			y1="1237.476"
+			x2="170.659"
+			y2="1151.089"
+			gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)"
+		>
+			<stop offset="0" stop-color="#5A9FD4" />
+			<stop offset="1" stop-color="#306998" />
+		</linearGradient>
+		<linearGradient
+			id="python-yellow"
+			gradientUnits="userSpaceOnUse"
+			x1="209.474"
+			y1="1098.811"
+			x2="173.62"
+			y2="1149.537"
+			gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)"
+		>
+			<stop offset="0" stop-color="#FFD43B" />
+			<stop offset="1" stop-color="#FFE873" />
+		</linearGradient>
+		<path
+			fill="url(#python-blue)"
+			d="M63.391 1.988c-4.222.02-8.252.379-11.8 1.007-10.45 1.846-12.346 5.71-12.346 12.837v9.411h24.693v3.137H29.977c-7.176 0-13.46 4.313-15.426 12.521-2.268 9.405-2.368 15.275 0 25.096 1.755 7.311 5.947 12.519 13.124 12.519h8.491V67.234c0-8.151 7.051-15.34 15.426-15.34h24.665c6.866 0 12.346-5.654 12.346-12.548V15.833c0-6.693-5.646-11.72-12.346-12.837-4.244-.706-8.645-1.027-12.866-1.008zM50.037 9.557c2.55 0 4.634 2.117 4.634 4.721 0 2.593-2.083 4.69-4.634 4.69-2.56 0-4.633-2.097-4.633-4.69-.001-2.604 2.073-4.721 4.633-4.721z"
+			transform="translate(0 10.26)"
+		/>
+		<path
+			fill="url(#python-yellow)"
+			d="M91.682 28.38v10.966c0 8.5-7.208 15.655-15.426 15.655H51.591c-6.756 0-12.346 5.783-12.346 12.549v23.515c0 6.691 5.818 10.628 12.346 12.547 7.816 2.297 15.312 2.713 24.665 0 6.216-1.801 12.346-5.423 12.346-12.547v-9.412H63.938v-3.138h37.012c7.176 0 9.852-5.005 12.348-12.519 2.578-7.735 2.467-15.174 0-25.096-1.774-7.145-5.161-12.521-12.348-12.521h-9.268zM77.809 87.927c2.561 0 4.634 2.097 4.634 4.692 0 2.602-2.074 4.719-4.634 4.719-2.55 0-4.633-2.117-4.633-4.719 0-2.595 2.083-4.692 4.633-4.692z"
+			transform="translate(0 10.26)"
+		/>
+	</svg>
+{/snippet}
+
+{#snippet sql()}
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		stroke-width="1.5"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		class="size-full text-foreground"
+	>
+		<ellipse cx="12" cy="5" rx="9" ry="3" />
+		<path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5" />
+		<path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6" />
+	</svg>
+{/snippet}
+

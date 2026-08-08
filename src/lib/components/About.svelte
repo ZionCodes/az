@@ -1,5 +1,5 @@
 <script>
-	import automationzion from '$lib/assets/images/automationzion profile.jpg';
+	import automationzion from '$lib/assets/images/automationzion-profile.webp';
 	import { Signature } from '$lib/components/spell/signature';
 </script>
 

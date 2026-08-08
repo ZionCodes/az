@@ -45,7 +45,7 @@
 			scrolled && 'md:px-2'
 		]}
 	>
-		<a href="/" class="rounded-md p-2 text-foreground hover:bg-muted">
+		<a href="/" aria-label="AutomationZion — Home" class="rounded-md p-2 text-foreground hover:bg-muted">
 			{@html logoMarkup}
 		</a>
 

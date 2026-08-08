@@ -13,6 +13,31 @@
 	let { data } = $props();
 </script>
 
+<svelte:head>
+	<title>AutomationZion — GTM Systems Engineer for B2B Revenue Teams</title>
+	<meta
+		name="description"
+		content="Data you can trust, tools that talk to each other, and no more leads slipping through the cracks. GTM systems, CRM architecture, and automation built by Zion Gonet."
+	/>
+	<meta property="og:title" content="AutomationZion — GTM Systems Engineer for B2B Revenue Teams" />
+	<meta
+		property="og:description"
+		content="Data you can trust, tools that talk to each other, and no more leads slipping through the cracks. GTM systems, CRM architecture, and automation built by Zion Gonet."
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://www.automationzion.com/" />
+	<meta property="og:image" content="https://www.automationzion.com/og/og-home.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="AutomationZion — GTM Systems Engineer for B2B Revenue Teams" />
+	<meta
+		name="twitter:description"
+		content="Data you can trust, tools that talk to each other, and no more leads slipping through the cracks."
+	/>
+	<meta name="twitter:image" content="https://www.automationzion.com/og/og-home.png" />
+</svelte:head>
+
 <div class="flex min-h-screen flex-col">
 	<Header />
 	<main class="grow">
@@ -21,13 +46,7 @@
 		<Services />
 		<FeatureSection />
 		<HowItWorks />
-		{#await data.streamed.caseStudies}
-			<CaseStudies loading={true} />
-		{:then caseStudies}
-			<CaseStudies studies={caseStudies} showViewAll={true} />
-		{:catch}
-			<CaseStudies studies={[]} />
-		{/await}
+		<CaseStudies studies={data.caseStudies} showViewAll={true} />
 		<TechStack />
 		<CallToAction />
 	</main>

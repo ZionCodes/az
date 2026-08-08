@@ -28,7 +28,12 @@
       "Bash(curl -s -o /dev/null -w \"status:%{http_code}\\\\n\" http://localhost:5173/ --max-time 5)",
       "Bash(curl -s -o /dev/null -w \"status:%{http_code}\\\\n\" http://localhost:5173/about --max-time 5)",
       "Bash(curl -s -o /dev/null -w \"home:%{http_code}\\\\n\" http://localhost:5173/ --max-time 5)",
-      "Bash(curl -s -o /dev/null -w \"case-studies:%{http_code}\\\\n\" http://localhost:5173/case-studies --max-time 5)"
+      "Bash(curl -s -o /dev/null -w \"case-studies:%{http_code}\\\\n\" http://localhost:5173/case-studies --max-time 5)",
+      "Bash(curl -s -o /dev/null -w \"dev:%{http_code}\\\\n\" http://localhost:5173/ --max-time 10)",
+      "Bash(node generate_og.js)",
+      "Bash(curl -s -o /dev/null -w \"dev:%{http_code}\\\\n\" http://localhost:5173/ --max-time 15)",
+      "Bash(curl -s -o /dev/null -w \"dev:%{http_code}\\\\n\" http://localhost:5173/about --max-time 15)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/dev-preview)"
     ]
   }
 }

@@ -1,6 +1,7 @@
 <script>
 	import { browser } from '$app/environment';
 	import { cn } from '$lib/utils';
+	import opentype from 'opentype.js';
 
 	let {
 		text = 'Signature',
@@ -33,10 +34,7 @@
 		const currentRequest = ++requestId;
 
 		try {
-			const [{ default: opentype }, response] = await Promise.all([
-				import('https://esm.sh/opentype.js@1.3.4'),
-				fetch('/LastoriaBoldRegular.otf')
-			]);
+			const response = await fetch('/LastoriaBoldRegular.otf');
 
 			if (!response.ok) throw new Error(`Failed to load font: ${response.status}`);
 

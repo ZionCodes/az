@@ -1,8 +1,9 @@
 <script>
 	import { onMount } from 'svelte';
 	import { Spring } from 'svelte/motion';
-	import siteLight from '$lib/assets/images/site-light.png';
-	import siteDark from '$lib/assets/images/site-dark.png';
+	import { reveal } from '$lib/actions/reveal.js';
+	import siteLight from '$lib/assets/images/site-light.webp';
+	import siteDark from '$lib/assets/images/site-dark.webp';
 
 	const initialSliderPercentage = 46;
 	const sliderXPercent = new Spring(initialSliderPercentage, { stiffness: 0.15 });
@@ -26,26 +27,26 @@
 		<div class="mx-auto w-full max-w-5xl px-2 md:px-6">
 			<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
 				<div
+					use:reveal={{ delay: 0 }}
 					class="col-span-full overflow-hidden rounded-xl border-none border-b border-secondary bg-foreground/5 pt-6 pl-6 text-card-foreground dark:bg-muted/80"
 				>
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-6 text-primary"
-						><g fill="none"
-							><path
-								fill="currentColor"
-								d="M2.75 12A9.25 9.25 0 0 0 12 21.25V2.75A9.25 9.25 0 0 0 2.75 12"
-							/><path
-								stroke="currentColor"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="1.5"
-								d="M12 21.25a9.25 9.25 0 0 0 0-18.5m0 18.5a9.25 9.25 0 0 1 0-18.5m0 18.5V2.75"
-							/></g
-						></svg
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="size-6 text-primary"
 					>
-					<h3 class="mt-4 text-lg font-semibold text-foreground">Polished, Down to the Details</h3>
+						<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+						<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+					</svg>
+					<h3 class="mt-4 text-lg font-semibold text-foreground">One Connected System</h3>
 					<p class="mt-3 max-w-2xl text-base/normal text-muted-foreground">
-						Every system I build gets the same care as this site, right down to how it looks in
-						both light and dark mode.
+						Your CRM, enrichment, and outreach tools working as one system, not a pile of tabs
+						you have to keep in sync by hand.
 					</p>
 					<div class="-mt-2.5 mr-0.5 -ml-2 pt-2 pl-2">
 						<div class="relative mx-auto mt-8 h-96 overflow-hidden rounded-tl-3xl">
@@ -89,8 +90,9 @@
 										style="clip-path: inset(0 {100 - sliderXPercent.current}% 0 0);"
 									>
 											<img
-											alt="AutomationZion site in light mode"
+											alt="AutomationZion's integration stack in light mode"
 											src={siteLight}
+											loading="lazy"
 											class="absolute inset-0 z-20 h-full w-full object-cover object-top select-none dark:bg-black"
 											draggable="false"
 										/>
@@ -99,8 +101,9 @@
 
 								<img
 									class="absolute top-0 left-0 z-[19] h-full w-full rounded-tl-3xl object-cover object-top select-none"
-									alt="AutomationZion site in dark mode"
+									alt="AutomationZion's integration stack in dark mode"
 									src={siteDark}
+									loading="lazy"
 									draggable="false"
 								/>
 							</div>
@@ -108,7 +111,10 @@
 					</div>
 				</div>
 
-				<div class="rounded-xl border-none bg-foreground/5 p-6 text-card-foreground dark:bg-muted/80">
+				<div
+					use:reveal={{ delay: 80 }}
+					class="rounded-xl border-none bg-foreground/5 p-6 text-card-foreground dark:bg-muted/80"
+				>
 					<svg xmlns="http://www.w3.org/2000/svg" class="size-6 text-primary" viewBox="0 0 24 24"
 						><g fill="none"
 							><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" /><path
@@ -128,7 +134,10 @@
 					</p>
 				</div>
 
-				<div class="rounded-xl border-none bg-foreground/5 p-6 text-card-foreground dark:bg-muted/80">
+				<div
+					use:reveal={{ delay: 160 }}
+					class="rounded-xl border-none bg-foreground/5 p-6 text-card-foreground dark:bg-muted/80"
+				>
 					<svg xmlns="http://www.w3.org/2000/svg" class="size-6 text-primary" viewBox="0 0 24 24"
 						><g fill="none" stroke="currentColor" stroke-width="1.5"
 							><path
@@ -146,26 +155,27 @@
 					</p>
 				</div>
 
-				<div class="rounded-xl border-none bg-foreground/5 p-6 text-card-foreground dark:bg-muted/80">
+				<div
+					use:reveal={{ delay: 240 }}
+					class="rounded-xl border-none bg-foreground/5 p-6 text-card-foreground dark:bg-muted/80"
+				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
-						width="32"
-						height="32"
 						class="size-6 text-primary"
 						viewBox="0 0 24 24"
-						><path
-							fill="none"
-							stroke="currentColor"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="1.5"
-							d="M9 10v10M20.5 9.5h-17M3 9.4c0-2.24 0-3.36.436-4.216a4 4 0 0 1 1.748-1.748C6.04 3 7.16 3 9.4 3h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C21 6.04 21 7.16 21 9.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C17.96 21 16.84 21 14.6 21H9.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748C3 17.96 3 16.84 3 14.6z"
-						/></svg
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
 					>
-					<h3 class="mt-4 text-lg font-semibold text-foreground">Works With Your Stack</h3>
+						<rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+						<path d="M7 11V7a5 5 0 0 1 9.9-1" />
+					</svg>
+					<h3 class="mt-4 text-lg font-semibold text-foreground">You Own What I Build</h3>
 					<p class="mt-3 text-base/normal text-muted-foreground">
-						HubSpot, Salesforce, Clay, Claude, and more, plugged into one connected system instead
-						of scattered tools.
+						No proprietary black boxes. Every workflow and integration is yours to keep, edit, or
+						hand off to your own team.
 					</p>
 				</div>
 			</div>

@@ -1,8 +1,13 @@
+<script>
+	import { reveal } from '$lib/actions/reveal.js';
+</script>
+
 <section class="bg-gray-50 py-16 md:py-32 dark:bg-transparent">
 	<div class="mx-auto max-w-5xl px-6">
 		<div class="relative">
 			<div class="relative z-10 grid grid-cols-6 gap-3">
 				<div
+					use:reveal={{ delay: 0 }}
 					class="bg-card text-card-foreground relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border py-6 shadow-sm lg:col-span-2"
 				>
 					<div class="relative m-auto size-fit px-6 pt-6">
@@ -25,6 +30,7 @@
 				</div>
 
 				<div
+					use:reveal={{ delay: 80 }}
 					class="bg-card text-card-foreground relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border py-6 shadow-sm sm:col-span-3 lg:col-span-2"
 				>
 					<div class="px-6 pt-6">
@@ -56,6 +62,7 @@
 				</div>
 
 				<div
+					use:reveal={{ delay: 160 }}
 					class="bg-card text-card-foreground relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border py-6 shadow-sm sm:col-span-3 lg:col-span-2"
 				>
 					<div class="px-6 pt-6">
@@ -144,6 +151,7 @@
 				</div>
 
 				<div
+					use:reveal={{ delay: 240 }}
 					class="bg-card text-card-foreground card variant-outlined relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border py-6 shadow-sm lg:col-span-3"
 				>
 					<div class="grid px-6 pt-6 sm:grid-cols-2">
@@ -225,6 +233,7 @@
 				</div>
 
 				<div
+					use:reveal={{ delay: 320 }}
 					class="bg-card text-card-foreground card variant-outlined relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border py-6 shadow-sm lg:col-span-3"
 				>
 					<div class="grid h-full px-6 pt-6 sm:grid-cols-2">

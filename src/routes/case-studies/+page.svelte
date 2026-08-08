@@ -12,18 +12,29 @@
 		name="description"
 		content="Real GTM systems built and shipped. Outbound infrastructure, CRM architecture, AI agents, and automation pipelines with measurable outcomes."
 	/>
+	<meta property="og:title" content="Case Studies — AutomationZion" />
+	<meta
+		property="og:description"
+		content="Real GTM systems built and shipped. Outbound infrastructure, CRM architecture, AI agents, and automation pipelines with measurable outcomes."
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://www.automationzion.com/case-studies" />
+	<meta property="og:image" content="https://www.automationzion.com/og/og-case-studies.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Case Studies — AutomationZion" />
+	<meta
+		name="twitter:description"
+		content="Real GTM systems built and shipped, with measurable outcomes."
+	/>
+	<meta name="twitter:image" content="https://www.automationzion.com/og/og-case-studies.png" />
 </svelte:head>
 
 <div class="flex min-h-screen flex-col">
 	<Header />
 	<main class="grow">
-		{#await data.streamed.caseStudies}
-			<CaseStudies loading={true} headingTag="h1" />
-		{:then caseStudies}
-			<CaseStudies studies={caseStudies} headingTag="h1" />
-		{:catch}
-			<CaseStudies studies={[]} headingTag="h1" />
-		{/await}
+		<CaseStudies studies={data.caseStudies} headingTag="h1" />
 	</main>
 	<Footer />
 </div>

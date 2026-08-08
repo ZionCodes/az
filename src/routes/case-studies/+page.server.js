@@ -1,15 +1,10 @@
 import { listPostsByCategory } from '$lib/server/posts.js';
 
 export async function load({ locals }) {
-	const fetchCaseStudies = () =>
-		listPostsByCategory(locals.pb, 'case study').catch((err) => {
-			console.error('Failed to load case studies:', err);
-			return [];
-		});
-
-	return {
-		streamed: {
-			caseStudies: fetchCaseStudies()
-		}
-	};
+	try {
+		return { caseStudies: await listPostsByCategory(locals.pb, 'case study') };
+	} catch (err) {
+		console.error('Failed to load case studies:', err);
+		return { caseStudies: [] };
+	}
 }
