@@ -1,3 +1,86 @@
+<script>
+	import { tick } from 'svelte';
+	import { browser } from '$app/environment';
+	import { Spring } from 'svelte/motion';
+	import { backOut, cubicOut } from 'svelte/easing';
+
+	const phrases = ['GTM stack', 'revenue engine', 'CRM system'];
+
+	let phraseIndex = $state(0);
+	let reducedMotion = $state(false);
+	let currentPhrase = $derived(phrases[phraseIndex]);
+
+	// staggerFrom: "last" — the rightmost character animates first, matching the reference.
+	// Flat (not nested per-word) because Svelte doesn't fire in:/out: transitions on elements
+	// inside a two-level-deep keyed {#each} — confirmed by direct testing (getAnimations()
+	// stayed empty through an entire transition with word->character nesting, worked once flattened).
+	let phraseChars = $derived([...currentPhrase]);
+	let totalChars = $derived(phraseChars.length);
+
+	// smoothly animates the pill's width between phrases, mirroring the reference's
+	// shared layout animation (motion-sv's `layout` prop) without pulling in that dependency —
+	// this project already uses Spring from svelte/motion for the same kind of numeric tween
+	let widthProbeEl = $state(null);
+	let pillWidth = new Spring(0, { stiffness: 0.3, damping: 0.75 });
+	let hasMeasured = $state(false);
+
+	function measurePillWidth() {
+		if (!widthProbeEl) return;
+		pillWidth.set(widthProbeEl.offsetWidth);
+		hasMeasured = true;
+	}
+
+	$effect(() => {
+		currentPhrase;
+		if (!browser) return;
+		tick().then(measurePillWidth);
+	});
+
+	// the initial measurement can race the custom heading font swapping in
+	// (fallback-font metrics are narrower), so re-measure once fonts are confirmed ready
+	$effect(() => {
+		if (!browser || !document.fonts) return;
+		document.fonts.ready.then(() => tick().then(measurePillWidth));
+	});
+
+	$effect(() => {
+		if (!browser) return;
+		reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		if (reducedMotion) return;
+
+		const interval = setInterval(() => {
+			phraseIndex = (phraseIndex + 1) % phrases.length;
+		}, 2000);
+		return () => clearInterval(interval);
+	});
+
+	// mirrors the reference's character transition — spring(damping: 25, stiffness: 300),
+	// initial/exit states (y: 100%/-120%, opacity: 0) — as a duration+easing transition
+	function riseIn(node, { delay = 0 } = {}) {
+		return {
+			delay: Math.max(0, delay),
+			duration: 350,
+			easing: backOut,
+			css: (t) => {
+				const c = Math.min(1, Math.max(0, t));
+				return `transform: translateY(${(1 - c) * 100}%); opacity: ${c}`;
+			}
+		};
+	}
+
+	function riseOut(node, { delay = 0 } = {}) {
+		return {
+			delay: Math.max(0, delay),
+			duration: 250,
+			easing: cubicOut,
+			css: (t) => {
+				const c = Math.min(1, Math.max(0, t));
+				return `transform: translateY(${(1 - c) * -120}%); opacity: ${c}`;
+			}
+		};
+	}
+</script>
+
 <section class="relative -top-14 mx-auto w-full max-w-5xl px-4">
 	<div
 		aria-hidden="true"
@@ -58,7 +141,31 @@
 		<h1
 			class="animate-in text-center font-heading text-4xl font-medium tracking-tight text-balance delay-100 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 [text-shadow:0_0_50px_color-mix(in_oklab,var(--foreground)_20%,transparent)] fade-in md:text-5xl lg:text-6xl"
 		>
-			A GTM stack that finally
+			A
+			<span
+				class="relative inline-grid overflow-hidden rounded-lg bg-[#ff5941] px-2 py-0.5 align-baseline text-white sm:px-2 sm:py-1 md:px-3 md:py-2"
+				style={hasMeasured ? `width: ${pillWidth.current}px;` : ''}
+			>
+				<span
+					bind:this={widthProbeEl}
+					aria-hidden="true"
+					class="pointer-events-none invisible fixed top-0 left-[-10000px] inline-flex flex-nowrap justify-center px-2 py-0.5 sm:px-2 sm:py-1 md:px-3 md:py-2"
+				>
+					{#each phraseChars as char, i (i)}
+						<span class="inline-block whitespace-pre">{char}</span>
+					{/each}
+				</span>
+				<span class="col-start-1 row-start-1 inline-flex flex-nowrap justify-center">
+					{#each phraseChars as char, i (`${phraseIndex}-${i}`)}
+						<span
+							class="inline-block whitespace-pre"
+							in:riseIn={{ delay: reducedMotion ? 0 : (totalChars - 1 - i) * 8 }}
+							out:riseOut={{ delay: reducedMotion ? 0 : (totalChars - 1 - i) * 5 }}
+						>{char}</span>
+					{/each}
+				</span>
+			</span>
+			that finally
 			<br />
 			works as hard as you do
 		</h1>
