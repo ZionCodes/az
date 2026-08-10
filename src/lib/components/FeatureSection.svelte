@@ -128,9 +128,9 @@
 							/><ellipse cx="9" cy="10.5" fill="currentColor" rx="1" ry="1.5" /></g
 						></svg
 					>
-					<h3 class="mt-4 text-lg font-semibold text-foreground">Straightforward to Work With</h3>
+					<h3 class="mt-4 text-lg font-semibold text-foreground">No Guesswork, Just Systems That Work</h3>
 					<p class="mt-3 text-base/normal text-muted-foreground">
-						Clear scoping, fast kickoffs, and no jargon, just a plan and steady updates.
+						Clear communication, steady updates and systems built to be understood, not a black box only I can maintain.
 					</p>
 				</div>
 
@@ -148,10 +148,9 @@
 							/></g
 						></svg
 					>
-					<h3 class="mt-4 text-lg font-semibold text-foreground">Built to Scale With You</h3>
+					<h3 class="mt-4 text-lg font-semibold text-foreground">Built to Scale With the Team</h3>
 					<p class="mt-3 text-base/normal text-muted-foreground">
-						Systems designed to grow with your GTM stack, from a single integration to full
-						automation.
+						Systems designed to grow as the business does, from one integration today to the full stack tomorrow.
 					</p>
 				</div>
 
@@ -172,10 +171,9 @@
 						<rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
 						<path d="M7 11V7a5 5 0 0 1 9.9-1" />
 					</svg>
-					<h3 class="mt-4 text-lg font-semibold text-foreground">You Own What I Build</h3>
+					<h3 class="mt-4 text-lg font-semibold text-foreground">Documented, Not Dependent</h3>
 					<p class="mt-3 text-base/normal text-muted-foreground">
-						No proprietary black boxes. Every workflow and integration is yours to keep, edit, or
-						hand off to your own team.
+						Everything I build is documented and handed off clean, so the team owns it fully.
 					</p>
 				</div>
 			</div>

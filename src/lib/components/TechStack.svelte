@@ -24,11 +24,33 @@
 		class="relative flex h-125 w-full flex-col items-center justify-center overflow-hidden"
 		use:reveal={{ delay: 150 }}
 	>
-		<span
-			class="pointer-events-none bg-linear-to-b from-black to-gray-300/80 bg-clip-text text-center text-7xl leading-none font-semibold whitespace-pre-wrap text-transparent dark:from-white dark:to-slate-900/10"
-		>
-			GTM
-		</span>
+		<div
+			class="orbit-connector"
+			style:--radius={80}
+			style:--duration={20}
+			style:--delay={0}
+		></div>
+		<div
+			class="orbit-connector"
+			style:--radius={80}
+			style:--duration={20}
+			style:--delay={-10}
+		></div>
+		<div
+			class="orbit-connector orbit-connector--reverse"
+			style:--radius={160}
+			style:--duration={20}
+			style:--delay={0}
+		></div>
+		<div
+			class="orbit-connector orbit-connector--reverse"
+			style:--radius={160}
+			style:--duration={20}
+			style:--delay={-10}
+		></div>
+
+		<div class="relative z-10 size-5 rounded-full bg-foreground"></div>
+
 		<OrbitingCircles iconSize={40} duration={20} radius={80}>
 			{@render hubspot()}
 		</OrbitingCircles>
@@ -43,6 +65,35 @@
 		</OrbitingCircles>
 	</div>
 </section>
+
+<style>
+	.orbit-connector {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 1px;
+		height: calc(var(--radius) * 1px);
+		transform-origin: top center;
+		background: var(--foreground);
+		opacity: 0.15;
+		animation: orbit-connector-spin calc(var(--duration) * 1s) linear infinite;
+		animation-delay: calc(var(--delay) * 1000ms);
+		pointer-events: none;
+	}
+
+	.orbit-connector--reverse {
+		animation-direction: reverse;
+	}
+
+	@keyframes orbit-connector-spin {
+		from {
+			transform: translateX(-50%) rotate(0deg);
+		}
+		to {
+			transform: translateX(-50%) rotate(360deg);
+		}
+	}
+</style>
 
 {#snippet hubspot()}
 	<svg width="100" height="100" viewBox="0 0 24 24" fill="#FF7A59">

@@ -18,7 +18,7 @@
 				Case Studies
 			</svelte:element>
 			<p class="text-muted-foreground">
-				Real GTM systems, shipped for real teams. Here's what changed.
+				Real systems I've built, in production. Here's what changed.
 			</p>
 		</div>
 

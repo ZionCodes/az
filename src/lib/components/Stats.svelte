@@ -11,7 +11,7 @@
 			</p>
 			<h2 class="font-heading text-4xl font-medium text-balance">Built on Real Experience</h2>
 			<p class="text-balance text-muted-foreground">
-				Years spent deep in GTM systems and automation, with the depth of tooling to back it up.
+				Years spent deep in automation and GTM systems, with the depth of tooling to back it up.
 			</p>
 		</div>
 		<div class="mt-12 grid grid-cols-2 gap-6 text-sm @xl:grid-cols-3" use:reveal={{ delay: 150 }}>

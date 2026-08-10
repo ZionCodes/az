@@ -25,7 +25,7 @@
 		class="pointer-events-none absolute inset-0 size-full"
 	>
 		<circle
-			class="stroke-1 stroke-red-500/40 dark:stroke-red-400/40"
+			class="stroke-1 stroke-foreground/15"
 			cx="50%"
 			cy="50%"
 			r={radius}

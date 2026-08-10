@@ -27,11 +27,10 @@
 
 				<div class="mx-auto mt-6 max-w-lg space-y-6 text-center sm:mt-0 sm:text-left">
 					<h2 class="text-3xl font-semibold text-balance md:text-4xl">
-						Built Into Your Existing Stack
+						One System, However You're Starting
 					</h2>
 					<p class="text-muted-foreground">
-						No rip and replace. I connect HubSpot, Salesforce, Clay, and the rest of your GTM
-						tools into one working system instead of another silo.
+						HubSpot, Salesforce, Clay and the rest of the stack, connected into one working system. Already have the tools? I make them talk to each other. Starting from zero? I build the foundation right the first time.
 					</p>
 
 					<a

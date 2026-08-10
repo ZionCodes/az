@@ -6,12 +6,12 @@
 </script>
 
 <svelte:head>
-	<title>About Zion Gonet, GTM Systems Engineer</title>
+	<title>About Zion Gonet | GTM Systems Engineer</title>
 	<meta
 		name="description"
-		content="I'm Zion Gonet, a GTM Systems Engineer building end-to-end revenue infrastructure across CRMs, automation tools, and AI agents."
+		content="I'm Zion Gonet, a GTM Systems Engineer building end-to-end revenue infrastructure across CRMs, automation tools and AI agents."
 	/>
-	<meta property="og:title" content="About Zion Gonet, GTM Systems Engineer" />
+	<meta property="og:title" content="About Zion Gonet | GTM Systems Engineer" />
 	<meta
 		property="og:description"
 		content="I'm Zion Gonet, a GTM Systems Engineer building end-to-end revenue infrastructure across CRMs, automation tools and AI agents."
@@ -23,7 +23,7 @@
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="About Zion Gonet, GTM Systems Engineer" />
+	<meta name="twitter:title" content="About Zion Gonet | GTM Systems Engineer" />
 	<meta
 		name="twitter:description"
 		content="I'm Zion Gonet, a GTM Systems Engineer building end-to-end revenue infrastructure."

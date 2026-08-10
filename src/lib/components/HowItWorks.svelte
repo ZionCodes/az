@@ -25,7 +25,7 @@
 			number: '04',
 			title: 'Own and Improve',
 			description:
-				'I document everything, embed with the team, and stay close to the system as the business grows. I am not a contractor who disappears after handoff.',
+				'I document everything and stay close to the system as the business grows, not just until launch.',
 			card: 'bg-gradient-to-br from-emerald-500 to-teal-600'
 		}
 	];

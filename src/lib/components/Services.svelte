@@ -14,8 +14,7 @@
 			</p>
 			<h2 class="font-heading text-3xl font-semibold lg:text-4xl">GTM Systems, Built End to End</h2>
 			<p class="text-muted-foreground">
-				From CRM setup to the AI and automation running quietly behind it, everything your GTM
-				stack needs, built and maintained by one engineer.
+				CRM setup, data infrastructure and the automation behind it, built and owned by one engineer.
 			</p>
 		</div>
 		<div class="relative">
@@ -189,7 +188,7 @@
 								</svg>
 							</div>
 							<div class="space-y-2">
-								<h2 class="font-heading text-lg font-medium transition">Systems Integration</h2>
+								<h2 class="font-heading text-lg font-medium transition">Tool Integration</h2>
 								<p class="text-sm text-muted-foreground">
 									Every tool in the GTM stack connected and kept in sync, whatever runs the business, with Python and SQL doing the heavy lifting behind the scenes.
 								</p>
