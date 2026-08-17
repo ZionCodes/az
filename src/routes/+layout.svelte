@@ -7,5 +7,5 @@
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
-<ModeWatcher disableTransitions={false} />
+<ModeWatcher disableTransitions={false} defaultMode="light" />
 {@render children()}
