@@ -32,7 +32,12 @@
 	<div class="@container mx-auto max-w-3xl px-6">
 		<div class="grid gap-8">
 			<div class="col-span-full border-b pb-8">
-				<a href="/" aria-label="AutomationZion — Home" class="flex w-fit items-center gap-2 text-foreground">
+				<a
+					href="/"
+					aria-label="AutomationZion — Home"
+					class="flex w-fit items-center gap-2 text-foreground"
+				>
+					<!-- eslint-disable-next-line svelte/no-at-html-tags -- static inline SVG import, not user data -->
 					{@html logoMarkup}
 				</a>
 				<p class="mt-4 max-w-xs text-sm text-muted-foreground">

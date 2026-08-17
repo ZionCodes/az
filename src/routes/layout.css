@@ -139,5 +139,15 @@
 		);
 		background-size: 28px 28px;
 		color: var(--foreground);
+		transition:
+			background-color 0.3s ease,
+			color 0.3s ease;
 	}
+}
+
+.hover-smile:hover {
+	cursor:
+		url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxMyIgZmlsbD0iI0ZGQ0MzMyIgc3Ryb2tlPSIjMTExIiBzdHJva2Utd2lkdGg9IjIiLz48Y2lyY2xlIGN4PSIxMSIgY3k9IjEzIiByPSIxLjYiIGZpbGw9IiMxMTEiLz48Y2lyY2xlIGN4PSIyMSIgY3k9IjEzIiByPSIxLjYiIGZpbGw9IiMxMTEiLz48cGF0aCBkPSJNMTAgMTljMS44IDIuNCA0IDMuNiA2IDMuNnM0LjItMS4yIDYtMy42IiBmaWxsPSJub25lIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+')
+			16 16,
+		pointer;
 }

@@ -1,5 +1,4 @@
 <script>
-	import { onMount } from 'svelte';
 	import { Spring } from 'svelte/motion';
 	import { reveal } from '$lib/actions/reveal.js';
 	import siteLight from '$lib/assets/images/site-light.webp';
@@ -10,15 +9,25 @@
 
 	let sliderRef = $state(null);
 
-	function mouseLeaveHandler() {
+	function pointerLeaveHandler() {
 		sliderXPercent.set(initialSliderPercentage);
 	}
 
-	function handleMouseMove(e) {
+	function handlePointerMove(e) {
 		if (!sliderRef) return;
 		const rect = sliderRef.getBoundingClientRect();
 		const percent = ((e.clientX - rect.left) / rect.width) * 100;
 		sliderXPercent.set(Math.max(0, Math.min(100, percent)));
+	}
+
+	function handleKeydown(e) {
+		if (e.key === 'ArrowLeft') {
+			e.preventDefault();
+			sliderXPercent.set(Math.max(0, sliderXPercent.current - 5));
+		} else if (e.key === 'ArrowRight') {
+			e.preventDefault();
+			sliderXPercent.set(Math.min(100, sliderXPercent.current + 5));
+		}
 	}
 </script>
 
@@ -28,7 +37,7 @@
 			<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
 				<div
 					use:reveal={{ delay: 0 }}
-					class="col-span-full overflow-hidden rounded-xl border-none border-b border-secondary bg-foreground/5 pt-6 pl-6 text-card-foreground dark:bg-muted/80"
+					class="col-span-full overflow-hidden rounded-xl border-b border-none border-secondary bg-foreground/5 pt-6 pl-6 text-card-foreground dark:bg-muted/80"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -43,19 +52,25 @@
 						<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
 						<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
 					</svg>
-					<h3 class="mt-4 text-lg font-semibold text-foreground">One Connected System</h3>
+					<h3 class="mt-4 text-lg font-semibold text-foreground">One System, Any Starting Point</h3>
 					<p class="mt-3 max-w-2xl text-base/normal text-muted-foreground">
-						Your CRM, enrichment, and outreach tools working as one system, not a pile of tabs
-						you have to keep in sync by hand.
+						Whether you're already running HubSpot, Salesforce, and Clay, or building your stack
+						from zero, I connect every tool into one working system instead of scattered logins.
 					</p>
 					<div class="-mt-2.5 mr-0.5 -ml-2 pt-2 pl-2">
 						<div class="relative mx-auto mt-8 h-96 overflow-hidden rounded-tl-3xl">
-							<!-- svelte-ignore a11y_no_static_element_interactions -->
 							<div
 								bind:this={sliderRef}
 								class="relative h-full w-full cursor-col-resize overflow-hidden"
-								onmousemove={handleMouseMove}
-								onmouseleave={mouseLeaveHandler}
+								role="slider"
+								tabindex="0"
+								aria-label="Drag or use arrow keys to compare light and dark mode"
+								aria-valuenow={Math.round(sliderXPercent.current)}
+								aria-valuemin="0"
+								aria-valuemax="100"
+								onpointermove={handlePointerMove}
+								onpointerleave={pointerLeaveHandler}
+								onkeydown={handleKeydown}
 							>
 								<div
 									class="absolute top-0 z-40 m-auto h-full w-px bg-gradient-to-b from-transparent from-[5%] via-indigo-500 to-transparent to-[95%]"
@@ -89,7 +104,7 @@
 										class="absolute inset-0 z-20 h-full w-full overflow-hidden rounded-tl-2xl select-none"
 										style="clip-path: inset(0 {100 - sliderXPercent.current}% 0 0);"
 									>
-											<img
+										<img
 											alt="AutomationZion's integration stack in light mode"
 											src={siteLight}
 											loading="lazy"
@@ -128,9 +143,12 @@
 							/><ellipse cx="9" cy="10.5" fill="currentColor" rx="1" ry="1.5" /></g
 						></svg
 					>
-					<h3 class="mt-4 text-lg font-semibold text-foreground">No Guesswork, Just Systems That Work</h3>
+					<h3 class="mt-4 text-lg font-semibold text-foreground">
+						No Guesswork, Just Systems That Work
+					</h3>
 					<p class="mt-3 text-base/normal text-muted-foreground">
-						Clear communication, steady updates and systems built to be understood, not a black box only I can maintain.
+						Clear communication, steady updates and systems built to be understood, not a black box
+						only I can maintain.
 					</p>
 				</div>
 
@@ -150,7 +168,8 @@
 					>
 					<h3 class="mt-4 text-lg font-semibold text-foreground">Built to Scale With the Team</h3>
 					<p class="mt-3 text-base/normal text-muted-foreground">
-						Systems designed to grow as the business does, from one integration today to the full stack tomorrow.
+						Systems designed to grow as the business does, from one integration today to the full
+						stack tomorrow.
 					</p>
 				</div>
 

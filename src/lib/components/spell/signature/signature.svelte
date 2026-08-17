@@ -1,7 +1,6 @@
 <script>
 	import { browser } from '$app/environment';
 	import { cn } from '$lib/utils';
-	import opentype from 'opentype.js';
 
 	let {
 		text = 'Signature',
@@ -34,7 +33,10 @@
 		const currentRequest = ++requestId;
 
 		try {
-			const response = await fetch('/LastoriaBoldRegular.otf');
+			const [{ default: opentype }, response] = await Promise.all([
+				import('opentype.js'),
+				fetch('/LastoriaBoldRegular.otf')
+			]);
 
 			if (!response.ok) throw new Error(`Failed to load font: ${response.status}`);
 
@@ -85,6 +87,10 @@
 		baseline;
 		horizontalPadding;
 		delay;
+		// Don't fetch the font + parse glyphs until the signature is actually about to be
+		// seen — avoids shipping opentype.js and the font file for a decorative flourish
+		// that might never scroll into view.
+		if (inView && !intersected) return;
 		buildPaths();
 	});
 
@@ -136,9 +142,9 @@
 			vector-effect="non-scaling-stroke"
 			stroke-linecap="butt"
 			stroke-linejoin="round"
-			style="stroke-dasharray: 1; stroke-dashoffset: {visible
-				? 0
-				: 1}; fill-opacity: {visible ? 1 : 0}; transition:
+			style="stroke-dasharray: 1; stroke-dashoffset: {visible ? 0 : 1}; fill-opacity: {visible
+				? 1
+				: 0}; transition:
 				stroke-dashoffset {duration}s ease-in-out {path.delay}s,
 				fill-opacity {Math.min(0.25, duration * 0.35)}s ease-in-out {path.delay + duration * 0.65}s;"
 		/>

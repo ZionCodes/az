@@ -26,7 +26,9 @@
 	</a>
 
 	{#if post.label}
-		<p class="mt-8 flex items-center gap-2 text-xs tracking-[0.2em] text-muted-foreground uppercase">
+		<p
+			class="mt-8 flex items-center gap-2 text-xs tracking-[0.2em] text-muted-foreground uppercase"
+		>
 			<span class="inline-block h-px w-8 bg-foreground/30"></span>
 			{post.label}
 		</p>
@@ -71,6 +73,9 @@
 	{/if}
 
 	<div class="article-content mt-10 leading-relaxed text-foreground/80">
+		<!-- article HTML is only ever written by the site owner via an authenticated PocketBase session,
+		     never from public input; revisit with a sanitizer (e.g. DOMPurify) if that ever changes -->
+		<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 		{@html post.article}
 	</div>
 </article>

@@ -17,8 +17,7 @@
 		<div class="mt-12 grid grid-cols-2 gap-6 text-sm @xl:grid-cols-3" use:reveal={{ delay: 150 }}>
 			<div class="border-y py-6">
 				<p class="text-xl text-muted-foreground">
-					<span class="font-medium text-foreground">3+</span> Years building automation and GTM
-					systems.
+					<span class="font-medium text-foreground">3+</span> Years building automation and GTM systems.
 				</p>
 			</div>
 			<div class="border-y py-6">
@@ -37,7 +36,8 @@
 		aria-hidden={true}
 		class="mx-auto flex h-72 max-w-5xl items-end justify-between gap-0.5 px-6"
 	>
-		{#each { length: 48 } as _, i}
+		<!-- eslint-disable-next-line no-unused-vars -- index-only each; item itself is intentionally unused -->
+		{#each { length: 48 } as _, i (i)}
 			{@const progress = i / 47}
 			{@const base = Math.pow(progress, 2.2)}
 			{@const noise = Math.sin(i * 0.7) * 0.08 + Math.sin(i * 1.3) * 0.05}

@@ -34,16 +34,18 @@
 						use:reveal={{ delay: i * 100 }}
 						class="group flex flex-col gap-6 rounded-xl border bg-card p-8 text-card-foreground shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
 					>
-						<div class="flex items-start justify-between gap-4">
-							{#if study.label}
-								<span class="text-sm text-muted-foreground">{study.label}</span>
-							{/if}
+						<div class="space-y-1.5">
 							{#if study.stat}
-								<span class="font-heading text-4xl font-semibold text-primary">{study.stat}</span>
+								<span class="block font-heading text-4xl font-semibold text-primary">
+									{study.stat}
+								</span>
+							{/if}
+							{#if study.label}
+								<span class="block text-sm text-muted-foreground">{study.label}</span>
 							{/if}
 						</div>
 						<div class="space-y-2">
-							<h2 class="font-heading text-xl font-semibold">{study.title}</h2>
+							<h3 class="font-heading text-xl font-semibold">{study.title}</h3>
 							<p class="text-sm text-muted-foreground">{study.introduction}</p>
 						</div>
 						<span

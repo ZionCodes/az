@@ -31,9 +31,9 @@
 			</h2>
 
 			<p class="text-base leading-relaxed text-muted-foreground">
-				I'm Zion Gonet, a GTM Systems Engineer with experience across automation tools, APIs,
-				CRMs, and AI agents. I build end-to-end revenue infrastructure that eliminates repetitive
-				work and lets teams scale without adding headcount.
+				I'm Zion, a GTM Systems Engineer with experience across automation tools, APIs, CRMs, and AI
+				agents. I build end-to-end revenue infrastructure that eliminates repetitive work and lets
+				teams scale without adding headcount.
 			</p>
 
 			<p class="text-base leading-relaxed text-muted-foreground">

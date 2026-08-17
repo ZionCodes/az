@@ -160,8 +160,8 @@
 						<span
 							class="inline-block whitespace-pre"
 							in:riseIn={{ delay: reducedMotion ? 0 : (totalChars - 1 - i) * 8 }}
-							out:riseOut={{ delay: reducedMotion ? 0 : (totalChars - 1 - i) * 5 }}
-						>{char}</span>
+							out:riseOut={{ delay: reducedMotion ? 0 : (totalChars - 1 - i) * 5 }}>{char}</span
+						>
 					{/each}
 				</span>
 			</span>
@@ -170,11 +170,11 @@
 			works as hard as you do
 		</h1>
 
-
 		<p
 			class="mx-auto max-w-md animate-in text-center text-base tracking-wider text-foreground/80 delay-200 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in sm:text-lg md:text-xl"
 		>
-			Data you can trust, tools that talk to each other and no more leads slipping through the cracks
+			Data you can trust, tools that talk to each other and no more leads slipping through the
+			cracks
 		</p>
 
 		<div
@@ -188,7 +188,7 @@
 			</a>
 			<a
 				href="mailto:ziongonet@gmail.com"
-				class="inline-flex h-10 items-center justify-center gap-2 rounded-full bg-primary px-6 text-sm font-medium text-primary-foreground shadow-xs transition-all hover:bg-primary/90"
+				class="hover-smile inline-flex h-10 items-center justify-center gap-2 rounded-full bg-primary px-6 text-sm font-medium text-primary-foreground shadow-xs transition-all hover:bg-primary/90"
 			>
 				Get in touch
 				<svg

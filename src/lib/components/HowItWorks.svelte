@@ -1,4 +1,6 @@
 <script>
+	import { reveal } from '$lib/actions/reveal.js';
+
 	const steps = [
 		{
 			number: '01',
@@ -55,19 +57,46 @@
 			}
 		}
 
+		// Scroll fires far more often than the display can paint; without this, every
+		// tick forces a synchronous layout read (getBoundingClientRect x3) even though
+		// only one of them can actually show up on screen. Coalesce to one update per frame.
+		let ticking = false;
+		function onScrollOrResize() {
+			if (ticking) return;
+			ticking = true;
+			requestAnimationFrame(() => {
+				update();
+				ticking = false;
+			});
+		}
+
 		update();
-		window.addEventListener('scroll', update, { passive: true });
-		window.addEventListener('resize', update);
+		window.addEventListener('scroll', onScrollOrResize, { passive: true });
+		window.addEventListener('resize', onScrollOrResize);
 
 		return () => {
-			window.removeEventListener('scroll', update);
-			window.removeEventListener('resize', update);
+			window.removeEventListener('scroll', onScrollOrResize);
+			window.removeEventListener('resize', onScrollOrResize);
 		};
 	});
 
 	let activeIndex = $derived(Math.min(steps.length - 1, Math.floor(progress * steps.length)));
 	let fillScale = $derived(1 / steps.length + (1 - 1 / steps.length) * progress);
 </script>
+
+<div class="mx-auto max-w-2xl space-y-4 px-6 pt-16 text-center md:pt-24" use:reveal>
+	<p
+		class="flex items-center justify-center gap-2 text-xs tracking-[0.2em] text-muted-foreground uppercase"
+	>
+		<span class="inline-block h-px w-8 bg-foreground/30"></span>
+		The Process
+		<span class="inline-block h-px w-8 bg-foreground/30"></span>
+	</p>
+	<h2 class="font-heading text-3xl font-semibold lg:text-4xl">A Clear Process From Day One</h2>
+	<p class="text-muted-foreground">
+		Every engagement follows the same four steps, so you always know what's happening and why.
+	</p>
+</div>
 
 <div class="pin-wrapper" bind:this={wrapper} style="height: calc(100vh + {scrollVh}vh)">
 	<section class="pin-section">
@@ -109,7 +138,13 @@
 									</svg>
 								{:else if i === 1}
 									<svg viewBox="0 0 160 160" fill="none">
-										<g stroke="#fff" stroke-width="2" stroke-linejoin="round" fill="#fff" fill-opacity="0.12">
+										<g
+											stroke="#fff"
+											stroke-width="2"
+											stroke-linejoin="round"
+											fill="#fff"
+											fill-opacity="0.12"
+										>
 											<path d="M80 24 138 52 80 80 22 52Z" />
 											<path d="M80 64 138 92 80 120 22 92Z" fill-opacity="0.18" />
 											<path d="M80 104 138 132 80 160 22 132Z" fill-opacity="0.24" />
@@ -182,7 +217,6 @@
 		color: var(--foreground);
 		position: sticky;
 		top: 0;
-		border-top: dashed 2px var(--border);
 		border-bottom: dashed 2px var(--border);
 	}
 

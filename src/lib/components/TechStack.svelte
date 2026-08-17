@@ -24,32 +24,7 @@
 		class="relative flex h-125 w-full flex-col items-center justify-center overflow-hidden"
 		use:reveal={{ delay: 150 }}
 	>
-		<div
-			class="orbit-connector"
-			style:--radius={80}
-			style:--duration={20}
-			style:--delay={0}
-		></div>
-		<div
-			class="orbit-connector"
-			style:--radius={80}
-			style:--duration={20}
-			style:--delay={-10}
-		></div>
-		<div
-			class="orbit-connector orbit-connector--reverse"
-			style:--radius={160}
-			style:--duration={20}
-			style:--delay={0}
-		></div>
-		<div
-			class="orbit-connector orbit-connector--reverse"
-			style:--radius={160}
-			style:--duration={20}
-			style:--delay={-10}
-		></div>
-
-		<div class="relative z-10 size-5 rounded-full bg-foreground"></div>
+		<div class="hub-dot relative z-10 size-5 rounded-full bg-foreground"></div>
 
 		<OrbitingCircles iconSize={40} duration={20} radius={80}>
 			{@render hubspot()}
@@ -65,35 +40,6 @@
 		</OrbitingCircles>
 	</div>
 </section>
-
-<style>
-	.orbit-connector {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		width: 1px;
-		height: calc(var(--radius) * 1px);
-		transform-origin: top center;
-		background: var(--foreground);
-		opacity: 0.15;
-		animation: orbit-connector-spin calc(var(--duration) * 1s) linear infinite;
-		animation-delay: calc(var(--delay) * 1000ms);
-		pointer-events: none;
-	}
-
-	.orbit-connector--reverse {
-		animation-direction: reverse;
-	}
-
-	@keyframes orbit-connector-spin {
-		from {
-			transform: translateX(-50%) rotate(0deg);
-		}
-		to {
-			transform: translateX(-50%) rotate(360deg);
-		}
-	}
-</style>
 
 {#snippet hubspot()}
 	<svg width="100" height="100" viewBox="0 0 24 24" fill="#FF7A59">
@@ -131,3 +77,25 @@
 		/>
 	</svg>
 {/snippet}
+
+<style>
+	.hub-dot::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border-radius: 9999px;
+		background: var(--foreground);
+		animation: hub-pulse 2s ease-out infinite;
+	}
+
+	@keyframes hub-pulse {
+		0% {
+			transform: scale(1);
+			opacity: 0.5;
+		}
+		100% {
+			transform: scale(2.4);
+			opacity: 0;
+		}
+	}
+</style>

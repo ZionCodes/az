@@ -33,17 +33,43 @@ function toSummary(post, pb, thumbSize = '400x300') {
 		stat: post.stat || null,
 		created: post.created,
 		slug: slugify(post),
-		thumbnailUrl: post.thumbnail ? pb.files.getURL(post, post.thumbnail, { thumb: thumbSize }) : null,
+		thumbnailUrl: post.thumbnail
+			? pb.files.getURL(post, post.thumbnail, { thumb: thumbSize })
+			: null,
 		readingTime: estimateReadingTime(post.article)
 	};
 }
+
+// List views only need enough of `article` to estimate reading time, not the full
+// body — some articles embed base64 images and run into the megabytes. The excerpt
+// bound is generous enough to cover any real (non-image-embedded) article's full
+// plain-text length, so reading-time estimates stay accurate; it just avoids
+// shipping raw image data over the wire for a value nobody displays on a list card.
+const LIST_VIEW_FIELDS =
+	'id,collectionId,collectionName,title,introduction,tags,category,stat,created,thumbnail,article:excerpt(60000)';
 
 export async function listPostsByCategory(pb, category, { limit } = {}) {
 	const filter = `category = "${category}"`;
 
 	const records = limit
-		? (await pb.collection('posts').getList(1, limit, { filter, sort: '-created' })).items
-		: await pb.collection('posts').getFullList({ filter, sort: '-created' });
+		? (
+				await pb
+					.collection('posts')
+					.getList(1, limit, { filter, sort: '-created', fields: LIST_VIEW_FIELDS })
+			).items
+		: await pb
+				.collection('posts')
+				.getFullList({ filter, sort: '-created', fields: LIST_VIEW_FIELDS });
+
+	return records.map((post) => toSummary(post, pb));
+}
+
+export async function getFeaturedCaseStudies(pb) {
+	const records = await pb.collection('posts').getFullList({
+		filter: `category = "case study" && featured = true`,
+		sort: '-created',
+		fields: LIST_VIEW_FIELDS
+	});
 
 	return records.map((post) => toSummary(post, pb));
 }

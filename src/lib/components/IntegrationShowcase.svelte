@@ -30,15 +30,9 @@
 						One System, However You're Starting
 					</h2>
 					<p class="text-muted-foreground">
-						HubSpot, Salesforce, Clay and the rest of the stack, connected into one working system. Already have the tools? I make them talk to each other. Starting from zero? I build the foundation right the first time.
+						Already have the tools? I make them talk to each other. Starting from zero? I build the
+						foundation right the first time.
 					</p>
-
-					<a
-						href="mailto:ziongonet@gmail.com"
-						class="inline-flex h-8 items-center justify-center gap-1.5 rounded-md border border-foreground/15 bg-background px-3 text-xs font-medium text-foreground shadow-xs transition-all hover:bg-foreground/5"
-					>
-						Get in touch
-					</a>
 				</div>
 			</div>
 		</div>
@@ -194,4 +188,3 @@
 		<path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6" />
 	</svg>
 {/snippet}
-

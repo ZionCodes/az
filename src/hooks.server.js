@@ -1,5 +1,5 @@
 import PocketBase from 'pocketbase';
-import { SECRET_EMAIL, SECRET_PASSWORD, PB_URL } from '$env/static/private';
+import { PB_URL } from '$env/static/private';
 
 const pb = new PocketBase(PB_URL);
 
@@ -8,18 +8,11 @@ const pb = new PocketBase(PB_URL);
 // requests. This client never runs in a browser, so that guard is unwanted.
 pb.autoCancellation(false);
 
-async function ensureAuth() {
-	if (pb.authStore.isValid) return;
-
-	try {
-		await pb.collection('_superusers').authWithPassword(SECRET_EMAIL, SECRET_PASSWORD);
-	} catch (err) {
-		console.error('PocketBase auth failed:', err);
-	}
-}
-
+// posts' listRule/viewRule are public, and this app only ever reads — all
+// writes happen through separately-authenticated local scripts. So this
+// client stays unauthenticated: no superuser credentials in the runtime
+// environment, no auth round-trip on cold starts.
 export async function handle({ event, resolve }) {
-	await ensureAuth();
 	event.locals.pb = pb;
 	return resolve(event);
 }

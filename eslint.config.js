@@ -23,8 +23,10 @@ export default defineConfig([
 	},
 
 	{
-		// Override or add rule settings here, such as:
-		// 'svelte/button-has-type': 'error'
-		rules: {}
+		rules: {
+			// This project uses plain string hrefs throughout (not SvelteKit's typed route ids),
+			// so the resolve() convention this rule enforces doesn't apply here.
+			'svelte/no-navigation-without-resolve': 'off'
+		}
 	}
 ]);

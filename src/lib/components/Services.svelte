@@ -14,14 +14,15 @@
 			</p>
 			<h2 class="font-heading text-3xl font-semibold lg:text-4xl">GTM Systems, Built End to End</h2>
 			<p class="text-muted-foreground">
-				CRM setup, data infrastructure and the automation behind it, built and owned by one engineer.
+				CRM setup, data infrastructure and the automation behind it, built and owned by one
+				engineer.
 			</p>
 		</div>
 		<div class="relative">
 			<div class="relative z-10 grid grid-cols-6 gap-3">
 				<div
 					use:reveal={{ delay: 0 }}
-					class="bg-card text-card-foreground relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border py-6 shadow-sm lg:col-span-2"
+					class="relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground shadow-sm lg:col-span-2"
 				>
 					<div class="relative m-auto size-fit px-6 pt-6">
 						<div class="relative flex h-24 w-56 items-center">
@@ -38,13 +39,15 @@
 							</svg>
 							<span class="mx-auto block w-fit font-heading text-5xl font-semibold">100%</span>
 						</div>
-						<h2 class="mt-6 text-center font-heading text-3xl font-semibold">Bespoke GTM Systems</h2>
+						<h3 class="mt-6 text-center font-heading text-3xl font-semibold">
+							Bespoke GTM Systems
+						</h3>
 					</div>
 				</div>
 
 				<div
 					use:reveal={{ delay: 80 }}
-					class="bg-card text-card-foreground relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border py-6 shadow-sm sm:col-span-3 lg:col-span-2"
+					class="relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground shadow-sm sm:col-span-3 lg:col-span-2"
 				>
 					<div class="px-6 pt-6">
 						<div
@@ -66,9 +69,10 @@
 							</svg>
 						</div>
 						<div class="relative z-10 mt-6 space-y-2 text-center">
-							<h2 class="font-heading text-lg font-medium transition">CRM Setup & Admin</h2>
+							<h3 class="font-heading text-lg font-medium transition">CRM Setup & Admin</h3>
 							<p class="text-sm text-muted-foreground">
-								Salesforce and HubSpot, configured, managed and tailored for your GTM model. Clean data, validation and pipelines so your CRM actually supports revenue.
+								Salesforce and HubSpot, configured, managed and tailored for your GTM model. Clean
+								data, validation and pipelines so your CRM actually supports revenue.
 							</p>
 						</div>
 					</div>
@@ -76,7 +80,7 @@
 
 				<div
 					use:reveal={{ delay: 160 }}
-					class="bg-card text-card-foreground relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border py-6 shadow-sm sm:col-span-3 lg:col-span-2"
+					class="relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground shadow-sm sm:col-span-3 lg:col-span-2"
 				>
 					<div class="px-6 pt-6">
 						<div class="pt-6 lg:px-6">
@@ -95,17 +99,8 @@
 										r="15"
 										fill="currentColor"
 									/>
-									<path
-										d="M23 33h3v-9h-3zM27.5 33h3v-13h-3zM32 33h3v-6h-3z"
-										fill="white"
-									/>
-									<text
-										x="55"
-										y="34"
-										font-size="15"
-										font-weight="600"
-										fill="currentColor"
-									>
+									<path d="M23 33h3v-9h-3zM27.5 33h3v-13h-3zM32 33h3v-6h-3z" fill="white" />
+									<text x="55" y="34" font-size="15" font-weight="600" fill="currentColor">
 										Reporting
 									</text>
 									<text
@@ -155,9 +150,12 @@
 							</svg>
 						</div>
 						<div class="relative z-10 mt-14 space-y-2 text-center">
-							<h2 class="font-heading text-lg font-medium transition">Data Foundation & Reporting</h2>
+							<h3 class="font-heading text-lg font-medium transition">
+								Data Foundation & Reporting
+							</h3>
 							<p class="text-sm text-muted-foreground">
-								Full visibility across the funnel, with dashboards and reporting that hold up in front of leadership because the data underneath them is actually right. 
+								Full visibility across the funnel, with dashboards and reporting that hold up in
+								front of leadership because the data underneath them is actually right.
 							</p>
 						</div>
 					</div>
@@ -165,7 +163,7 @@
 
 				<div
 					use:reveal={{ delay: 240 }}
-					class="bg-card text-card-foreground card variant-outlined relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border py-6 shadow-sm lg:col-span-3"
+					class="card variant-outlined relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground shadow-sm lg:col-span-3"
 				>
 					<div class="grid px-6 pt-6 sm:grid-cols-2">
 						<div class="relative z-10 flex flex-col justify-between space-y-12 lg:space-y-6">
@@ -188,9 +186,10 @@
 								</svg>
 							</div>
 							<div class="space-y-2">
-								<h2 class="font-heading text-lg font-medium transition">Tool Integration</h2>
+								<h3 class="font-heading text-lg font-medium transition">Tool Integration</h3>
 								<p class="text-sm text-muted-foreground">
-									Every tool in the GTM stack connected and kept in sync, whatever runs the business, with Python and SQL doing the heavy lifting behind the scenes.
+									Every tool in the GTM stack connected and kept in sync, whatever runs the
+									business, with Python and SQL doing the heavy lifting behind the scenes.
 								</p>
 							</div>
 						</div>
@@ -198,14 +197,11 @@
 							class="relative mt-6 -mr-6 -mb-6 h-fit rounded-tl-(--radius) border-t border-l p-6 py-6 sm:ml-6"
 						>
 							<div class="absolute top-2 left-3 flex gap-1">
-								<span
-									class="block size-2 rounded-full border dark:border-white/10 dark:bg-white/10"
+								<span class="block size-2 rounded-full border dark:border-white/10 dark:bg-white/10"
 								></span>
-								<span
-									class="block size-2 rounded-full border dark:border-white/10 dark:bg-white/10"
+								<span class="block size-2 rounded-full border dark:border-white/10 dark:bg-white/10"
 								></span>
-								<span
-									class="block size-2 rounded-full border dark:border-white/10 dark:bg-white/10"
+								<span class="block size-2 rounded-full border dark:border-white/10 dark:bg-white/10"
 								></span>
 							</div>
 							<svg
@@ -214,11 +210,51 @@
 								fill="none"
 								xmlns="http://www.w3.org/2000/svg"
 							>
-								<line x1="183" y1="115" x2="70" y2="55" stroke="currentColor" stroke-width="1.5" class="text-border" />
-								<line x1="183" y1="115" x2="296" y2="55" stroke="currentColor" stroke-width="1.5" class="text-border" />
-								<line x1="183" y1="115" x2="70" y2="176" stroke="currentColor" stroke-width="1.5" class="text-border" />
-								<line x1="183" y1="115" x2="296" y2="176" stroke="currentColor" stroke-width="1.5" class="text-border" />
-								<line x1="183" y1="115" x2="183" y2="30" stroke="currentColor" stroke-width="1.5" class="text-border" />
+								<line
+									x1="183"
+									y1="115"
+									x2="70"
+									y2="55"
+									stroke="currentColor"
+									stroke-width="1.5"
+									class="text-border"
+								/>
+								<line
+									x1="183"
+									y1="115"
+									x2="296"
+									y2="55"
+									stroke="currentColor"
+									stroke-width="1.5"
+									class="text-border"
+								/>
+								<line
+									x1="183"
+									y1="115"
+									x2="70"
+									y2="176"
+									stroke="currentColor"
+									stroke-width="1.5"
+									class="text-border"
+								/>
+								<line
+									x1="183"
+									y1="115"
+									x2="296"
+									y2="176"
+									stroke="currentColor"
+									stroke-width="1.5"
+									class="text-border"
+								/>
+								<line
+									x1="183"
+									y1="115"
+									x2="183"
+									y2="30"
+									stroke="currentColor"
+									stroke-width="1.5"
+									class="text-border"
+								/>
 
 								<circle cx="127" cy="85" r="3" class="text-primary" fill="currentColor" />
 								<circle cx="240" cy="85" r="3" class="text-primary" fill="currentColor" />
@@ -229,7 +265,13 @@
 								<circle cx="70" cy="55" r="17" class="text-muted-foreground" fill="currentColor" />
 								<circle cx="296" cy="55" r="17" class="text-muted-foreground" fill="currentColor" />
 								<circle cx="70" cy="176" r="17" class="text-muted-foreground" fill="currentColor" />
-								<circle cx="296" cy="176" r="17" class="text-muted-foreground" fill="currentColor" />
+								<circle
+									cx="296"
+									cy="176"
+									r="17"
+									class="text-muted-foreground"
+									fill="currentColor"
+								/>
 								<circle cx="183" cy="30" r="14" class="text-muted-foreground" fill="currentColor" />
 
 								<circle cx="183" cy="115" r="30" class="text-primary" fill="currentColor" />
@@ -247,7 +289,7 @@
 
 				<div
 					use:reveal={{ delay: 320 }}
-					class="bg-card text-card-foreground card variant-outlined relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border py-6 shadow-sm lg:col-span-3"
+					class="card variant-outlined relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground shadow-sm lg:col-span-3"
 				>
 					<div class="grid h-full px-6 pt-6 sm:grid-cols-2">
 						<div class="relative z-10 flex flex-col justify-between space-y-12 lg:space-y-6">
@@ -273,9 +315,10 @@
 								</svg>
 							</div>
 							<div class="space-y-2">
-								<h2 class="font-heading text-lg font-medium transition">AI Systems & Workflows</h2>
+								<h3 class="font-heading text-lg font-medium transition">AI Systems & Workflows</h3>
 								<p class="text-sm text-muted-foreground">
-									The manual work your team has accepted as normal, automated. Custom AI agents and automations that take manual work off the team's plate. 
+									The manual work your team has accepted as normal, automated. Custom AI agents and
+									automations that take manual work off the team's plate.
 								</p>
 							</div>
 						</div>

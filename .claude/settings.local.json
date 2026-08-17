@@ -35,7 +35,9 @@
       "Bash(curl -s -o /dev/null -w \"dev:%{http_code}\\\\n\" http://localhost:5173/about --max-time 15)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/dev-preview)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/)",
-      "Bash(node \"C:\\\\Users\\\\NEWUSE~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-NEW-USER-Desktop-az\\\\09b60c14-4213-4be5-a5a6-0bd6286c1574\\\\scratchpad\\\\compress-profile.mjs\")"
+      "Bash(node \"C:\\\\Users\\\\NEWUSE~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-NEW-USER-Desktop-az\\\\09b60c14-4213-4be5-a5a6-0bd6286c1574\\\\scratchpad\\\\compress-profile.mjs\")",
+      "Bash(mkdir -p .drafts/lighthouse)",
+      "Bash(npx lighthouse *)"
     ]
   }
 }

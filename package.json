@@ -30,6 +30,7 @@
 		"vite": "^8.0.16"
 	},
 	"dependencies": {
+		"mode-watcher": "^1.1.0",
 		"opentype.js": "^2.0.0",
 		"pocketbase": "^0.27.1",
 		"super-sitemap": "^2.0.6",

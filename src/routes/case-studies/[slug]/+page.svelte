@@ -7,7 +7,33 @@
 	let { data } = $props();
 	let post = $derived(data.post);
 	let canonicalUrl = $derived(`https://www.automationzion.com${page.url.pathname}`);
-	let ogImage = $derived(post.thumbnailUrl || 'https://www.automationzion.com/og/og-case-studies.png');
+	let ogImage = $derived(
+		post.thumbnailUrl || 'https://www.automationzion.com/og/og-case-studies.png'
+	);
+	let jsonLd = $derived(
+		JSON.stringify({
+			'@context': 'https://schema.org',
+			'@type': 'BlogPosting',
+			headline: post.title,
+			description: post.introduction,
+			image: ogImage,
+			datePublished: new Date(post.created).toISOString(),
+			author: {
+				'@type': 'Person',
+				name: 'Zion Gonet',
+				url: 'https://www.automationzion.com/about'
+			},
+			publisher: {
+				'@type': 'Organization',
+				name: 'AutomationZion',
+				logo: { '@type': 'ImageObject', url: 'https://www.automationzion.com/og/og-home.png' }
+			},
+			mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl }
+		})
+	);
+	let jsonLdScriptTag = $derived(
+		'<scr' + 'ipt type="application/ld+json">' + jsonLd + '</scr' + 'ipt>'
+	);
 </script>
 
 <svelte:head>
@@ -24,6 +50,8 @@
 	<meta name="twitter:title" content={post.title} />
 	<meta name="twitter:description" content={post.introduction} />
 	<meta name="twitter:image" content={ogImage} />
+	<!-- eslint-disable-next-line svelte/no-at-html-tags -- server-built JSON.stringify output, not user input -->
+	{@html jsonLdScriptTag}
 </svelte:head>
 
 <div class="flex min-h-screen flex-col">

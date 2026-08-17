@@ -25,7 +25,7 @@
 		class="pointer-events-none absolute inset-0 size-full"
 	>
 		<circle
-			class="stroke-1 stroke-foreground/15"
+			class="stroke-foreground/15 stroke-1"
 			cx="50%"
 			cy="50%"
 			r={radius}
@@ -42,7 +42,7 @@
 	style:--delay={delay}
 	style:--icon-size="{iconSize}px"
 	class={cn(
-		'animate-orbit absolute flex size-(--icon-size) transform-gpu items-center justify-center rounded-full [animation-delay:calc(var(--delay)*1000ms)]',
+		'absolute flex size-(--icon-size) transform-gpu animate-orbit items-center justify-center rounded-full [animation-delay:calc(var(--delay)*1000ms)]',
 		{ 'direction-[reverse]': reverse },
 		className
 	)}
