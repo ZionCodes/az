@@ -2,6 +2,11 @@
 	import { reveal } from '$lib/actions/reveal.js';
 
 	let { studies = [], showViewAll = false, headingTag = 'h2' } = $props();
+
+	// Card titles must be exactly one level below whatever the section heading
+	// is, or the heading order skips a level (h1 -> h3 on the standalone
+	// /case-studies page, which uses h1 here vs h2 on the homepage section).
+	let cardHeadingTag = $derived(headingTag === 'h1' ? 'h2' : 'h3');
 </script>
 
 <section class="py-16 md:py-32">
@@ -45,7 +50,9 @@
 							{/if}
 						</div>
 						<div class="space-y-2">
-							<h3 class="font-heading text-xl font-semibold">{study.title}</h3>
+							<svelte:element this={cardHeadingTag} class="font-heading text-xl font-semibold">
+								{study.title}
+							</svelte:element>
 							<p class="text-sm text-muted-foreground">{study.introduction}</p>
 						</div>
 						<span
