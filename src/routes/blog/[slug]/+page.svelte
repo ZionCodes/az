@@ -39,6 +39,7 @@
 	<meta name="description" content={post.introduction} />
 	<link rel="canonical" href={canonicalUrl} />
 	<meta property="og:title" content={post.title} />
+	<meta property="og:site_name" content="AutomationZion" />
 	<meta property="og:description" content={post.introduction} />
 	<meta property="og:type" content="article" />
 	<meta property="article:published_time" content={new Date(post.created).toISOString()} />

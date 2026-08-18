@@ -20,6 +20,7 @@
 		content="Data you can trust, tools that talk to each other and no more leads slipping through the cracks. Built by an engineer who's done it for real teams."
 	/>
 	<meta property="og:title" content="Zion Gonet | GTM Systems Engineer for B2B Revenue Teams" />
+	<meta property="og:site_name" content="AutomationZion" />
 	<meta
 		property="og:description"
 		content="Data you can trust, tools that talk to each other and no more leads slipping through the cracks. Built by an engineer who's done it for real teams."

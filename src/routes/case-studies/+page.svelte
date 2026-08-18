@@ -13,6 +13,7 @@
 		content="Real GTM systems built and shipped. CRM architecture, AI agents and automation pipelines with measurable outcomes."
 	/>
 	<meta property="og:title" content="Case Studies | Zion Gonet" />
+	<meta property="og:site_name" content="AutomationZion" />
 	<meta
 		property="og:description"
 		content="Real GTM systems built and shipped. CRM architecture, AI agents and automation pipelines with measurable outcomes."

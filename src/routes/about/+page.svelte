@@ -12,6 +12,7 @@
 		content="I'm Zion Gonet, a GTM Systems Engineer building end-to-end revenue infrastructure across CRMs, automation tools and AI agents."
 	/>
 	<meta property="og:title" content="About Zion Gonet | GTM Systems Engineer" />
+	<meta property="og:site_name" content="AutomationZion" />
 	<meta
 		property="og:description"
 		content="I'm Zion Gonet, a GTM Systems Engineer building end-to-end revenue infrastructure across CRMs, automation tools and AI agents."

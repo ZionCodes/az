@@ -13,6 +13,7 @@
 		content="Breakdowns, walkthroughs and honest takes on GTM systems, CRM architecture, automation and building revenue infrastructure that actually works."
 	/>
 	<meta property="og:title" content="Blog | Zion Gonet" />
+	<meta property="og:site_name" content="AutomationZion" />
 	<meta
 		property="og:description"
 		content="Breakdowns, walkthroughs, and honest takes on GTM systems, CRM architecture, automation, and building revenue infrastructure that actually works."
