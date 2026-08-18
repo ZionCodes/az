@@ -29,5 +29,4 @@ vite.config.ts.timestamp-*
 # AI-agent and editor tooling — not needed by the app itself
 /.claude/
 /.mcp.json
-/CLAUDE.md
 /.vscode/
