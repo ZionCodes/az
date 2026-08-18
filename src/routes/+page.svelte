@@ -17,12 +17,12 @@
 	<title>Zion Gonet | GTM Systems Engineer for B2B Revenue Teams</title>
 	<meta
 		name="description"
-		content="Data you can trust, tools that talk to each other, and no more leads slipping through the cracks. GTM systems, CRM architecture and automation built by Zion Gonet."
+		content="Data you can trust, tools that talk to each other and no more leads slipping through the cracks. Built by an engineer who's done it for real teams."
 	/>
 	<meta property="og:title" content="Zion Gonet | GTM Systems Engineer for B2B Revenue Teams" />
 	<meta
 		property="og:description"
-		content="Data you can trust, tools that talk to each other, and no more leads slipping through the cracks. GTM systems, CRM architecture and automation built by Zion Gonet."
+		content="Data you can trust, tools that talk to each other and no more leads slipping through the cracks. Built by an engineer who's done it for real teams."
 	/>
 	<link rel="canonical" href="https://www.automationzion.com/" />
 	<meta property="og:type" content="website" />
