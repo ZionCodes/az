@@ -25,3 +25,9 @@ vite.config.ts.timestamp-*
 # Local-only article authoring tools + drafts — machine-local, never pushed to GitHub
 /scripts/
 /.drafts/
+
+# AI-agent and editor tooling — not needed by the app itself
+/.claude/
+/.mcp.json
+/CLAUDE.md
+/.vscode/
