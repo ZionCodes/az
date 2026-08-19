@@ -11,7 +11,7 @@
 
 <section class="py-16 md:py-32">
 	<div class="mx-auto max-w-5xl px-6">
-		<div class="mx-auto max-w-xl space-y-4 text-center" use:reveal>
+		<div class="mx-auto max-w-xl space-y-4 text-center opacity-0" use:reveal>
 			<p
 				class="flex items-center justify-center gap-2 text-xs tracking-[0.2em] text-muted-foreground uppercase"
 			>
@@ -37,7 +37,7 @@
 					<a
 						href="/case-studies/{study.slug}"
 						use:reveal={{ delay: i * 100 }}
-						class="group flex flex-col gap-6 rounded-xl border bg-card p-8 text-card-foreground shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+						class="group flex flex-col gap-6 rounded-xl border bg-card p-8 text-card-foreground opacity-0 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
 					>
 						<div class="space-y-1.5">
 							{#if study.stat}

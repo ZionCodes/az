@@ -84,7 +84,7 @@
 	let fillScale = $derived(1 / steps.length + (1 - 1 / steps.length) * progress);
 </script>
 
-<div class="mx-auto max-w-2xl space-y-4 px-6 pt-16 text-center md:pt-24" use:reveal>
+<div class="mx-auto max-w-2xl space-y-4 px-6 pt-16 text-center opacity-0 md:pt-24" use:reveal>
 	<p
 		class="flex items-center justify-center gap-2 text-xs tracking-[0.2em] text-muted-foreground uppercase"
 	>

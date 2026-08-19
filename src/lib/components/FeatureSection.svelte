@@ -37,7 +37,7 @@
 			<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
 				<div
 					use:reveal={{ delay: 0 }}
-					class="col-span-full overflow-hidden rounded-xl border-b border-none border-secondary bg-foreground/5 pt-6 pl-6 text-card-foreground dark:bg-muted/80"
+					class="col-span-full overflow-hidden rounded-xl border-b border-none border-secondary bg-foreground/5 pt-6 pl-6 text-card-foreground opacity-0 dark:bg-muted/80"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -54,8 +54,8 @@
 					</svg>
 					<h3 class="mt-4 text-lg font-semibold text-foreground">One System, Any Starting Point</h3>
 					<p class="mt-3 max-w-2xl text-base/normal text-muted-foreground">
-						Whether you're already running HubSpot, Salesforce, and Clay, or building your stack
-						from zero, I connect every tool into one working system instead of scattered logins.
+						Whether you're already running a GTM stack, or building from zero, I build the systems
+						that carry a deal from first signal to closed-won
 					</p>
 					<div class="-mt-2.5 mr-0.5 -ml-2 pt-2 pl-2">
 						<div class="relative mx-auto mt-8 h-96 overflow-hidden rounded-tl-3xl">
@@ -128,7 +128,7 @@
 
 				<div
 					use:reveal={{ delay: 80 }}
-					class="rounded-xl border-none bg-foreground/5 p-6 text-card-foreground dark:bg-muted/80"
+					class="rounded-xl border-none bg-foreground/5 p-6 text-card-foreground opacity-0 dark:bg-muted/80"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" class="size-6 text-primary" viewBox="0 0 24 24"
 						><g fill="none"
@@ -154,7 +154,7 @@
 
 				<div
 					use:reveal={{ delay: 160 }}
-					class="rounded-xl border-none bg-foreground/5 p-6 text-card-foreground dark:bg-muted/80"
+					class="rounded-xl border-none bg-foreground/5 p-6 text-card-foreground opacity-0 dark:bg-muted/80"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" class="size-6 text-primary" viewBox="0 0 24 24"
 						><g fill="none" stroke="currentColor" stroke-width="1.5"
@@ -175,7 +175,7 @@
 
 				<div
 					use:reveal={{ delay: 240 }}
-					class="rounded-xl border-none bg-foreground/5 p-6 text-card-foreground dark:bg-muted/80"
+					class="rounded-xl border-none bg-foreground/5 p-6 text-card-foreground opacity-0 dark:bg-muted/80"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

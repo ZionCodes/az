@@ -4,7 +4,7 @@
 
 <section class="@container py-24">
 	<div class="mx-auto max-w-2xl px-6">
-		<div class="space-y-4" use:reveal>
+		<div class="space-y-4 opacity-0" use:reveal>
 			<p class="flex items-center gap-2 text-xs tracking-[0.2em] text-muted-foreground uppercase">
 				<span class="inline-block h-px w-8 bg-foreground/30"></span>
 				By the Numbers
@@ -14,7 +14,10 @@
 				Years spent deep in automation and GTM systems, with the depth of tooling to back it up.
 			</p>
 		</div>
-		<div class="mt-12 grid grid-cols-2 gap-6 text-sm @xl:grid-cols-3" use:reveal={{ delay: 150 }}>
+		<div
+			class="mt-12 grid grid-cols-2 gap-6 text-sm opacity-0 @xl:grid-cols-3"
+			use:reveal={{ delay: 150 }}
+		>
 			<div class="border-y py-6">
 				<p class="text-xl text-muted-foreground">
 					<span class="font-medium text-foreground">3+</span> Years building automation and GTM systems.

@@ -4,7 +4,7 @@
 
 <section class="bg-gray-50 py-16 md:py-32 dark:bg-transparent">
 	<div class="mx-auto max-w-5xl px-6">
-		<div class="mx-auto mb-12 max-w-2xl space-y-4 text-center" use:reveal>
+		<div class="mx-auto mb-12 max-w-2xl space-y-4 text-center opacity-0" use:reveal>
 			<p
 				class="flex items-center justify-center gap-2 text-xs tracking-[0.2em] text-muted-foreground uppercase"
 			>
@@ -22,7 +22,7 @@
 			<div class="relative z-10 grid grid-cols-6 gap-3">
 				<div
 					use:reveal={{ delay: 0 }}
-					class="relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground shadow-sm lg:col-span-2"
+					class="relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground opacity-0 shadow-sm lg:col-span-2"
 				>
 					<div class="relative m-auto size-fit px-6 pt-6">
 						<div class="relative flex h-24 w-56 items-center">
@@ -47,7 +47,7 @@
 
 				<div
 					use:reveal={{ delay: 80 }}
-					class="relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground shadow-sm sm:col-span-3 lg:col-span-2"
+					class="relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground opacity-0 shadow-sm sm:col-span-3 lg:col-span-2"
 				>
 					<div class="px-6 pt-6">
 						<div
@@ -80,7 +80,7 @@
 
 				<div
 					use:reveal={{ delay: 160 }}
-					class="relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground shadow-sm sm:col-span-3 lg:col-span-2"
+					class="relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground opacity-0 shadow-sm sm:col-span-3 lg:col-span-2"
 				>
 					<div class="px-6 pt-6">
 						<div class="pt-6 lg:px-6">
@@ -163,7 +163,7 @@
 
 				<div
 					use:reveal={{ delay: 240 }}
-					class="card variant-outlined relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground shadow-sm lg:col-span-3"
+					class="card variant-outlined relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground opacity-0 shadow-sm lg:col-span-3"
 				>
 					<div class="grid px-6 pt-6 sm:grid-cols-2">
 						<div class="relative z-10 flex flex-col justify-between space-y-12 lg:space-y-6">
@@ -289,7 +289,7 @@
 
 				<div
 					use:reveal={{ delay: 320 }}
-					class="card variant-outlined relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground shadow-sm lg:col-span-3"
+					class="card variant-outlined relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground opacity-0 shadow-sm lg:col-span-3"
 				>
 					<div class="grid h-full px-6 pt-6 sm:grid-cols-2">
 						<div class="relative z-10 flex flex-col justify-between space-y-12 lg:space-y-6">

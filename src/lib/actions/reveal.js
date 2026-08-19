@@ -7,8 +7,10 @@ export function reveal(node, params = {}) {
 		rootMargin = '0px 0px -10% 0px'
 	} = params;
 
-	node.classList.add('opacity-0');
-
+	// The node must already carry `opacity-0` in its own markup (not added
+	// here) so it's hidden from the very first server-rendered paint. This
+	// action only runs after hydration, so adding the class here would leave
+	// a brief flash of fully-visible content between paint and hydration.
 	if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 		node.classList.remove('opacity-0');
 		return {};

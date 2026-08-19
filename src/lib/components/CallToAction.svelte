@@ -4,7 +4,7 @@
 
 <section class="@container bg-background py-24">
 	<div class="mx-auto max-w-2xl px-6">
-		<div class="text-center" use:reveal>
+		<div class="text-center opacity-0" use:reveal>
 			<h2 class="font-heading text-4xl font-medium text-balance">
 				Open to Full-Time Roles & Client Work
 			</h2>

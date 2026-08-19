@@ -5,7 +5,7 @@
 </script>
 
 <section class="py-16 md:py-32">
-	<div class="mx-auto max-w-2xl space-y-4 px-6 text-center" use:reveal>
+	<div class="mx-auto max-w-2xl space-y-4 px-6 text-center opacity-0" use:reveal>
 		<p
 			class="flex items-center justify-center gap-2 text-xs tracking-[0.2em] text-muted-foreground uppercase"
 		>
@@ -21,7 +21,7 @@
 	</div>
 
 	<div
-		class="relative flex h-125 w-full flex-col items-center justify-center overflow-hidden"
+		class="relative flex h-125 w-full flex-col items-center justify-center overflow-hidden opacity-0"
 		use:reveal={{ delay: 150 }}
 	>
 		<div class="hub-dot relative z-10 size-5 rounded-full bg-foreground"></div>
