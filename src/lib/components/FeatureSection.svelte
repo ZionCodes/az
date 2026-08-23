@@ -144,7 +144,7 @@
 						></svg
 					>
 					<h3 class="mt-4 text-lg font-semibold text-foreground">
-						No Guesswork, Just Systems That Work
+						Just Systems That Work
 					</h3>
 					<p class="mt-3 text-base/normal text-muted-foreground">
 						Clear communication, steady updates and systems built to be understood, not a black box
