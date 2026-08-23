@@ -13,9 +13,10 @@
 
 	onMount(() => {
 		initAnalytics();
-		trackPageview(new URL(window.location.href));
 	});
 
+	// afterNavigate also fires once for the initial page load, not just
+	// subsequent client-side navigations, so this alone covers every pageview.
 	afterNavigate(({ to }) => {
 		if (to?.url) trackPageview(to.url);
 	});
