@@ -80,7 +80,7 @@
 	</div>
 </article>
 
-<CallToAction />
+<CallToAction location="post_cta" />
 
 <style>
 	.article-content :global(h2) {

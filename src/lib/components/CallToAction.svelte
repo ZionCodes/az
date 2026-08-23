@@ -1,5 +1,8 @@
 <script>
 	import { reveal } from '$lib/actions/reveal.js';
+	import { trackEvent } from '$lib/analytics.js';
+
+	let { location = 'call_to_action' } = $props();
 </script>
 
 <section class="@container bg-background py-24">
@@ -15,6 +18,7 @@
 			<div class="mt-6 flex flex-wrap justify-center gap-3">
 				<a
 					href="mailto:ziongonet@gmail.com"
+					onclick={() => trackEvent('contact_click', { location })}
 					class="hover-smile inline-flex h-10 items-center justify-center gap-1.5 rounded-full bg-primary py-1 pr-1.5 pl-6 text-sm font-medium text-primary-foreground shadow-xs transition-all hover:bg-primary/90"
 				>
 					<span>Get in touch</span>

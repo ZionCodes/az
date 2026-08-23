@@ -1,6 +1,7 @@
 <script>
 	import logoMarkup from '$lib/assets/images/logo.svg?raw';
 	import { mode, toggleMode } from 'mode-watcher';
+	import { trackEvent } from '$lib/analytics.js';
 
 	const navLinks = [
 		{ label: 'About', href: '/about' },
@@ -69,6 +70,7 @@
 				</div>
 				<a
 					href="mailto:ziongonet@gmail.com"
+					onclick={() => trackEvent('contact_click', { location: 'header' })}
 					class="hover-smile inline-flex h-8 items-center justify-center gap-1.5 rounded-md bg-primary px-3 text-sm font-medium text-primary-foreground shadow-xs transition-all hover:bg-primary/90"
 				>
 					Get in touch
@@ -173,7 +175,10 @@
 						<div class="mt-12 flex flex-col gap-2">
 							<a
 								href="mailto:ziongonet@gmail.com"
-								onclick={closeMobileNav}
+								onclick={() => {
+									trackEvent('contact_click', { location: 'header_mobile' });
+									closeMobileNav();
+								}}
 								class="hover-smile flex h-9 w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-xs transition-all hover:bg-primary/90"
 							>
 								Get in touch

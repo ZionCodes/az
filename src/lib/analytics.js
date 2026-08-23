@@ -28,6 +28,15 @@ export function initAnalytics() {
 	// send_page_view is disabled here because SvelteKit navigates client-side;
 	// page views are sent manually from afterNavigate so route changes are tracked.
 	window.gtag('config', PUBLIC_GA_MEASUREMENT_ID, { send_page_view: false });
+
+	// Blog/case-study body content is raw HTML from PocketBase, so its mailto
+	// links can't carry onclick handlers directly — delegate from the document
+	// instead. Harmless no-op on pages with no .article-content mailto links.
+	document.addEventListener('click', (event) => {
+		if (event.target.closest('.article-content a[href^="mailto:"]')) {
+			trackEvent('contact_click', { location: 'article_body' });
+		}
+	});
 }
 
 export function trackPageview(url) {
@@ -38,4 +47,10 @@ export function trackPageview(url) {
 		page_location: url.href,
 		page_title: document.title
 	});
+}
+
+export function trackEvent(name, params = {}) {
+	if (!shouldTrack() || typeof window.gtag !== 'function') return;
+
+	window.gtag('event', name, params);
 }

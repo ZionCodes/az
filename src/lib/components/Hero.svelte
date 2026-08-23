@@ -3,6 +3,7 @@
 	import { browser } from '$app/environment';
 	import { Spring } from 'svelte/motion';
 	import { backOut, cubicOut } from 'svelte/easing';
+	import { trackEvent } from '$lib/analytics.js';
 
 	const phrases = ['GTM stack', 'revenue engine', 'CRM system'];
 
@@ -189,6 +190,7 @@
 			</a>
 			<a
 				href="mailto:ziongonet@gmail.com"
+				onclick={() => trackEvent('contact_click', { location: 'hero' })}
 				class="hover-smile inline-flex h-10 items-center justify-center gap-2 rounded-full bg-primary px-6 text-sm font-medium text-primary-foreground shadow-xs transition-all hover:bg-primary/90"
 			>
 				Get in touch
