@@ -5,8 +5,20 @@
 	import clashDisplay500 from '$lib/assets/fonts/clash-display-500.woff2?url';
 	import satoshi400 from '$lib/assets/fonts/satoshi-400.woff2?url';
 	import satoshi500 from '$lib/assets/fonts/satoshi-500.woff2?url';
+	import { onMount } from 'svelte';
+	import { afterNavigate } from '$app/navigation';
+	import { initAnalytics, trackPageview } from '$lib/analytics.js';
 
 	let { children } = $props();
+
+	onMount(() => {
+		initAnalytics();
+		trackPageview(new URL(window.location.href));
+	});
+
+	afterNavigate(({ to }) => {
+		if (to?.url) trackPageview(to.url);
+	});
 </script>
 
 <svelte:head>
