@@ -30,6 +30,18 @@
 	function closeMobileNav() {
 		mobileOpen = false;
 	}
+
+	$effect(() => {
+		if (!mobileOpen) return;
+
+		const { style } = document.documentElement;
+		const previousOverflow = style.overflow;
+		style.overflow = 'hidden';
+
+		return () => {
+			style.overflow = previousOverflow;
+		};
+	});
 </script>
 
 <header
@@ -155,38 +167,38 @@
 						</svg>
 					{/if}
 				</button>
-
-				{#if mobileOpen}
-					<div
-						id="mobile-menu"
-						class="fixed inset-0 top-14 z-40 flex flex-col bg-background/95 p-4 backdrop-blur-sm supports-[backdrop-filter]:bg-background/60"
-					>
-						<div class="grid gap-y-2">
-							{#each navLinks as { label, href } (href)}
-								<a
-									{href}
-									onclick={closeMobileNav}
-									class="flex h-8 items-center justify-start gap-1.5 rounded-md px-3 text-sm font-medium text-foreground hover:bg-accent hover:text-accent-foreground"
-								>
-									{label}
-								</a>
-							{/each}
-						</div>
-						<div class="mt-12 flex flex-col gap-2">
-							<a
-								href="mailto:ziongonet@gmail.com"
-								onclick={() => {
-									trackEvent('contact_click', { location: 'header_mobile' });
-									closeMobileNav();
-								}}
-								class="hover-smile flex h-9 w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-xs transition-all hover:bg-primary/90"
-							>
-								Get in touch
-							</a>
-						</div>
-					</div>
-				{/if}
 			</div>
 		</div>
 	</nav>
 </header>
+
+{#if mobileOpen}
+	<div
+		id="mobile-menu"
+		class="fixed inset-0 top-14 z-40 flex flex-col bg-background/95 p-4 backdrop-blur-sm supports-[backdrop-filter]:bg-background/60 md:hidden"
+	>
+		<div class="grid gap-y-2">
+			{#each navLinks as { label, href } (href)}
+				<a
+					{href}
+					onclick={closeMobileNav}
+					class="flex h-8 items-center justify-start gap-1.5 rounded-md px-3 text-sm font-medium text-foreground hover:bg-accent hover:text-accent-foreground"
+				>
+					{label}
+				</a>
+			{/each}
+		</div>
+		<div class="mt-12 flex flex-col gap-2">
+			<a
+				href="mailto:ziongonet@gmail.com"
+				onclick={() => {
+					trackEvent('contact_click', { location: 'header_mobile' });
+					closeMobileNav();
+				}}
+				class="hover-smile flex h-9 w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-xs transition-all hover:bg-primary/90"
+			>
+				Get in touch
+			</a>
+		</div>
+	</div>
+{/if}
