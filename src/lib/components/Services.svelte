@@ -72,7 +72,7 @@
 							<h3 class="font-heading text-lg font-medium transition">CRM Setup & Admin</h3>
 							<p class="text-sm text-muted-foreground">
 								Salesforce and HubSpot, configured, managed and tailored for your GTM model. Clean
-								data, validation and pipelines so your CRM actually supports revenue.
+								data, validation and permissions that stay maintained.
 							</p>
 						</div>
 					</div>
@@ -155,7 +155,7 @@
 							</h3>
 							<p class="text-sm text-muted-foreground">
 								Full visibility across the funnel, with dashboards and reporting that hold up in
-								front of leadership because the data underneath them is actually right.
+								front of leadership because the data underneath them is actually right and stays monitored.
 							</p>
 						</div>
 					</div>
