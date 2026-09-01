@@ -3,6 +3,8 @@
 	import { reveal } from '$lib/actions/reveal.js';
 	import siteLight from '$lib/assets/images/site-light.webp';
 	import siteDark from '$lib/assets/images/site-dark.webp';
+	import siteLightMobile from '$lib/assets/images/site-light-mobile.webp';
+	import siteDarkMobile from '$lib/assets/images/site-dark-mobile.webp';
 
 	const initialSliderPercentage = 46;
 	const sliderXPercent = new Spring(initialSliderPercentage, { stiffness: 0.15 });
@@ -58,7 +60,9 @@
 						that carry a deal from first signal to closed-won
 					</p>
 					<div class="-mt-2.5 mr-0.5 -ml-2 pt-2 pl-2">
-						<div class="relative mx-auto mt-8 h-96 overflow-hidden rounded-tl-3xl">
+						<div
+							class="relative mx-auto mt-8 aspect-350/512 overflow-hidden rounded-tl-3xl sm:aspect-auto sm:h-96"
+						>
 							<div
 								bind:this={sliderRef}
 								class="relative h-full w-full cursor-col-resize overflow-hidden"
@@ -101,7 +105,19 @@
 
 								<div class="pointer-events-none relative z-20 h-full w-full overflow-hidden">
 									<div
-										class="absolute inset-0 z-20 h-full w-full overflow-hidden rounded-tl-2xl select-none"
+										class="absolute inset-0 z-20 h-full w-full overflow-hidden rounded-tl-2xl select-none sm:hidden"
+										style="clip-path: inset(0 {100 - sliderXPercent.current}% 0 0);"
+									>
+										<img
+											alt="AutomationZion's integration stack in light mode"
+											src={siteLightMobile}
+											loading="lazy"
+											class="absolute inset-0 z-20 h-full w-full object-cover object-top select-none dark:bg-black"
+											draggable="false"
+										/>
+									</div>
+									<div
+										class="absolute inset-0 z-20 hidden h-full w-full overflow-hidden rounded-tl-2xl select-none sm:block"
 										style="clip-path: inset(0 {100 - sliderXPercent.current}% 0 0);"
 									>
 										<img
@@ -115,7 +131,14 @@
 								</div>
 
 								<img
-									class="absolute top-0 left-0 z-[19] h-full w-full rounded-tl-3xl object-cover object-top select-none"
+									class="absolute top-0 left-0 z-[19] h-full w-full rounded-tl-3xl object-cover object-top select-none sm:hidden"
+									alt="AutomationZion's integration stack in dark mode"
+									src={siteDarkMobile}
+									loading="lazy"
+									draggable="false"
+								/>
+								<img
+									class="absolute top-0 left-0 z-[19] hidden h-full w-full rounded-tl-3xl object-cover object-top select-none sm:block"
 									alt="AutomationZion's integration stack in dark mode"
 									src={siteDark}
 									loading="lazy"
