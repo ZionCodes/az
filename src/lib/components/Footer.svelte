@@ -1,5 +1,5 @@
 <script>
-	import logoMarkup from '$lib/assets/images/logo.svg?raw';
+	import logoMarkup from '#lib/assets/images/logo.svg?raw';
 
 	const navLinks = [
 		{ label: 'About', href: '/about' },

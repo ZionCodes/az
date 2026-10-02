@@ -1,10 +1,10 @@
 <script>
 	import { Spring } from 'svelte/motion';
-	import { reveal } from '$lib/actions/reveal.js';
-	import siteLight from '$lib/assets/images/site-light.webp';
-	import siteDark from '$lib/assets/images/site-dark.webp';
-	import siteLightMobile from '$lib/assets/images/site-light-mobile.webp';
-	import siteDarkMobile from '$lib/assets/images/site-dark-mobile.webp';
+	import { reveal } from '#lib/actions/reveal.js';
+	import siteLight from '#lib/assets/images/site-light.webp';
+	import siteDark from '#lib/assets/images/site-dark.webp';
+	import siteLightMobile from '#lib/assets/images/site-light-mobile.webp';
+	import siteDarkMobile from '#lib/assets/images/site-dark-mobile.webp';
 
 	const initialSliderPercentage = 46;
 	const sliderXPercent = new Spring(initialSliderPercentage, { stiffness: 0.15 });
@@ -166,9 +166,7 @@
 							/><ellipse cx="9" cy="10.5" fill="currentColor" rx="1" ry="1.5" /></g
 						></svg
 					>
-					<h3 class="mt-4 text-lg font-semibold text-foreground">
-						Just Systems That Work
-					</h3>
+					<h3 class="mt-4 text-lg font-semibold text-foreground">Just Systems That Work</h3>
 					<p class="mt-3 text-base/normal text-muted-foreground">
 						Clear communication, steady updates and systems built to be understood, not a black box
 						only I can maintain.

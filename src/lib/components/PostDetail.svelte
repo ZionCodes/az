@@ -1,6 +1,6 @@
 <script>
-	import CallToAction from '$lib/components/CallToAction.svelte';
-	import automationzion from '$lib/assets/images/automationzion-profile.webp';
+	import CallToAction from '#lib/components/CallToAction.svelte';
+	import automationzion from '#lib/assets/images/automationzion-profile.webp';
 
 	let { post, backHref, backLabel } = $props();
 </script>

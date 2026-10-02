@@ -1,6 +1,6 @@
 <script>
-	import automationzion from '$lib/assets/images/automationzion-profile.webp';
-	import { Signature } from '$lib/components/spell/signature';
+	import automationzion from '#lib/assets/images/automationzion-profile.webp';
+	import { Signature } from '#lib/components/spell/signature/index.js';
 </script>
 
 <section class="mx-auto max-w-4xl px-6 py-16 md:py-24">

@@ -1,4 +1,4 @@
-import { listPostsByCategory } from '$lib/server/posts.js';
+import { listPostsByCategory } from '#lib/server/posts.js';
 
 export async function load({ locals, setHeaders }) {
 	setHeaders({ 'cache-control': 'public, max-age=60, stale-while-revalidate=300' });

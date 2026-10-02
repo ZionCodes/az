@@ -1,7 +1,7 @@
 <script>
-	import { OrbitingCircles } from '$lib/components/magic/orbiting-circles';
-	import { reveal } from '$lib/actions/reveal.js';
-	import clayLogo from '$lib/assets/images/clay.webp';
+	import { OrbitingCircles } from '#lib/components/magic/orbiting-circles/index.js';
+	import { reveal } from '#lib/actions/reveal.js';
+	import clayLogo from '#lib/assets/images/clay.webp';
 </script>
 
 <section class="py-16 md:py-32">

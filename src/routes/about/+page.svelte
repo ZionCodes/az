@@ -1,8 +1,8 @@
 <script>
-	import Header from '$lib/components/Header.svelte';
-	import About from '$lib/components/About.svelte';
-	import CallToAction from '$lib/components/CallToAction.svelte';
-	import Footer from '$lib/components/Footer.svelte';
+	import Header from '#lib/components/Header.svelte';
+	import About from '#lib/components/About.svelte';
+	import CallToAction from '#lib/components/CallToAction.svelte';
+	import Footer from '#lib/components/Footer.svelte';
 </script>
 
 <svelte:head>

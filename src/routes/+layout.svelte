@@ -1,13 +1,13 @@
 <script>
 	import './layout.css';
-	import favicon from '$lib/assets/favicon.svg';
+	import favicon from '#lib/assets/favicon.svg';
 	import { ModeWatcher } from 'mode-watcher';
-	import clashDisplay500 from '$lib/assets/fonts/clash-display-500.woff2?url';
-	import satoshi400 from '$lib/assets/fonts/satoshi-400.woff2?url';
-	import satoshi500 from '$lib/assets/fonts/satoshi-500.woff2?url';
+	import clashDisplay500 from '#lib/assets/fonts/clash-display-500.woff2?url';
+	import satoshi400 from '#lib/assets/fonts/satoshi-400.woff2?url';
+	import satoshi500 from '#lib/assets/fonts/satoshi-500.woff2?url';
 	import { onMount } from 'svelte';
 	import { afterNavigate } from '$app/navigation';
-	import { initAnalytics, trackPageview } from '$lib/analytics.js';
+	import { initAnalytics, trackPageview } from '#lib/analytics.js';
 
 	let { children } = $props();
 
@@ -17,7 +17,8 @@
 
 	// afterNavigate also fires once for the initial page load, not just
 	// subsequent client-side navigations, so this alone covers every pageview.
-	afterNavigate(({ to }) => {
+	afterNavigate(({ to, shallow }) => {
+		if (shallow) return;
 		if (to?.url) trackPageview(to.url);
 	});
 </script>

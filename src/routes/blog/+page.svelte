@@ -1,7 +1,7 @@
 <script>
-	import Header from '$lib/components/Header.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-	import Blog from '$lib/components/Blog.svelte';
+	import Header from '#lib/components/Header.svelte';
+	import Footer from '#lib/components/Footer.svelte';
+	import Blog from '#lib/components/Blog.svelte';
 
 	let { data } = $props();
 </script>

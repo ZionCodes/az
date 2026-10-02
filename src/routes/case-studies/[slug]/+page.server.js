@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { getPostBySlug } from '$lib/server/posts.js';
+import { getPostBySlug } from '#lib/server/posts.js';
 
 export async function load({ params, locals, setHeaders }) {
 	setHeaders({ 'cache-control': 'public, max-age=300, stale-while-revalidate=3600' });

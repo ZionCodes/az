@@ -1,7 +1,7 @@
 <script>
-	import logoMarkup from '$lib/assets/images/logo.svg?raw';
+	import logoMarkup from '#lib/assets/images/logo.svg?raw';
 	import { mode, toggleMode } from 'mode-watcher';
-	import { trackEvent } from '$lib/analytics.js';
+	import { trackEvent } from '#lib/analytics.js';
 
 	const navLinks = [
 		{ label: 'About', href: '/about' },

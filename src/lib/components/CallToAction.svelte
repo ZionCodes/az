@@ -1,6 +1,6 @@
 <script>
-	import { reveal } from '$lib/actions/reveal.js';
-	import { trackEvent } from '$lib/analytics.js';
+	import { reveal } from '#lib/actions/reveal.js';
+	import { trackEvent } from '#lib/analytics.js';
 
 	let { location = 'call_to_action' } = $props();
 </script>

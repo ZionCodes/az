@@ -1,5 +1,5 @@
 import { response } from 'super-sitemap/sveltekit';
-import { listPostsByCategory } from '$lib/server/posts.js';
+import { listPostsByCategory } from '#lib/server/posts.js';
 
 export async function GET({ locals }) {
 	const [blogPosts, caseStudies] = await Promise.all([

@@ -1,5 +1,5 @@
 import PocketBase from 'pocketbase';
-import { PB_URL } from '$env/static/private';
+import { PB_URL } from '$app/env/private';
 
 const pb = new PocketBase(PB_URL);
 

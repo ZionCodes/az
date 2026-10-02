@@ -1,6 +1,6 @@
 <script>
-	import { browser } from '$app/environment';
-	import { cn } from '$lib/utils';
+	import { browser } from '$app/env';
+	import { cn } from '#lib/utils.js';
 
 	let {
 		text = 'Signature',
@@ -147,6 +147,6 @@
 				: 0}; transition:
 				stroke-dashoffset {duration}s ease-in-out {path.delay}s,
 				fill-opacity {Math.min(0.25, duration * 0.35)}s ease-in-out {path.delay + duration * 0.65}s;"
-		/>
+		></path>
 	{/each}
 </svg>

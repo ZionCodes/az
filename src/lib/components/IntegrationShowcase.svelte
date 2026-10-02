@@ -1,5 +1,5 @@
 <script>
-	import clayLogo from '$lib/assets/images/clay.webp';
+	import clayLogo from '#lib/assets/images/clay.webp';
 </script>
 
 <section>

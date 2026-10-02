@@ -1,8 +1,8 @@
 <script>
 	import { page } from '$app/state';
-	import Header from '$lib/components/Header.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-	import PostDetail from '$lib/components/PostDetail.svelte';
+	import Header from '#lib/components/Header.svelte';
+	import Footer from '#lib/components/Footer.svelte';
+	import PostDetail from '#lib/components/PostDetail.svelte';
 
 	let { data } = $props();
 	let post = $derived(data.post);

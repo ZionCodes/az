@@ -1,5 +1,5 @@
-import { browser, dev } from '$app/environment';
-import { PUBLIC_GA_MEASUREMENT_ID } from '$env/static/public';
+import { browser, dev } from '$app/env';
+import { PUBLIC_GA_MEASUREMENT_ID } from '$app/env/public';
 
 const PRODUCTION_HOSTNAMES = ['automationzion.com', 'www.automationzion.com'];
 

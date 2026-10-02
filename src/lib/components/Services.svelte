@@ -1,5 +1,5 @@
 <script>
-	import { reveal } from '$lib/actions/reveal.js';
+	import { reveal } from '#lib/actions/reveal.js';
 </script>
 
 <section class="bg-gray-50 py-16 md:py-32 dark:bg-transparent">
@@ -155,7 +155,8 @@
 							</h3>
 							<p class="text-sm text-muted-foreground">
 								Full visibility across the funnel, with dashboards and reporting that hold up in
-								front of leadership because the data underneath them is actually right and stays monitored.
+								front of leadership because the data underneath them is actually right and stays
+								monitored.
 							</p>
 						</div>
 					</div>
