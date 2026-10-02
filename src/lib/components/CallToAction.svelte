@@ -5,7 +5,7 @@
 	let { location = 'call_to_action' } = $props();
 </script>
 
-<section class="@container bg-background py-24">
+<section class="@container py-24">
 	<div class="mx-auto max-w-2xl px-6">
 		<div class="text-center opacity-0" use:reveal>
 			<h2 class="font-heading text-4xl font-medium text-balance">

@@ -1,6 +1,7 @@
 <script>
 	import Header from '#lib/components/Header.svelte';
 	import Hero from '#lib/components/Hero.svelte';
+	import SignalNetworkBackground from '#lib/components/SignalNetworkBackground.svelte';
 	import Stats from '#lib/components/Stats.svelte';
 	import Services from '#lib/components/Services.svelte';
 	import FeatureSection from '#lib/components/FeatureSection.svelte';
@@ -41,6 +42,7 @@
 </svelte:head>
 
 <div class="flex min-h-screen flex-col">
+	<SignalNetworkBackground className="hidden lg:block" />
 	<Header />
 	<main class="grow">
 		<Hero />
