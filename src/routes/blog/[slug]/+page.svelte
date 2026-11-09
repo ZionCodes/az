@@ -8,25 +8,61 @@
 	let post = $derived(data.post);
 	let canonicalUrl = $derived(`https://www.automationzion.com${page.url.pathname}`);
 	let ogImage = $derived(post.thumbnailUrl || 'https://www.automationzion.com/og/og-blog.png');
+
+	// Every FAQ section in the CMS follows the same hand-written shape:
+	// <p><strong>Question?</strong><br>Answer</p>, one per Q&A, right after an
+	// <h2>FAQ</h2> heading. Parsing it out of the already-fetched article HTML
+	// means FAQPage schema stays in sync with the visible content automatically,
+	// no separate structured-data field to keep updated by hand.
+	function extractFaqItems(articleHtml) {
+		if (!articleHtml || !articleHtml.includes('<h2>FAQ</h2>')) return [];
+		const stripTags = (html) => html.replace(/<[^>]+>/g, '').trim();
+		const pattern = /<p><strong>([^<]+?\?)<\/strong><br\s*\/?>\s*([\s\S]*?)<\/p>/g;
+		const items = [];
+		let match;
+		while ((match = pattern.exec(articleHtml)) !== null) {
+			items.push({ question: stripTags(match[1]), answer: stripTags(match[2]) });
+		}
+		return items;
+	}
+
+	let faqItems = $derived(extractFaqItems(post.article));
+
 	let jsonLd = $derived(
 		JSON.stringify({
 			'@context': 'https://schema.org',
-			'@type': 'BlogPosting',
-			headline: post.title,
-			description: post.introduction,
-			image: ogImage,
-			datePublished: new Date(post.created).toISOString(),
-			author: {
-				'@type': 'Person',
-				name: 'Zion Gonet',
-				url: 'https://www.automationzion.com/about'
-			},
-			publisher: {
-				'@type': 'Organization',
-				name: 'AutomationZion',
-				logo: { '@type': 'ImageObject', url: 'https://www.automationzion.com/og/og-home.png' }
-			},
-			mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl }
+			'@graph': [
+				{
+					'@type': 'BlogPosting',
+					headline: post.title,
+					description: post.introduction,
+					image: ogImage,
+					datePublished: new Date(post.created).toISOString(),
+					author: {
+						'@type': 'Person',
+						name: 'Zion Gonet',
+						url: 'https://www.automationzion.com/about'
+					},
+					publisher: {
+						'@type': 'Organization',
+						name: 'AutomationZion',
+						logo: { '@type': 'ImageObject', url: 'https://www.automationzion.com/og/og-home.png' }
+					},
+					mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl }
+				},
+				...(faqItems.length
+					? [
+							{
+								'@type': 'FAQPage',
+								mainEntity: faqItems.map((item) => ({
+									'@type': 'Question',
+									name: item.question,
+									acceptedAnswer: { '@type': 'Answer', text: item.answer }
+								}))
+							}
+						]
+					: [])
+			]
 		})
 	);
 	let jsonLdScriptTag = $derived(
