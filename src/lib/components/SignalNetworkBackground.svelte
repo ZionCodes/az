@@ -126,21 +126,41 @@
 				n.y = n.by + driftY + n.pushY;
 			}
 
+			// batch every connector line into a handful of opacity buckets and issue
+			// one stroke() per bucket instead of one per pair -- under CPU throttling,
+			// ~780 individual stroke() calls a frame (40 nodes) was the single biggest
+			// cost in the whole animation, far more than the distance math itself
 			ctx.lineWidth = 1;
+			// buckets are small dense integers (1-100), so a plain array indexed by
+			// bucket number fits better than a Map here -- this is a per-frame
+			// scratch structure local to the draw loop, never component state
+			const segsByBucket = [];
 			for (let a = 0; a < nodes.length; a++) {
 				for (let b = a + 1; b < nodes.length; b++) {
 					const dx = nodes[a].x - nodes[b].x,
 						dy = nodes[a].y - nodes[b].y;
 					const dist = Math.sqrt(dx * dx + dy * dy);
-					if (dist < MAX_DIST) {
-						const o = (1 - dist / MAX_DIST) * 0.1;
-						ctx.strokeStyle = `rgba(${base},${o.toFixed(3)})`;
-						ctx.beginPath();
-						ctx.moveTo(nodes[a].x, nodes[a].y);
-						ctx.lineTo(nodes[b].x, nodes[b].y);
-						ctx.stroke();
+					if (dist >= MAX_DIST) continue;
+					const bucket = Math.round((1 - dist / MAX_DIST) * 100);
+					if (bucket <= 0) continue;
+					let arr = segsByBucket[bucket];
+					if (!arr) {
+						arr = [];
+						segsByBucket[bucket] = arr;
 					}
+					arr.push(nodes[a].x, nodes[a].y, nodes[b].x, nodes[b].y);
 				}
+			}
+			for (let bucket = 1; bucket <= 100; bucket++) {
+				const arr = segsByBucket[bucket];
+				if (!arr) continue;
+				ctx.strokeStyle = `rgba(${base},${((bucket / 100) * 0.1).toFixed(3)})`;
+				ctx.beginPath();
+				for (let i = 0; i < arr.length; i += 4) {
+					ctx.moveTo(arr[i], arr[i + 1]);
+					ctx.lineTo(arr[i + 2], arr[i + 3]);
+				}
+				ctx.stroke();
 			}
 
 			if (mouse.active) {
@@ -185,6 +205,10 @@
 				}
 			}
 
+			// same batching idea for the dots: the rare near-cursor ones still get
+			// their own immediate fill, but every resting dot accumulates into one
+			// path and one fill() call instead of 40 separate ones
+			const restDots = [];
 			for (const n of nodes) {
 				let dist = Infinity;
 				if (mouse.active) {
@@ -200,11 +224,17 @@
 					ctx.arc(n.x, n.y, n.r + glow * 1.6, 0, Math.PI * 2);
 					ctx.fill();
 				} else {
-					ctx.fillStyle = `rgba(${base},0.16)`;
-					ctx.beginPath();
-					ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-					ctx.fill();
+					restDots.push(n);
 				}
+			}
+			if (restDots.length) {
+				ctx.beginPath();
+				for (const n of restDots) {
+					ctx.moveTo(n.x + n.r, n.y);
+					ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+				}
+				ctx.fillStyle = `rgba(${base},0.16)`;
+				ctx.fill();
 			}
 		}
 
@@ -225,13 +255,19 @@
 		}
 
 		resize();
+		draw();
 
 		// mirror Hero's own rotating-phrase pill: reduced motion means fully
-		// static, not just slower -- no drift, no pulses, no cursor reactivity
-		if (reducedMotion) {
-			draw();
-		} else {
-			raf = requestAnimationFrame(loop);
+		// static, not just slower -- no drift, no pulses, no cursor reactivity.
+		// For everyone else, delay starting the continuous loop a beat: this is
+		// purely decorative, so it shouldn't compete with the page's own
+		// load-critical work (LCP, hydration) for main-thread time right when
+		// it matters most. The static first frame drawn above covers the gap.
+		let startTimer;
+		if (!reducedMotion) {
+			startTimer = setTimeout(() => {
+				raf = requestAnimationFrame(loop);
+			}, 1200);
 		}
 
 		// listen on window, not the container itself: this layer sits behind
@@ -246,6 +282,7 @@
 		}
 
 		return () => {
+			clearTimeout(startTimer);
 			cancelAnimationFrame(raf);
 			window.removeEventListener('resize', resize);
 			if (!reducedMotion) {
