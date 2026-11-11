@@ -10,7 +10,7 @@
 		>
 			<img
 				src={automationzion}
-				alt="Zion Gonet, GTM Systems Engineer"
+				alt="Zion Gonet, Automation Engineer and GTM Engineer"
 				width="420"
 				height="560"
 				sizes="(min-width: 640px) 40vw, 75vw"
@@ -31,9 +31,9 @@
 			</h2>
 
 			<p class="text-base leading-relaxed text-muted-foreground">
-				I'm Zion, a GTM Systems Engineer with experience across automation tools, APIs, CRMs, and AI
-				agents. I build end-to-end revenue infrastructure that eliminates repetitive work and lets
-				teams scale without adding headcount.
+				I'm Zion, an Automation Engineer and GTM Engineer. The result is process and revenue
+				infrastructure where nothing slips through the cracks and leadership can trust the numbers
+				in front of them.
 			</p>
 
 			<p class="text-base leading-relaxed text-muted-foreground">

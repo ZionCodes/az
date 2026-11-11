@@ -47,7 +47,7 @@
 					{@html logoMarkup}
 				</a>
 				<p class="mt-4 max-w-xs text-sm text-muted-foreground">
-					AI Automation and GTM Systems Engineer
+					Automation Engineer & GTM Engineer
 				</p>
 				<div class="mt-6 -ml-2 flex">
 					{#each social as item (item.label)}

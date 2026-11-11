@@ -14,12 +14,12 @@
 </script>
 
 <svelte:head>
-	<title>Zion Gonet | GTM Systems Engineer for B2B Revenue Teams</title>
+	<title>Zion Gonet | Automation Engineer & GTM Engineer</title>
 	<meta
 		name="description"
 		content="Data you can trust, tools that talk to each other and no more leads slipping through the cracks. Built by an engineer who's done it for real teams."
 	/>
-	<meta property="og:title" content="Zion Gonet | GTM Systems Engineer for B2B Revenue Teams" />
+	<meta property="og:title" content="Zion Gonet | Automation Engineer & GTM Engineer" />
 	<meta property="og:site_name" content="AutomationZion" />
 	<meta
 		property="og:description"
@@ -32,7 +32,7 @@
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="Zion Gonet | GTM Systems Engineer for B2B Revenue Teams" />
+	<meta name="twitter:title" content="Zion Gonet | Automation Engineer & GTM Engineer" />
 	<meta
 		name="twitter:description"
 		content="Data you can trust, tools that talk to each other and no more leads slipping through the cracks."
