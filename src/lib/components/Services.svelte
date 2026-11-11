@@ -444,8 +444,8 @@
 							<div class="space-y-2">
 								<h3 class="font-heading text-lg font-medium transition">Outbound Engineering</h3>
 								<p class="text-sm text-muted-foreground">
-									Deliverability infrastructure, enrichment-driven list building and sequence
-									logic, engineered and debugged like a system, not run by hand.
+									Signal-based prospecting, enrichment waterfalls and deliverability
+									infrastructure, engineered and debugged like a system, not run by hand.
 								</p>
 							</div>
 						</div>
