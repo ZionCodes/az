@@ -1,5 +1,6 @@
 <script>
 	import { reveal } from '#lib/actions/reveal.js';
+	import { playOnView } from '#lib/actions/playOnView.js';
 </script>
 
 <section class="bg-gray-50 py-16 md:py-32 dark:bg-transparent">
@@ -22,12 +23,13 @@
 			<div class="relative z-10 grid grid-cols-6 gap-3">
 				<div
 					use:reveal={{ delay: 0 }}
-					class="relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground opacity-0 shadow-sm lg:col-span-2"
+					use:playOnView={{ class: 'svc-play', enterDelay: 600 }}
+					class="svc-card relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground opacity-0 shadow-sm lg:col-span-2"
 				>
 					<div class="relative m-auto size-fit px-6 pt-6">
 						<div class="relative flex h-24 w-56 items-center">
 							<svg
-								class="absolute inset-0 size-full text-muted"
+								class="svc-blob absolute inset-0 size-full text-muted"
 								viewBox="0 0 254 104"
 								fill="none"
 								xmlns="http://www.w3.org/2000/svg"
@@ -47,21 +49,22 @@
 
 				<div
 					use:reveal={{ delay: 80 }}
-					class="relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground opacity-0 shadow-sm sm:col-span-3 lg:col-span-2"
+					use:playOnView={{ class: 'svc-play', enterDelay: 680 }}
+					class="svc-card relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground opacity-0 shadow-sm sm:col-span-3 lg:col-span-2"
 				>
 					<div class="px-6 pt-6">
 						<div
-							class="relative mx-auto flex aspect-square size-32 rounded-full border before:absolute before:-inset-2 before:rounded-full before:border dark:border-white/10 dark:before:border-white/5"
+							class="svc-icon-badge relative mx-auto flex aspect-square size-32 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-sky-600 shadow-sm"
 						>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 24 24"
 								fill="none"
 								stroke="currentColor"
-								stroke-width="1"
+								stroke-width="1.5"
 								stroke-linecap="round"
 								stroke-linejoin="round"
-								class="m-auto size-10 text-muted-foreground"
+								class="m-auto size-10 text-white"
 							>
 								<ellipse cx="12" cy="5" rx="9" ry="3" />
 								<path d="M3 5V19A9 3 0 0 0 21 19V5" />
@@ -80,7 +83,8 @@
 
 				<div
 					use:reveal={{ delay: 160 }}
-					class="relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground opacity-0 shadow-sm sm:col-span-3 lg:col-span-2"
+					use:playOnView={{ class: 'svc-play', enterDelay: 760 }}
+					class="svc-card relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground opacity-0 shadow-sm sm:col-span-3 lg:col-span-2"
 				>
 					<div class="px-6 pt-6">
 						<div class="pt-6 lg:px-6">
@@ -91,9 +95,9 @@
 								xmlns="http://www.w3.org/2000/svg"
 							>
 								<rect width="386" height="123" rx="10" />
-								<g clip-path="url(#clip0_svc_106)">
+								<g clip-path="url(#clip0_svc_106p)">
 									<circle
-										class="text-muted-foreground dark:text-muted"
+										class="text-violet-500"
 										cx="29"
 										cy="29"
 										r="15"
@@ -103,6 +107,13 @@
 									<text x="55" y="34" font-size="15" font-weight="600" fill="currentColor">
 										Reporting
 									</text>
+									<circle
+										class="svc-live-dot text-emerald-500"
+										cx="300"
+										cy="30"
+										r="4"
+										fill="currentColor"
+									/>
 									<text
 										x="330"
 										y="34"
@@ -118,24 +129,25 @@
 									fill-rule="evenodd"
 									clip-rule="evenodd"
 									d="M3 123C3 123 14.3298 94.153 35.1282 88.0957C55.9266 82.0384 65.9333 80.5508 65.9333 80.5508C65.9333 80.5508 80.699 80.5508 92.1777 80.5508C103.656 80.5508 100.887 63.5348 109.06 63.5348C117.233 63.5348 117.217 91.9728 124.78 91.9728C132.343 91.9728 142.264 78.03 153.831 80.5508C165.398 83.0716 186.825 91.9728 193.761 91.9728C200.697 91.9728 206.296 63.5348 214.07 63.5348C221.844 63.5348 238.653 93.7771 244.234 91.9728C249.814 90.1684 258.8 60 266.19 60C272.075 60 284.1 88.057 286.678 88.0957C294.762 88.2171 300.192 72.9284 305.423 72.9284C312.323 72.9284 323.377 65.2437 335.553 63.5348C347.729 61.8259 348.218 82.07 363.639 80.5508C367.875 80.1335 372.949 82.2017 376.437 87.1008C379.446 91.3274 381.054 97.4325 382.521 104.647C383.479 109.364 382.521 123 382.521 123"
-									fill="url(#paint0_linear_svc_106)"
+									fill="url(#paint0_linear_svc_106p)"
 								/>
 								<path
-									class="text-primary"
+									class="svc-chart-line text-violet-500"
 									d="M3 121.077C3 121.077 15.3041 93.6691 36.0195 87.756C56.7349 81.8429 66.6632 80.9723 66.6632 80.9723C66.6632 80.9723 80.0327 80.9723 91.4656 80.9723C102.898 80.9723 100.415 64.2824 108.556 64.2824C116.696 64.2824 117.693 92.1332 125.226 92.1332C132.759 92.1332 142.07 78.5115 153.591 80.9723C165.113 83.433 186.092 92.1332 193 92.1332C199.908 92.1332 205.274 64.2824 213.017 64.2824C220.76 64.2824 237.832 93.8946 243.39 92.1332C248.948 90.3718 257.923 60.5 265.284 60.5C271.145 60.5 283.204 87.7182 285.772 87.756C293.823 87.8746 299.2 73.0802 304.411 73.0802C311.283 73.0802 321.425 65.9506 333.552 64.2824C345.68 62.6141 346.91 82.4553 362.27 80.9723C377.629 79.4892 383 106.605 383 106.605"
 									stroke="currentColor"
 									stroke-width="3"
+									pathLength="1000"
 								/>
 								<defs>
 									<linearGradient
-										id="paint0_linear_svc_106"
+										id="paint0_linear_svc_106p"
 										x1="3"
 										y1="60"
 										x2="3"
 										y2="123"
 										gradientUnits="userSpaceOnUse"
 									>
-										<stop class="text-primary/15" stop-color="currentColor" />
+										<stop class="text-violet-500/15" stop-color="currentColor" />
 										<stop
 											class="text-transparent"
 											offset="1"
@@ -143,7 +155,7 @@
 											stop-opacity="0.103775"
 										/>
 									</linearGradient>
-									<clip-path id="clip0_svc_106">
+									<clip-path id="clip0_svc_106p">
 										<rect width="358" height="30" fill="white" transform="translate(14 14)" />
 									</clip-path>
 								</defs>
@@ -164,22 +176,23 @@
 
 				<div
 					use:reveal={{ delay: 240 }}
-					class="card variant-outlined relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground opacity-0 shadow-sm lg:col-span-3"
+					use:playOnView={{ class: 'svc-play', enterDelay: 840 }}
+					class="svc-card card variant-outlined relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground opacity-0 shadow-sm lg:col-span-3"
 				>
 					<div class="grid px-6 pt-6 sm:grid-cols-2">
 						<div class="relative z-10 flex flex-col justify-between space-y-12 lg:space-y-6">
 							<div
-								class="relative flex aspect-square size-12 rounded-full border before:absolute before:-inset-2 before:rounded-full before:border dark:border-white/10 dark:before:border-white/5"
+								class="svc-icon-badge relative flex aspect-square size-12 items-center justify-center rounded-full bg-gradient-to-br from-orange-500 to-red-500 shadow-sm"
 							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									viewBox="0 0 24 24"
 									fill="none"
 									stroke="currentColor"
-									stroke-width="1"
+									stroke-width="1.5"
 									stroke-linecap="round"
 									stroke-linejoin="round"
-									class="m-auto size-5"
+									class="m-auto size-5 text-white"
 								>
 									<rect width="8" height="8" x="3" y="3" rx="2" />
 									<path d="M7 11v4a2 2 0 0 0 2 2h4" />
@@ -218,7 +231,7 @@
 									y2="55"
 									stroke="currentColor"
 									stroke-width="1.5"
-									class="text-border"
+									class="svc-flow-line text-border"
 								/>
 								<line
 									x1="183"
@@ -227,7 +240,7 @@
 									y2="55"
 									stroke="currentColor"
 									stroke-width="1.5"
-									class="text-border"
+									class="svc-flow-line text-border"
 								/>
 								<line
 									x1="183"
@@ -236,7 +249,7 @@
 									y2="176"
 									stroke="currentColor"
 									stroke-width="1.5"
-									class="text-border"
+									class="svc-flow-line text-border"
 								/>
 								<line
 									x1="183"
@@ -245,7 +258,7 @@
 									y2="176"
 									stroke="currentColor"
 									stroke-width="1.5"
-									class="text-border"
+									class="svc-flow-line text-border"
 								/>
 								<line
 									x1="183"
@@ -254,14 +267,14 @@
 									y2="30"
 									stroke="currentColor"
 									stroke-width="1.5"
-									class="text-border"
+									class="svc-flow-line text-border"
 								/>
 
-								<circle cx="127" cy="85" r="3" class="text-primary" fill="currentColor" />
-								<circle cx="240" cy="85" r="3" class="text-primary" fill="currentColor" />
-								<circle cx="127" cy="146" r="3" class="text-primary" fill="currentColor" />
-								<circle cx="240" cy="146" r="3" class="text-primary" fill="currentColor" />
-								<circle cx="183" cy="72" r="3" class="text-primary" fill="currentColor" />
+								<circle cx="127" cy="85" r="3" class="text-orange-500" fill="currentColor" />
+								<circle cx="240" cy="85" r="3" class="text-orange-500" fill="currentColor" />
+								<circle cx="127" cy="146" r="3" class="text-orange-500" fill="currentColor" />
+								<circle cx="240" cy="146" r="3" class="text-orange-500" fill="currentColor" />
+								<circle cx="183" cy="72" r="3" class="text-orange-500" fill="currentColor" />
 
 								<circle cx="70" cy="55" r="17" class="text-muted-foreground" fill="currentColor" />
 								<circle cx="296" cy="55" r="17" class="text-muted-foreground" fill="currentColor" />
@@ -275,14 +288,25 @@
 								/>
 								<circle cx="183" cy="30" r="14" class="text-muted-foreground" fill="currentColor" />
 
-								<circle cx="183" cy="115" r="30" class="text-primary" fill="currentColor" />
-								<path
-									d="M183 100v30M168 115h30"
-									class="text-primary-foreground"
+								<circle
+									cx="183"
+									cy="115"
+									r="30"
+									class="svc-hub-ping text-orange-500"
+									fill="none"
 									stroke="currentColor"
-									stroke-width="3"
-									stroke-linecap="round"
+									stroke-width="2"
 								/>
+								<g class="svc-hub">
+									<circle cx="183" cy="115" r="30" class="text-orange-500" fill="currentColor" />
+									<path
+										d="M183 100v30M168 115h30"
+										class="text-white"
+										stroke="currentColor"
+										stroke-width="3"
+										stroke-linecap="round"
+									/>
+								</g>
 							</svg>
 						</div>
 					</div>
@@ -290,22 +314,23 @@
 
 				<div
 					use:reveal={{ delay: 320 }}
-					class="card variant-outlined relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground opacity-0 shadow-sm lg:col-span-3"
+					use:playOnView={{ class: 'svc-play', enterDelay: 920 }}
+					class="svc-card card variant-outlined relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground opacity-0 shadow-sm lg:col-span-3"
 				>
 					<div class="grid h-full px-6 pt-6 sm:grid-cols-2">
 						<div class="relative z-10 flex flex-col justify-between space-y-12 lg:space-y-6">
 							<div
-								class="relative flex aspect-square size-12 rounded-full border before:absolute before:-inset-2 before:rounded-full before:border dark:border-white/10 dark:before:border-white/5"
+								class="svc-icon-badge relative flex aspect-square size-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 shadow-sm"
 							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									viewBox="0 0 24 24"
 									fill="none"
 									stroke="currentColor"
-									stroke-width="1"
+									stroke-width="1.5"
 									stroke-linecap="round"
 									stroke-linejoin="round"
-									class="m-auto size-6"
+									class="m-auto size-6 text-white"
 								>
 									<path d="M12 8V4H8" />
 									<rect width="16" height="12" x="4" y="8" rx="2" />
@@ -318,8 +343,8 @@
 							<div class="space-y-2">
 								<h3 class="font-heading text-lg font-medium transition">AI Systems & Workflows</h3>
 								<p class="text-sm text-muted-foreground">
-									The manual work your team has accepted as normal, automated. Custom AI agents and
-									automations that take manual work off the team's plate.
+									Scoped and owned end to end: identifying where AI actually moves the business,
+									then building and shipping the agents and automations that do it.
 								</p>
 							</div>
 						</div>
@@ -327,7 +352,7 @@
 							class="relative mt-6 before:absolute before:inset-0 before:mx-auto before:w-px before:bg-(--color-border) sm:-my-6 sm:-mr-6"
 						>
 							<div class="relative flex h-full flex-col justify-center space-y-4 py-6">
-								<div class="relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2">
+								<div class="svc-pill-wrap relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2">
 									<span
 										class="flex items-center gap-1.5 rounded border bg-background px-2 py-1 text-xs shadow-sm"
 									>
@@ -339,7 +364,7 @@
 											stroke-width="2"
 											stroke-linecap="round"
 											stroke-linejoin="round"
-											class="size-3.5 text-primary"
+											class="size-3.5 text-emerald-600"
 										>
 											<circle cx="12" cy="12" r="10" />
 											<path d="m9 12 2 2 4-4" />
@@ -347,7 +372,7 @@
 										Meeting notes summarized
 									</span>
 								</div>
-								<div class="relative ml-[calc(50%-1rem)] flex items-center gap-2">
+								<div class="svc-pill-wrap relative ml-[calc(50%-1rem)] flex items-center gap-2">
 									<span
 										class="flex items-center gap-1.5 rounded border bg-background px-2 py-1 text-xs shadow-sm"
 									>
@@ -359,7 +384,7 @@
 											stroke-width="2"
 											stroke-linecap="round"
 											stroke-linejoin="round"
-											class="size-3.5 text-primary"
+											class="size-3.5 text-emerald-600"
 										>
 											<circle cx="12" cy="12" r="10" />
 											<path d="m9 12 2 2 4-4" />
@@ -367,7 +392,7 @@
 										Weekly report sent
 									</span>
 								</div>
-								<div class="relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2">
+								<div class="svc-pill-wrap relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2">
 									<span
 										class="flex items-center gap-1.5 rounded border bg-background px-2 py-1 text-xs shadow-sm"
 									>
@@ -379,7 +404,7 @@
 											stroke-width="2"
 											stroke-linecap="round"
 											stroke-linejoin="round"
-											class="size-3.5 text-primary"
+											class="size-3.5 text-emerald-600"
 										>
 											<circle cx="12" cy="12" r="10" />
 											<path d="m9 12 2 2 4-4" />
@@ -391,7 +416,287 @@
 						</div>
 					</div>
 				</div>
+
+				<div
+					use:reveal={{ delay: 400 }}
+					use:playOnView={{ class: 'svc-play', enterDelay: 1000 }}
+					class="svc-card card variant-outlined relative col-span-full flex flex-col gap-6 overflow-hidden rounded-xl border bg-card py-6 text-card-foreground opacity-0 shadow-sm"
+				>
+					<div class="grid px-6 pt-6 sm:grid-cols-2">
+						<div class="relative z-10 flex flex-col justify-between space-y-12 lg:space-y-6">
+							<div
+								class="svc-icon-badge relative flex aspect-square size-12 items-center justify-center rounded-full bg-gradient-to-br from-rose-500 to-pink-600 shadow-sm"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									class="m-auto size-5 text-white"
+								>
+									<path d="M22 2 11 13" />
+									<path d="M22 2 15 22l-4-9-9-4Z" />
+								</svg>
+							</div>
+							<div class="space-y-2">
+								<h3 class="font-heading text-lg font-medium transition">Outbound Engineering</h3>
+								<p class="text-sm text-muted-foreground">
+									Deliverability infrastructure, enrichment-driven list building and sequence
+									logic, engineered and debugged like a system, not run by hand.
+								</p>
+							</div>
+						</div>
+						<div
+							class="relative mt-6 before:absolute before:inset-0 before:mx-auto before:w-px before:bg-(--color-border) sm:-my-6 sm:-mr-6"
+						>
+							<div class="relative flex h-full flex-col justify-center space-y-4 py-6">
+								<div class="svc-pill-wrap relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2">
+									<span
+										class="flex items-center gap-1.5 rounded border bg-background px-2 py-1 text-xs shadow-sm"
+									>
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 24 24"
+											fill="none"
+											stroke="currentColor"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											class="size-3.5 text-rose-600"
+										>
+											<circle cx="12" cy="12" r="10" />
+											<path d="m9 12 2 2 4-4" />
+										</svg>
+										Domain warmed, DMARC passing
+									</span>
+								</div>
+								<div class="svc-pill-wrap relative ml-[calc(50%-1rem)] flex items-center gap-2">
+									<span
+										class="flex items-center gap-1.5 rounded border bg-background px-2 py-1 text-xs shadow-sm"
+									>
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 24 24"
+											fill="none"
+											stroke="currentColor"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											class="size-3.5 text-rose-600"
+										>
+											<circle cx="12" cy="12" r="10" />
+											<path d="m9 12 2 2 4-4" />
+										</svg>
+										Sequence live across 3 domains
+									</span>
+								</div>
+								<div class="svc-pill-wrap relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2">
+									<span
+										class="flex items-center gap-1.5 rounded border bg-background px-2 py-1 text-xs shadow-sm"
+									>
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 24 24"
+											fill="none"
+											stroke="currentColor"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											class="size-3.5 text-rose-600"
+										>
+											<circle cx="12" cy="12" r="10" />
+											<path d="m9 12 2 2 4-4" />
+										</svg>
+										Qualified reply routed to CRM
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
+
+<style>
+	/* every flourish below is triggered by the `.svc-play` class, toggled by
+	   the playOnView action: it fires once automatically when the card
+	   scrolls into view (so touch visitors see it unprompted), and replays
+	   on every `mouseenter` on desktop. Each animation starts and ends at
+	   the element's normal resting look, so nothing is ever stuck mid-pose
+	   and nothing depends on an active `:hover` state to stay visible. */
+
+	/* icon badge: a springy lift + rotate, shared by every card that has
+	   one (CRM, Tool Integration, AI Systems, Outbound) */
+	@keyframes svc-icon-pop {
+		0% {
+			transform: translateY(0) scale(1) rotate(0deg);
+		}
+		50% {
+			transform: translateY(-4px) scale(1.12) rotate(8deg);
+		}
+		100% {
+			transform: translateY(0) scale(1) rotate(0deg);
+		}
+	}
+	.svc-card:global(.svc-play) .svc-icon-badge {
+		animation: svc-icon-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+	}
+
+	/* card 1: the decorative blob behind "100%" breathes outward with a slight twist */
+	@keyframes svc-blob-pop {
+		0% {
+			transform: scale(1) rotate(0deg);
+		}
+		50% {
+			transform: scale(1.08) rotate(-3deg);
+		}
+		100% {
+			transform: scale(1) rotate(0deg);
+		}
+	}
+	.svc-card:global(.svc-play) .svc-blob {
+		animation: svc-blob-pop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+	}
+
+	/* card 3: the live indicator pulses continuously, like a real status
+	   dot -- not gated behind the play trigger, since that's how live
+	   indicators actually behave; the chart line draws itself in and
+	   stays drawn, since it's real content, not a decoration */
+	.svc-live-dot {
+		transform-box: fill-box;
+		transform-origin: center;
+		animation: svc-live-pulse 2s ease-out infinite;
+	}
+	@keyframes svc-live-pulse {
+		0% {
+			opacity: 0.9;
+		}
+		50% {
+			opacity: 0.3;
+		}
+		100% {
+			opacity: 0.9;
+		}
+	}
+	.svc-chart-line {
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+	}
+	@keyframes svc-chart-draw {
+		to {
+			stroke-dashoffset: 0;
+		}
+	}
+	.svc-card:global(.svc-play) .svc-chart-line {
+		animation: svc-chart-draw 1.1s ease forwards;
+	}
+
+	/* card 4: connector lines flow like a signal moving toward the hub for a
+	   brief burst, the hub pops with a spring, and a ring pings outward from
+	   it a couple of times, then everything settles back to resting */
+	.svc-flow-line {
+		stroke-dasharray: 6 6;
+	}
+	@keyframes svc-flow-dash {
+		to {
+			stroke-dashoffset: -24;
+		}
+	}
+	.svc-card:global(.svc-play) .svc-flow-line {
+		animation: svc-flow-dash 0.5s linear 4;
+	}
+	@keyframes svc-hub-pop {
+		0% {
+			transform: scale(1);
+		}
+		50% {
+			transform: scale(1.12);
+		}
+		100% {
+			transform: scale(1);
+		}
+	}
+	.svc-hub {
+		transform-box: fill-box;
+		transform-origin: center;
+	}
+	.svc-card:global(.svc-play) .svc-hub {
+		animation: svc-hub-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+	}
+	.svc-hub-ping {
+		transform-box: fill-box;
+		transform-origin: center;
+		opacity: 0;
+	}
+	@keyframes svc-hub-ping {
+		0% {
+			transform: scale(0.9);
+			opacity: 0.6;
+		}
+		75%,
+		100% {
+			transform: scale(1.8);
+			opacity: 0;
+		}
+	}
+	.svc-card:global(.svc-play) .svc-hub-ping {
+		animation: svc-hub-ping 1.4s cubic-bezier(0, 0, 0.2, 1) 2;
+	}
+
+	/* cards 5 & 6: the status pills are always fully shown at rest -- the
+	   play trigger replays their arrival as a staggered cascade, landing
+	   back on the exact same resting state every time */
+	@keyframes svc-pill-cascade {
+		from {
+			opacity: 0;
+			transform: translateY(10px) scale(0.95);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0) scale(1);
+		}
+	}
+	.svc-pill-wrap {
+		opacity: 1;
+	}
+	.svc-card:global(.svc-play) .svc-pill-wrap {
+		animation: svc-pill-cascade 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+	}
+	.svc-card:global(.svc-play) .svc-pill-wrap:nth-child(1) {
+		animation-delay: 0ms;
+	}
+	.svc-card:global(.svc-play) .svc-pill-wrap:nth-child(2) {
+		animation-delay: 150ms;
+	}
+	.svc-card:global(.svc-play) .svc-pill-wrap:nth-child(3) {
+		animation-delay: 300ms;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.svc-icon-badge,
+		.svc-blob,
+		.svc-chart-line,
+		.svc-flow-line,
+		.svc-hub,
+		.svc-hub-ping,
+		.svc-pill-wrap,
+		.svc-live-dot {
+			animation: none !important;
+		}
+		.svc-chart-line {
+			stroke-dashoffset: 0 !important;
+		}
+		.svc-hub-ping {
+			opacity: 0 !important;
+		}
+		.svc-pill-wrap {
+			opacity: 1 !important;
+			transform: none !important;
+		}
+	}
+</style>

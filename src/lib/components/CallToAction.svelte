@@ -8,6 +8,17 @@
 <section class="@container py-24">
 	<div class="mx-auto max-w-2xl px-6">
 		<div class="text-center opacity-0" use:reveal>
+			<span
+				class="cta-status mx-auto mb-4 inline-flex items-center gap-2 rounded-full border bg-card px-3 py-1 text-xs font-medium text-muted-foreground"
+			>
+				<span class="relative flex size-2">
+					<span
+						class="cta-status-ping absolute inline-flex size-full rounded-full bg-emerald-500 opacity-75"
+					></span>
+					<span class="relative inline-flex size-2 rounded-full bg-emerald-500"></span>
+				</span>
+				Currently available
+			</span>
 			<h2 class="font-heading text-4xl font-medium text-balance">
 				Open to Full-Time Roles & Client Work
 			</h2>
@@ -19,7 +30,7 @@
 				<a
 					href="mailto:ziongonet@gmail.com"
 					onclick={() => trackEvent('contact_click', { location })}
-					class="hover-smile inline-flex h-10 items-center justify-center gap-1.5 rounded-full bg-primary py-1 pr-1.5 pl-6 text-sm font-medium text-primary-foreground shadow-xs transition-all hover:bg-primary/90"
+					class="hover-smile group inline-flex h-10 items-center justify-center gap-1.5 rounded-full bg-primary py-1 pr-1.5 pl-6 text-sm font-medium text-primary-foreground shadow-xs transition-all hover:bg-primary/90"
 				>
 					<span>Get in touch</span>
 					<svg
@@ -30,7 +41,7 @@
 						stroke-width="2"
 						stroke-linecap="round"
 						stroke-linejoin="round"
-						class="size-4 opacity-50"
+						class="size-4 opacity-50 transition-transform duration-150 ease-out group-hover:translate-x-1"
 					>
 						<path d="m9 18 6-6-6-6" />
 					</svg>
@@ -39,12 +50,12 @@
 					href="https://www.linkedin.com/in/zion-gonet/"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="inline-flex h-10 items-center justify-center gap-2 rounded-full bg-secondary px-6 text-sm font-medium text-secondary-foreground shadow-xs transition-all hover:bg-secondary/80"
+					class="group inline-flex h-10 items-center justify-center gap-2 rounded-full bg-secondary px-6 text-sm font-medium text-secondary-foreground shadow-xs transition-all hover:bg-secondary/80"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 24 24"
-						class="size-4"
+						class="size-4 text-[#0A66C2] transition-transform duration-150 ease-out group-hover:scale-110"
 						fill="currentColor"
 					>
 						<path
@@ -57,3 +68,27 @@
 		</div>
 	</div>
 </section>
+
+<style>
+	.cta-status-ping {
+		animation: cta-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+	}
+	@keyframes cta-ping {
+		0% {
+			transform: scale(1);
+			opacity: 0.75;
+		}
+		75%,
+		100% {
+			transform: scale(2.2);
+			opacity: 0;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.cta-status-ping {
+			animation: none !important;
+			opacity: 0 !important;
+		}
+	}
+</style>

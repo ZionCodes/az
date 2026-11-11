@@ -37,8 +37,8 @@
 			</p>
 
 			<p class="text-base leading-relaxed text-muted-foreground">
-				I've worked inside agencies and directly with clients, which means I understand both the
-				technical side and the business problem behind every build.
+				I've worked inside agencies and directly with clients, which means I'm used to owning a
+				project end to end, scoping it and building the thing itself.
 			</p>
 
 			<p class="text-base leading-relaxed text-muted-foreground">

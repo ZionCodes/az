@@ -93,12 +93,12 @@
 				type="button"
 				aria-label="Toggle color theme"
 				onclick={toggleMode}
-				class="inline-flex size-8 items-center justify-center rounded-md text-foreground transition-all hover:bg-accent hover:text-accent-foreground"
+				class="header-mode-toggle inline-flex size-8 items-center justify-center rounded-md text-foreground transition-all hover:bg-accent"
 			>
 				{#if mode.current === 'dark'}
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
-						class="size-4"
+						class="size-4 transition-colors duration-150"
 						viewBox="0 0 24 24"
 						fill="none"
 						stroke="currentColor"
@@ -114,7 +114,7 @@
 				{:else}
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
-						class="size-4"
+						class="size-4 transition-colors duration-150"
 						viewBox="0 0 24 24"
 						fill="none"
 						stroke="currentColor"
@@ -202,3 +202,15 @@
 		</div>
 	</div>
 {/if}
+
+<style>
+	.header-mode-toggle:hover svg {
+		color: var(--toggle-hover-color, inherit);
+	}
+	.header-mode-toggle:has(circle):hover svg {
+		--toggle-hover-color: var(--color-amber-500, #f59e0b);
+	}
+	.header-mode-toggle:not(:has(circle)):hover svg {
+		--toggle-hover-color: var(--color-indigo-500, #6366f1);
+	}
+</style>

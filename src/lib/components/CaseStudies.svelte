@@ -1,5 +1,6 @@
 <script>
 	import { reveal } from '#lib/actions/reveal.js';
+	import { playOnView } from '#lib/actions/playOnView.js';
 
 	let { studies = [], showViewAll = false, headingTag = 'h2' } = $props();
 
@@ -7,6 +8,16 @@
 	// is, or the heading order skips a level (h1 -> h3 on the standalone
 	// /case-studies page, which uses h1 here vs h2 on the homepage section).
 	let cardHeadingTag = $derived(headingTag === 'h1' ? 'h2' : 'h3');
+
+	// same five color families used across Services/Stats, so every section
+	// of the site reads as one system
+	const caseAccents = [
+		{ num: 'text-blue-600', arrow: 'group-hover:text-blue-600' },
+		{ num: 'text-violet-600', arrow: 'group-hover:text-violet-600' },
+		{ num: 'text-orange-600', arrow: 'group-hover:text-orange-600' },
+		{ num: 'text-emerald-600', arrow: 'group-hover:text-emerald-600' },
+		{ num: 'text-rose-600', arrow: 'group-hover:text-rose-600' }
+	];
 </script>
 
 <section class="py-16 md:py-32">
@@ -34,14 +45,16 @@
 				</p>
 			{:else}
 				{#each studies as study, i (study.id)}
+					{@const accent = caseAccents[i % caseAccents.length]}
 					<a
 						href="/case-studies/{study.slug}"
 						use:reveal={{ delay: i * 100 }}
-						class="group flex flex-col gap-6 rounded-xl border bg-card p-8 text-card-foreground opacity-0 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+						use:playOnView={{ class: 'cs-play', enterDelay: 500 + i * 80 }}
+						class="cs-card group flex flex-col gap-6 rounded-xl border bg-card p-8 text-card-foreground opacity-0 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
 					>
 						<div class="space-y-1.5">
 							{#if study.stat}
-								<span class="block font-heading text-4xl font-semibold text-primary">
+								<span class="cs-stat block font-heading text-4xl font-semibold {accent.num}">
 									{study.stat}
 								</span>
 							{/if}
@@ -67,7 +80,7 @@
 								stroke-width="2"
 								stroke-linecap="round"
 								stroke-linejoin="round"
-								class="size-3.5 duration-150 ease-out group-hover:translate-x-1"
+								class="size-3.5 duration-150 ease-out group-hover:translate-x-1 {accent.arrow}"
 							>
 								<path d="M5 12h14M12 5l7 7-7 7" />
 							</svg>
@@ -101,3 +114,26 @@
 		{/if}
 	</div>
 </section>
+
+<style>
+	@keyframes cs-stat-pop {
+		0% {
+			transform: scale(1);
+		}
+		50% {
+			transform: scale(1.15);
+		}
+		100% {
+			transform: scale(1);
+		}
+	}
+	.cs-card:global(.cs-play) .cs-stat {
+		animation: cs-stat-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.cs-stat {
+			animation: none !important;
+		}
+	}
+</style>
