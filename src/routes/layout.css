@@ -131,6 +131,12 @@
 		outline-color: color-mix(in oklch, var(--ring) 50%, transparent);
 	}
 
+	*:focus-visible {
+		outline-style: solid !important;
+		outline-width: 2px !important;
+		outline-offset: 2px !important;
+	}
+
 	body {
 		background-color: var(--background);
 		background-image: radial-gradient(
