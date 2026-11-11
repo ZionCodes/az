@@ -26,9 +26,9 @@
 				About Me
 			</p>
 
-			<h2 class="font-heading text-2xl font-medium text-foreground md:text-3xl md:leading-tight">
+			<h1 class="font-heading text-2xl font-medium text-foreground md:text-3xl md:leading-tight">
 				I build systems.<br />Not just workflows.
-			</h2>
+			</h1>
 
 			<p class="text-base leading-relaxed text-muted-foreground">
 				I'm Zion, an Automation Engineer and GTM Engineer. The result is process and revenue

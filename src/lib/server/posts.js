@@ -41,12 +41,13 @@ function toSummary(post, pb, thumbSize = '400x300') {
 }
 
 // List views only need enough of `article` to estimate reading time, not the full
-// body — some articles embed base64 images and run into the megabytes. The excerpt
-// bound is generous enough to cover any real (non-image-embedded) article's full
-// plain-text length, so reading-time estimates stay accurate; it just avoids
-// shipping raw image data over the wire for a value nobody displays on a list card.
+// body. PocketBase's `:excerpt()` modifier has a real per-record server-side cost
+// that scales with the bound, not just the payload size: at 60000 a 25-post list
+// query took 45s+ to resolve, at 8000 it dropped to ~2.3s (matching an unbounded
+// fetch's own baseline). 8000 characters is still well past the plain-text length
+// of a normal post, so reading-time estimates stay accurate.
 const LIST_VIEW_FIELDS =
-	'id,collectionId,collectionName,title,introduction,tags,category,stat,created,thumbnail,article:excerpt(60000)';
+	'id,collectionId,collectionName,title,introduction,tags,category,stat,created,thumbnail,article:excerpt(8000)';
 
 export async function listPostsByCategory(pb, category, { limit } = {}) {
 	const filter = `category = "${category}"`;

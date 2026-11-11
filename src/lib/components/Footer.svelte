@@ -65,7 +65,7 @@
 					{/each}
 				</div>
 			</div>
-			<nav class="flex flex-wrap gap-x-8 gap-y-3">
+			<nav aria-label="Footer" class="flex flex-wrap gap-x-8 gap-y-3">
 				{#each navLinks as link (link.href)}
 					<a
 						href={link.href}
