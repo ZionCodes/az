@@ -13,7 +13,7 @@
 				What I Do
 				<span class="inline-block h-px w-8 bg-foreground/30"></span>
 			</p>
-			<h2 class="font-heading text-3xl font-semibold lg:text-4xl">GTM Systems, Built End to End</h2>
+			<h2 class="font-heading text-3xl font-semibold lg:text-4xl">Automation & GTM Systems, Built End to End</h2>
 			<p class="text-muted-foreground">
 				CRM setup, data infrastructure and the automation behind it, built and owned by one
 				engineer.
@@ -166,8 +166,8 @@
 								Data Foundation & Reporting
 							</h3>
 							<p class="text-sm text-muted-foreground">
-								Full visibility across the funnel, with dashboards and reporting that hold up in
-								front of leadership because the data underneath them is actually right and stays
+								Full visibility across the funnel. Dashboards and reporting that hold up in front
+								of leadership, because the data underneath them is actually right and stays
 								monitored.
 							</p>
 						</div>
@@ -202,8 +202,8 @@
 							<div class="space-y-2">
 								<h3 class="font-heading text-lg font-medium transition">Tool Integration</h3>
 								<p class="text-sm text-muted-foreground">
-									Every tool in the GTM stack connected and kept in sync, whatever runs the
-									business, with Python and SQL doing the heavy lifting behind the scenes.
+									Every tool in the GTM stack connected and kept in sync, so nothing gets
+									re-entered by hand or drifts out of date.
 								</p>
 							</div>
 						</div>
@@ -343,8 +343,8 @@
 							<div class="space-y-2">
 								<h3 class="font-heading text-lg font-medium transition">AI Systems & Workflows</h3>
 								<p class="text-sm text-muted-foreground">
-									Scoped and owned end to end: identifying where AI actually moves the business,
-									then building and shipping the agents and automations that do it.
+									I find where AI actually moves the business, then build and ship the agents and
+									automations that do it, end to end.
 								</p>
 							</div>
 						</div>
@@ -445,7 +445,7 @@
 								<h3 class="font-heading text-lg font-medium transition">Outbound Engineering</h3>
 								<p class="text-sm text-muted-foreground">
 									Signal-based prospecting, enrichment waterfalls and deliverability
-									infrastructure, engineered and debugged like a system, not run by hand.
+									infrastructure, measured in pipeline and revenue, not emails sent.
 								</p>
 							</div>
 						</div>
