@@ -5,11 +5,21 @@
 	import { backOut, cubicOut } from 'svelte/easing';
 	import { trackEvent } from '#lib/analytics.js';
 
-	const phrases = ['GTM stack', 'revenue engine', 'CRM system'];
+	// article is explicit per phrase rather than guessed from the first letter --
+	// acronyms are pronounced as letter names ("CRM" -> "see", a consonant sound,
+	// so "a CRM system" is correct) which a simple vowel-letter check gets wrong
+	const phrases = [
+		{ text: 'GTM stack', article: 'A' },
+		{ text: 'workflow engine', article: 'A' },
+		{ text: 'AI system', article: 'An' },
+		{ text: 'revenue engine', article: 'A' },
+		{ text: 'CRM system', article: 'A' }
+	];
 
 	let phraseIndex = $state(0);
 	let reducedMotion = $state(false);
-	let currentPhrase = $derived(phrases[phraseIndex]);
+	let currentPhrase = $derived(phrases[phraseIndex].text);
+	let currentArticle = $derived(phrases[phraseIndex].article);
 
 	// staggerFrom: "last" — the rightmost character animates first, matching the reference.
 	// Flat (not nested per-word) because Svelte doesn't fire in:/out: transitions on elements
@@ -142,7 +152,7 @@
 		<h1
 			class="animate-in text-center font-heading text-4xl font-medium tracking-tight text-balance delay-100 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 [text-shadow:0_0_50px_color-mix(in_oklab,var(--foreground)_20%,transparent)] fade-in md:text-5xl lg:text-6xl"
 		>
-			A
+			{currentArticle}
 			<span
 				class="relative inline-grid overflow-hidden rounded-lg bg-[#ff5941] px-2 py-0.5 align-baseline text-white sm:px-2 sm:py-1 md:px-3 md:py-2"
 				style={hasMeasured ? `width: ${pillWidth.current}px;` : ''}
