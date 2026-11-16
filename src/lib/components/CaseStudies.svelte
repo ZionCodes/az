@@ -69,7 +69,7 @@
 						<span
 							class="mt-auto inline-flex items-center gap-1.5 text-sm font-medium text-foreground"
 						>
-							Read case study
+							<span class="link-fill">Read case study</span>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 24 24"

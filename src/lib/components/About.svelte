@@ -1,6 +1,7 @@
 <script>
 	import automationzion from '#lib/assets/images/automationzion-profile.webp';
 	import { Signature } from '#lib/components/spell/signature/index.js';
+	import { playOnView } from '#lib/actions/playOnView.js';
 </script>
 
 <section class="mx-auto max-w-4xl px-6 py-16 md:py-24">
@@ -33,8 +34,11 @@
 			<p class="text-base leading-relaxed text-muted-foreground">
 				I'm Zion, an Automation Engineer and GTM Engineer. The copy-paste work and status chasing
 				that used to eat hours of your team's week runs on its own, the same way every time. What's
-				left is process and revenue infrastructure where nothing slips through the cracks and the
-				numbers read the same no matter who pulls the report.
+				left is process and revenue infrastructure where
+				<span class="hl-sweep" use:playOnView={{ class: 'hl-play', replayOnHover: false }}
+					>nothing slips through the cracks</span
+				>
+				and the numbers read the same no matter who pulls the report.
 			</p>
 
 			<p class="text-base leading-relaxed text-muted-foreground">

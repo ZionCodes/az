@@ -157,3 +157,60 @@
 			16 16,
 		pointer;
 }
+
+.hl-sweep {
+	padding: 0.05em 0.2em;
+	border-radius: 0.25em;
+	color: var(--foreground);
+	background-image: linear-gradient(
+		color-mix(in oklab, #ff5941 30%, transparent),
+		color-mix(in oklab, #ff5941 30%, transparent)
+	);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	box-decoration-break: clone;
+	-webkit-box-decoration-break: clone;
+}
+
+@keyframes hl-sweep {
+	from {
+		background-size: 0% 100%;
+	}
+	to {
+		background-size: 100% 100%;
+	}
+}
+
+.hl-sweep.hl-play {
+	animation: hl-sweep 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.25s backwards;
+}
+
+.link-fill {
+	padding: 0.05em 0.2em;
+	border-radius: 0.2em;
+	background-image: linear-gradient(#ff5941, #ff5941);
+	background-repeat: no-repeat;
+	background-position: 0 100%;
+	background-size: 100% 1px;
+	transition:
+		background-size 0.25s ease,
+		color 0.25s ease;
+}
+
+a.link-fill:hover,
+a.link-fill:focus-visible,
+a:hover .link-fill,
+a:focus-visible .link-fill {
+	background-size: 100% 100%;
+	color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.hl-sweep.hl-play {
+		animation: none;
+	}
+
+	.link-fill {
+		transition: none;
+	}
+}

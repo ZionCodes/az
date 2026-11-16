@@ -43,6 +43,9 @@
 				</p>
 			</div>
 		</div>
+		<p class="mt-8 text-sm text-muted-foreground opacity-0" use:reveal={{ delay: 250 }}>
+			Worked with teams in the US, UK, Australia and the Netherlands.
+		</p>
 	</div>
 	<div
 		aria-hidden={true}

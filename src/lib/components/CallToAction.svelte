@@ -1,5 +1,6 @@
 <script>
 	import { reveal } from '#lib/actions/reveal.js';
+	import { playOnView } from '#lib/actions/playOnView.js';
 	import { trackEvent } from '#lib/analytics.js';
 
 	let { location = 'call_to_action' } = $props();
@@ -24,7 +25,10 @@
 			</h2>
 			<p class="mx-auto mt-4 max-w-md text-balance text-muted-foreground">
 				Tell me the role you're hiring for or the workflow that's costing you time, and I'll reply
-				with how I'd approach it.
+				with
+				<span class="hl-sweep" use:playOnView={{ class: 'hl-play', replayOnHover: false }}
+					>how I'd approach it.</span
+				>
 			</p>
 			<div class="mt-6 flex flex-wrap justify-center gap-3">
 				<a

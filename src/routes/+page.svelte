@@ -7,6 +7,7 @@
 	import TechStack from '#lib/components/TechStack.svelte';
 	import CaseStudies from '#lib/components/CaseStudies.svelte';
 	import HowItWorks from '#lib/components/HowItWorks.svelte';
+	import Testimonials from '#lib/components/Testimonials.svelte';
 	import CallToAction from '#lib/components/CallToAction.svelte';
 	import Footer from '#lib/components/Footer.svelte';
 	import profilePhoto from '#lib/assets/images/automationzion-profile.webp';
@@ -90,6 +91,7 @@
 		<FeatureSection />
 		<HowItWorks />
 		<CaseStudies studies={data.caseStudies} showViewAll={true} />
+		<Testimonials />
 		<TechStack />
 		<CallToAction />
 	</main>
