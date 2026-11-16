@@ -13,10 +13,11 @@
 				What I Do
 				<span class="inline-block h-px w-8 bg-foreground/30"></span>
 			</p>
-			<h2 class="font-heading text-3xl font-semibold lg:text-4xl">Automation & GTM Systems, Built End to End</h2>
+			<h2 class="font-heading text-3xl font-semibold lg:text-4xl">
+				The Systems Behind Process and Revenue
+			</h2>
 			<p class="text-muted-foreground">
-				CRM setup, data infrastructure and the automation behind it, built and owned by one
-				engineer.
+				CRM, data, integrations, AI and outbound, scoped and built by one engineer.
 			</p>
 		</div>
 		<div class="relative">
@@ -42,7 +43,7 @@
 							<span class="mx-auto block w-fit font-heading text-5xl font-semibold">100%</span>
 						</div>
 						<h3 class="mt-6 text-center font-heading text-3xl font-semibold">
-							Bespoke GTM Systems
+							Built Around How Your Team Works
 						</h3>
 					</div>
 				</div>
@@ -74,8 +75,8 @@
 						<div class="relative z-10 mt-6 space-y-2 text-center">
 							<h3 class="font-heading text-lg font-medium transition">CRM Setup & Admin</h3>
 							<p class="text-sm text-muted-foreground">
-								Salesforce and HubSpot, configured, managed and tailored for your GTM model. Clean
-								data, validation and permissions that stay maintained.
+								Salesforce and HubSpot set up around how you sell. Records your reps don't
+								second-guess, with validation and permissions kept current.
 							</p>
 						</div>
 					</div>
@@ -96,13 +97,7 @@
 							>
 								<rect width="386" height="123" rx="10" />
 								<g clip-path="url(#clip0_svc_106p)">
-									<circle
-										class="text-violet-500"
-										cx="29"
-										cy="29"
-										r="15"
-										fill="currentColor"
-									/>
+									<circle class="text-violet-500" cx="29" cy="29" r="15" fill="currentColor" />
 									<path d="M23 33h3v-9h-3zM27.5 33h3v-13h-3zM32 33h3v-6h-3z" fill="white" />
 									<text x="55" y="34" font-size="15" font-weight="600" fill="currentColor">
 										Reporting
@@ -166,9 +161,8 @@
 								Data Foundation & Reporting
 							</h3>
 							<p class="text-sm text-muted-foreground">
-								Full visibility across the funnel. Dashboards and reporting that hold up in front
-								of leadership, because the data underneath them is actually right and stays
-								monitored.
+								Dashboards and reporting that hold up in front of leadership, because the numbers
+								underneath are right and stay monitored.
 							</p>
 						</div>
 					</div>
@@ -202,7 +196,7 @@
 							<div class="space-y-2">
 								<h3 class="font-heading text-lg font-medium transition">Tool Integration</h3>
 								<p class="text-sm text-muted-foreground">
-									Every tool in the GTM stack connected and kept in sync, so nothing gets
+									Every tool your team runs on, connected and kept in sync, so nothing gets
 									re-entered by hand or drifts out of date.
 								</p>
 							</div>
@@ -343,8 +337,8 @@
 							<div class="space-y-2">
 								<h3 class="font-heading text-lg font-medium transition">AI Systems & Workflows</h3>
 								<p class="text-sm text-muted-foreground">
-									I find where AI actually moves the business, then build and ship the agents and
-									automations that do it, end to end.
+									I find where AI moves a number the business already tracks, then build and ship
+									the agents and automations that do it.
 								</p>
 							</div>
 						</div>
@@ -352,7 +346,9 @@
 							class="relative mt-6 before:absolute before:inset-0 before:mx-auto before:w-px before:bg-(--color-border) sm:-my-6 sm:-mr-6"
 						>
 							<div class="relative flex h-full flex-col justify-center space-y-4 py-6">
-								<div class="svc-pill-wrap relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2">
+								<div
+									class="svc-pill-wrap relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2"
+								>
 									<span
 										class="flex items-center gap-1.5 rounded border bg-background px-2 py-1 text-xs shadow-sm"
 									>
@@ -392,7 +388,9 @@
 										Weekly report sent
 									</span>
 								</div>
-								<div class="svc-pill-wrap relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2">
+								<div
+									class="svc-pill-wrap relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2"
+								>
 									<span
 										class="flex items-center gap-1.5 rounded border bg-background px-2 py-1 text-xs shadow-sm"
 									>
@@ -444,8 +442,8 @@
 							<div class="space-y-2">
 								<h3 class="font-heading text-lg font-medium transition">Outbound Engineering</h3>
 								<p class="text-sm text-muted-foreground">
-									Signal-based prospecting, enrichment waterfalls and deliverability
-									infrastructure, measured in pipeline and revenue, not emails sent.
+									Signal-based prospecting, enrichment waterfalls and deliverability infrastructure,
+									measured in pipeline and revenue, not emails sent.
 								</p>
 							</div>
 						</div>
@@ -453,7 +451,9 @@
 							class="relative mt-6 before:absolute before:inset-0 before:mx-auto before:w-px before:bg-(--color-border) sm:-my-6 sm:-mr-6"
 						>
 							<div class="relative flex h-full flex-col justify-center space-y-4 py-6">
-								<div class="svc-pill-wrap relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2">
+								<div
+									class="svc-pill-wrap relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2"
+								>
 									<span
 										class="flex items-center gap-1.5 rounded border bg-background px-2 py-1 text-xs shadow-sm"
 									>
@@ -493,7 +493,9 @@
 										Sequence live across 3 domains
 									</span>
 								</div>
-								<div class="svc-pill-wrap relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2">
+								<div
+									class="svc-pill-wrap relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2"
+								>
 									<span
 										class="flex items-center gap-1.5 rounded border bg-background px-2 py-1 text-xs shadow-sm"
 									>

@@ -20,10 +20,7 @@
 				<span class="inline-block h-px w-8 bg-foreground/30"></span>
 				By the Numbers
 			</p>
-			<h2 class="font-heading text-4xl font-medium text-balance">Built on Real Experience</h2>
-			<p class="text-balance text-muted-foreground">
-				Years spent deep in automation and GTM systems, with the depth of tooling to back it up.
-			</p>
+			<h2 class="font-heading text-4xl font-medium text-balance">Three Years of Shipped Systems</h2>
 		</div>
 		<div
 			class="mt-12 grid grid-cols-2 gap-6 text-sm opacity-0 @xl:grid-cols-3"
@@ -36,12 +33,13 @@
 			</div>
 			<div class="border-y py-6">
 				<p class="text-xl text-muted-foreground">
-					<span class="font-medium text-violet-600">20+</span> Systems shipped, end to end.
+					<span class="font-medium text-violet-600">20+</span> Systems shipped and still running.
 				</p>
 			</div>
 			<div class="border-y py-6">
 				<p class="text-xl text-muted-foreground">
-					<span class="font-medium text-orange-600">10+</span> Tools across the GTM stack.
+					<span class="font-medium text-orange-600">10+</span> Hours a week of commission admin taken
+					off one sales team.
 				</p>
 			</div>
 		</div>

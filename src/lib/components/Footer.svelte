@@ -40,14 +40,14 @@
 			<div class="col-span-full border-b pb-8">
 				<a
 					href="/"
-					aria-label="AutomationZion — Home"
+					aria-label="AutomationZion home"
 					class="flex w-fit items-center gap-2 text-foreground"
 				>
 					<!-- eslint-disable-next-line svelte/no-at-html-tags -- static inline SVG import, not user data -->
 					{@html logoMarkup}
 				</a>
 				<p class="mt-4 max-w-xs text-sm text-muted-foreground">
-					Automation Engineer & GTM Engineer
+					Automation Engineer & GTM Engineer building process and revenue infrastructure.
 				</p>
 				<div class="mt-6 -ml-2 flex">
 					{#each social as item (item.label)}

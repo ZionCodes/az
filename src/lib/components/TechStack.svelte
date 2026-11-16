@@ -2,6 +2,7 @@
 	import { OrbitingCircles } from '#lib/components/magic/orbiting-circles/index.js';
 	import { reveal } from '#lib/actions/reveal.js';
 	import clayLogo from '#lib/assets/images/clay.webp';
+	import instantlyLogo from '#lib/assets/images/instantly.png';
 </script>
 
 <section class="py-16 md:py-32">
@@ -15,8 +16,7 @@
 		</p>
 		<h2 class="font-heading text-3xl font-semibold lg:text-4xl">Tools I Work With</h2>
 		<p class="text-muted-foreground">
-			CRM, enrichment, and AI, wired together into one connected GTM stack instead of sitting in
-			silos.
+			The tools I build in most. If it has an API, I can work with it.
 		</p>
 	</div>
 
@@ -29,14 +29,20 @@
 		<OrbitingCircles iconSize={40} duration={20} radius={80}>
 			{@render hubspot()}
 		</OrbitingCircles>
-		<OrbitingCircles iconSize={40} duration={20} radius={80} delay={-10} path>
+		<OrbitingCircles iconSize={40} duration={20} radius={80} delay={-6.67} path>
 			{@render salesforce()}
+		</OrbitingCircles>
+		<OrbitingCircles iconSize={40} duration={20} radius={80} delay={-13.33}>
+			{@render n8n()}
 		</OrbitingCircles>
 		<OrbitingCircles iconSize={40} radius={160} duration={20} reverse>
 			{@render clay()}
 		</OrbitingCircles>
-		<OrbitingCircles iconSize={40} radius={160} duration={20} reverse delay={-10} path>
+		<OrbitingCircles iconSize={40} radius={160} duration={20} reverse delay={-6.67} path>
 			{@render claude()}
+		</OrbitingCircles>
+		<OrbitingCircles iconSize={40} radius={160} duration={20} reverse delay={-13.33}>
+			{@render instantly()}
 		</OrbitingCircles>
 	</div>
 </section>
@@ -68,6 +74,25 @@
 
 {#snippet clay()}
 	<img src={clayLogo} alt="Clay" width="100" height="100" loading="lazy" class="rounded-full" />
+{/snippet}
+
+{#snippet n8n()}
+	<svg width="100" height="100" viewBox="0 0 24 24" fill="#EA4B71">
+		<path
+			d="M21.4737 5.6842c-1.1772 0-2.1663.8051-2.4468 1.8947h-2.8955c-1.235 0-2.289.893-2.492 2.111l-.1038.623a1.263 1.263 0 0 1-1.246 1.0555H11.289c-.2805-1.0896-1.2696-1.8947-2.4468-1.8947s-2.1663.8051-2.4467 1.8947H4.973c-.2805-1.0896-1.2696-1.8947-2.4468-1.8947C1.1311 9.4737 0 10.6047 0 12s1.131 2.5263 2.5263 2.5263c1.1772 0 2.1663-.8051 2.4468-1.8947h1.4223c.2804 1.0896 1.2696 1.8947 2.4467 1.8947 1.1772 0 2.1663-.8051 2.4468-1.8947h1.0008a1.263 1.263 0 0 1 1.2459 1.0555l.1038.623c.203 1.218 1.257 2.111 2.492 2.111h.3692c.2804 1.0895 1.2696 1.8947 2.4468 1.8947 1.3952 0 2.5263-1.131 2.5263-2.5263s-1.131-2.5263-2.5263-2.5263c-1.1772 0-2.1664.805-2.4468 1.8947h-.3692a1.263 1.263 0 0 1-1.246-1.0555l-.1037-.623A2.52 2.52 0 0 0 13.9607 12a2.52 2.52 0 0 0 .821-1.4794l.1038-.623a1.263 1.263 0 0 1 1.2459-1.0555h2.8955c.2805 1.0896 1.2696 1.8947 2.4468 1.8947 1.3952 0 2.5263-1.131 2.5263-2.5263s-1.131-2.5263-2.5263-2.5263m0 1.2632a1.263 1.263 0 0 1 1.2631 1.2631 1.263 1.263 0 0 1-1.2631 1.2632 1.263 1.263 0 0 1-1.2632-1.2632 1.263 1.263 0 0 1 1.2632-1.2631M2.5263 10.7368A1.263 1.263 0 0 1 3.7895 12a1.263 1.263 0 0 1-1.2632 1.2632A1.263 1.263 0 0 1 1.2632 12a1.263 1.263 0 0 1 1.2631-1.2632m6.3158 0A1.263 1.263 0 0 1 10.1053 12a1.263 1.263 0 0 1-1.2632 1.2632A1.263 1.263 0 0 1 7.579 12a1.263 1.263 0 0 1 1.2632-1.2632m10.1053 3.7895a1.263 1.263 0 0 1 1.2631 1.2632 1.263 1.263 0 0 1-1.2631 1.2631 1.263 1.263 0 0 1-1.2632-1.2631 1.263 1.263 0 0 1 1.2632-1.2632"
+		/>
+	</svg>
+{/snippet}
+
+{#snippet instantly()}
+	<img
+		src={instantlyLogo}
+		alt="Instantly"
+		width="100"
+		height="100"
+		loading="lazy"
+		class="rounded-full"
+	/>
 {/snippet}
 
 {#snippet claude()}

@@ -23,8 +23,8 @@
 				Open to Full-Time Roles & Client Work
 			</h2>
 			<p class="mx-auto mt-4 max-w-md text-balance text-muted-foreground">
-				Looking for a GTM Systems / AI Automation Engineer, full-time, part-time, or contract? Let's
-				talk.
+				Tell me the role you're hiring for or the workflow that's costing you time, and I'll reply
+				with how I'd approach it.
 			</p>
 			<div class="mt-6 flex flex-wrap justify-center gap-3">
 				<a

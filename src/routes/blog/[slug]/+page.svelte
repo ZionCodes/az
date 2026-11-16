@@ -71,7 +71,7 @@
 </script>
 
 <svelte:head>
-	<title>{post.title} — AutomationZion</title>
+	<title>{post.title} | AutomationZion</title>
 	<meta name="description" content={post.introduction} />
 	<link rel="canonical" href={canonicalUrl} />
 	<meta property="og:title" content={post.title} />

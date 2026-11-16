@@ -33,9 +33,7 @@
 			<svelte:element this={headingTag} class="font-heading text-3xl font-semibold lg:text-4xl">
 				Case Studies
 			</svelte:element>
-			<p class="text-muted-foreground">
-				Real systems I've built, in production. Here's what changed.
-			</p>
+			<p class="text-muted-foreground">What changed after each system went live.</p>
 		</div>
 
 		<div class="mt-12 grid gap-6 md:grid-cols-2">

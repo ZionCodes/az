@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>{page.status} — AutomationZion</title>
+	<title>{page.status} | AutomationZion</title>
 </svelte:head>
 
 <div class="flex min-h-screen flex-col">

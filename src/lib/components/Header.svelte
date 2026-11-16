@@ -62,7 +62,7 @@
 	>
 		<a
 			href="/"
-			aria-label="AutomationZion — Home"
+			aria-label="AutomationZion home"
 			class="rounded-md p-2 text-foreground hover:bg-muted"
 		>
 			<!-- eslint-disable-next-line svelte/no-at-html-tags -- static inline SVG import, not user data -->

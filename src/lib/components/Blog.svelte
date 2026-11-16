@@ -15,8 +15,8 @@
 			Breakdowns, decoded.
 		</h1>
 		<p class="text-muted-foreground">
-			Honest takes on GTM systems, outbound engineering, CRM architecture, and building revenue
-			infrastructure that actually works.
+			Breakdowns of GTM systems, outbound engineering, CRM architecture and automation, written from
+			systems I've built.
 		</p>
 	</div>
 

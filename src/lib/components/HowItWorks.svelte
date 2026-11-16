@@ -4,23 +4,23 @@
 	const steps = [
 		{
 			number: '01',
-			title: 'Understand the Stack',
+			title: 'Map the Process',
 			description:
-				'I start by mapping the full GTM motion. Where data breaks, where handoffs fail, and where the team is spending time on work a system should handle.',
+				'You get a map of where data breaks, where handoffs fail and where the team is doing work a system should.',
 			card: 'bg-gradient-to-br from-blue-500 to-sky-600'
 		},
 		{
 			number: '02',
 			title: 'Design the Architecture',
 			description:
-				'I design the full system before touching any tool. CRM data models, workflow logic, integration layers, and failure handling all mapped out before building starts.',
+				'You see the full design before anything is built: data model, workflow logic, integrations and what happens when something fails.',
 			card: 'bg-gradient-to-br from-violet-500 to-purple-600'
 		},
 		{
 			number: '03',
 			title: 'Build and Ship',
 			description:
-				'I build end to end, handle edge cases, and test against real data. I ship v1 fast and iterate based on what breaks in production, not what looked good in a diagram.',
+				'A working v1 goes live fast, tested on real data, then improved by what breaks in production.',
 			card: 'bg-gradient-to-br from-orange-500 to-red-500'
 		},
 		{
@@ -92,9 +92,11 @@
 		The Process
 		<span class="inline-block h-px w-8 bg-foreground/30"></span>
 	</p>
-	<h2 class="font-heading text-3xl font-semibold lg:text-4xl">A Clear Process From Day One</h2>
+	<h2 class="font-heading text-3xl font-semibold lg:text-4xl">
+		Four Steps From Broken Handoff to Running System
+	</h2>
 	<p class="text-muted-foreground">
-		Every engagement follows the same four steps, so you always know what's happening and why.
+		The same four steps every time, so you always know what comes next.
 	</p>
 </div>
 

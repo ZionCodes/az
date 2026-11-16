@@ -184,8 +184,7 @@
 		<p
 			class="mx-auto max-w-md animate-in text-center text-base tracking-wider text-foreground/80 delay-200 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in sm:text-lg md:text-xl"
 		>
-			Data you can trust, tools that talk to each other and no more leads slipping through the
-			cracks
+			The handoffs, updates and follow-ups your team chases by hand, running on their own.
 		</p>
 
 		<div

@@ -62,8 +62,8 @@
 					</div>
 					<h3 class="mt-4 text-lg font-semibold text-foreground">One System, Any Starting Point</h3>
 					<p class="mt-3 max-w-2xl text-base/normal text-muted-foreground">
-						Whether you're already running a GTM stack, or building from zero, I build the systems
-						that carry a deal from first signal to closed-won
+						Whether you're already running a revenue system or need a process automated somewhere in
+						the business, I build the systems that carry work from first signal to final outcome.
 					</p>
 					<div class="-mt-2.5 mr-0.5 -ml-2 pt-2 pl-2">
 						<div
@@ -180,10 +180,10 @@
 							></svg
 						>
 					</div>
-					<h3 class="mt-4 text-lg font-semibold text-foreground">Just Systems That Work</h3>
+					<h3 class="mt-4 text-lg font-semibold text-foreground">Straight Answers</h3>
 					<p class="mt-3 text-base/normal text-muted-foreground">
-						Clear communication, steady updates and systems built to be understood, not a black box
-						only I can maintain.
+						Steady updates while it's being built and a plain warning when a fix you want would
+						break something else.
 					</p>
 				</div>
 
@@ -209,10 +209,10 @@
 							></svg
 						>
 					</div>
-					<h3 class="mt-4 text-lg font-semibold text-foreground">Built to Scale With the Team</h3>
+					<h3 class="mt-4 text-lg font-semibold text-foreground">Start With One Workflow</h3>
 					<p class="mt-3 text-base/normal text-muted-foreground">
-						Systems designed to grow as the business does, from one integration today to the full
-						stack tomorrow.
+						The first build solves one problem. Everything after it plugs into the same foundation
+						instead of starting over.
 					</p>
 				</div>
 
@@ -240,7 +240,8 @@
 					</div>
 					<h3 class="mt-4 text-lg font-semibold text-foreground">Documented, Not Dependent</h3>
 					<p class="mt-3 text-base/normal text-muted-foreground">
-						Everything I build is documented and handed off clean, so the team owns it fully.
+						Documentation, walkthroughs and a clean handover, so the next person to touch the system
+						isn't working from guesswork.
 					</p>
 				</div>
 			</div>
