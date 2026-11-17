@@ -11,8 +11,8 @@
 	const phrases = [
 		{ text: 'CRM system', article: 'A' },
 		{ text: 'workflow engine', article: 'A' },
-		{ text: 'AI system', article: 'An' },
-		{ text: 'revenue engine', article: 'A' }
+		{ text: 'GTM stack', article: 'A' },
+		{ text: 'AI system', article: 'An' }
 	];
 
 	let phraseIndex = $state(0);
