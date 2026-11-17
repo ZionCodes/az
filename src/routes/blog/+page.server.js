@@ -1,7 +1,7 @@
 import { listPostsByCategory } from '#lib/server/posts.js';
 
 export async function load({ locals, setHeaders }) {
-	setHeaders({ 'cache-control': 'public, max-age=60, stale-while-revalidate=300' });
+	setHeaders({ 'cache-control': 'public, max-age=60, s-maxage=300, stale-while-revalidate=86400' });
 
 	try {
 		return { posts: await listPostsByCategory(locals.pb, 'blog') };

@@ -36,6 +36,7 @@
 							src={post.thumbnailUrl}
 							alt={post.title}
 							loading={i < 2 ? 'eager' : 'lazy'}
+							fetchpriority={i === 0 ? 'high' : 'auto'}
 							width="192"
 							height="144"
 							class="aspect-video w-full flex-shrink-0 rounded-lg object-cover transition-transform duration-500 group-hover:scale-105 sm:aspect-auto sm:h-36 sm:w-48"

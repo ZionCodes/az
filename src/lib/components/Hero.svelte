@@ -9,11 +9,10 @@
 	// acronyms are pronounced as letter names ("CRM" -> "see", a consonant sound,
 	// so "a CRM system" is correct) which a simple vowel-letter check gets wrong
 	const phrases = [
-		{ text: 'GTM stack', article: 'A' },
+		{ text: 'CRM system', article: 'A' },
 		{ text: 'workflow engine', article: 'A' },
 		{ text: 'AI system', article: 'An' },
-		{ text: 'revenue engine', article: 'A' },
-		{ text: 'CRM system', article: 'A' }
+		{ text: 'revenue engine', article: 'A' }
 	];
 
 	let phraseIndex = $state(0);
@@ -117,7 +116,7 @@
 	<div class="relative flex flex-col items-center justify-center gap-5 pt-46 pb-10">
 		<a
 			class="group mx-auto flex w-fit animate-in items-center gap-3 rounded-full border bg-card px-3 py-1 shadow transition-all delay-500 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in"
-			href="/"
+			href="/about"
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"

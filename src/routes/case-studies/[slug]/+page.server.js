@@ -2,7 +2,9 @@ import { error } from '@sveltejs/kit';
 import { getPostBySlug } from '#lib/server/posts.js';
 
 export async function load({ params, locals, setHeaders }) {
-	setHeaders({ 'cache-control': 'public, max-age=300, stale-while-revalidate=3600' });
+	setHeaders({
+		'cache-control': 'public, max-age=300, s-maxage=3600, stale-while-revalidate=86400'
+	});
 
 	try {
 		return { post: await getPostBySlug(locals.pb, params.slug) };
