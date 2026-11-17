@@ -36,7 +36,9 @@
 
 	function measurePillWidth() {
 		if (!widthProbeEl) return;
-		pillWidth.set(widthProbeEl.offsetWidth);
+		// the first measurement snaps into place: animating up from 0 would
+		// shrink the pill and reflow the headline, shifting the page below it
+		pillWidth.set(widthProbeEl.offsetWidth, { instant: !hasMeasured });
 		hasMeasured = true;
 	}
 

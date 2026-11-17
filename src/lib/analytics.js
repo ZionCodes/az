@@ -15,10 +15,24 @@ function shouldTrack() {
 export function initAnalytics() {
 	if (!shouldTrack()) return;
 
-	const script = document.createElement('script');
-	script.async = true;
-	script.src = `https://www.googletagmanager.com/gtag/js?id=${PUBLIC_GA_MEASUREMENT_ID}`;
-	document.head.appendChild(script);
+	// The tag is the heaviest script on the page, so it waits for the first
+	// interaction or a few idle seconds instead of competing with first paint.
+	// Events queue in dataLayer in the meantime and are sent once it loads.
+	const interactionEvents = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+	let loaded = false;
+	function loadTag() {
+		if (loaded) return;
+		loaded = true;
+		for (const type of interactionEvents) window.removeEventListener(type, loadTag);
+		const script = document.createElement('script');
+		script.async = true;
+		script.src = `https://www.googletagmanager.com/gtag/js?id=${PUBLIC_GA_MEASUREMENT_ID}`;
+		document.head.appendChild(script);
+	}
+	for (const type of interactionEvents) {
+		window.addEventListener(type, loadTag, { once: true, passive: true });
+	}
+	setTimeout(loadTag, 4000);
 
 	window.dataLayer = window.dataLayer || [];
 	window.gtag = function gtag() {
