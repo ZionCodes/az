@@ -2,7 +2,6 @@
 	import { reveal } from '#lib/actions/reveal.js';
 	import { playOnView } from '#lib/actions/playOnView.js';
 	import { trackEvent } from '#lib/analytics.js';
-	import CopyEmail from '#lib/components/CopyEmail.svelte';
 
 	let { location = 'call_to_action' } = $props();
 </script>
@@ -70,7 +69,6 @@
 					Connect on LinkedIn
 				</a>
 			</div>
-			<CopyEmail class="mt-5" location={`${location}_copy`} />
 		</div>
 	</div>
 </section>

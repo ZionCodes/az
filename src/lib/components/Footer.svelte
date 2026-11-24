@@ -1,7 +1,6 @@
 <script>
 	import logoMarkup from '#lib/assets/images/logo.svg?raw';
 	import { playOnView } from '#lib/actions/playOnView.js';
-	import CopyEmail from '#lib/components/CopyEmail.svelte';
 
 	const navLinks = [
 		{ label: 'About', href: '/about' },
@@ -50,7 +49,6 @@
 				<p class="mt-4 max-w-xs text-sm text-muted-foreground">
 					Automation Engineer & GTM Engineer building process and revenue infrastructure.
 				</p>
-				<CopyEmail class="mt-4" location="footer" />
 				<div class="mt-6 -ml-2 flex">
 					{#each social as item (item.label)}
 						<a
