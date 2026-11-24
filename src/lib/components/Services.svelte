@@ -346,75 +346,37 @@
 								</p>
 							</div>
 						</div>
-						<div
-							class="relative mt-6 before:absolute before:inset-0 before:mx-auto before:w-px before:bg-(--color-border) sm:-my-6 sm:-mr-6"
-						>
-							<div class="relative flex h-full flex-col justify-center space-y-4 py-6">
-								<div
-									class="svc-pill-wrap relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2"
-								>
-									<span
-										class="flex items-center gap-1.5 rounded border bg-background px-2 py-1 text-xs shadow-sm"
-									>
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											viewBox="0 0 24 24"
-											fill="none"
-											stroke="currentColor"
-											stroke-width="2"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											class="size-3.5 text-emerald-600"
+						<div class="relative mt-8 flex items-center sm:mt-0 sm:pl-6">
+							<ol class="svc-run relative w-full space-y-4" aria-label="Example AI workflow run">
+								{#each [{ tool: 'n8n', title: 'Call transcript received', note: 'Trigger', state: 'done' }, { tool: 'claude', title: 'Summary and next steps written', note: 'AI step', state: 'done' }, { tool: 'hubspot', title: 'Deal note added, follow-up drafted', note: 'Waiting for rep approval', state: 'review' }] as step (step.title)}
+									<li class="svc-pill-wrap relative flex items-start gap-3">
+										<span
+											class="relative z-10 flex size-8 shrink-0 items-center justify-center rounded-full border bg-background shadow-sm"
 										>
-											<circle cx="12" cy="12" r="10" />
-											<path d="m9 12 2 2 4-4" />
-										</svg>
-										Meeting notes summarized
-									</span>
-								</div>
-								<div class="svc-pill-wrap relative ml-[calc(50%-1rem)] flex items-center gap-2">
-									<span
-										class="flex items-center gap-1.5 rounded border bg-background px-2 py-1 text-xs shadow-sm"
-									>
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											viewBox="0 0 24 24"
-											fill="none"
-											stroke="currentColor"
-											stroke-width="2"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											class="size-3.5 text-emerald-600"
-										>
-											<circle cx="12" cy="12" r="10" />
-											<path d="m9 12 2 2 4-4" />
-										</svg>
-										Weekly report sent
-									</span>
-								</div>
-								<div
-									class="svc-pill-wrap relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2"
-								>
-									<span
-										class="flex items-center gap-1.5 rounded border bg-background px-2 py-1 text-xs shadow-sm"
-									>
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											viewBox="0 0 24 24"
-											fill="none"
-											stroke="currentColor"
-											stroke-width="2"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											class="size-3.5 text-emerald-600"
-										>
-											<circle cx="12" cy="12" r="10" />
-											<path d="m9 12 2 2 4-4" />
-										</svg>
-										Follow-up email drafted
-									</span>
-								</div>
-							</div>
+											<ToolLogo name={step.tool} class="size-4" />
+										</span>
+										<span class="min-w-0 pt-0.5">
+											<span class="block text-sm font-medium text-foreground">{step.title}</span>
+											<span
+												class={[
+													'mt-0.5 flex items-center gap-1.5 text-xs',
+													step.state === 'review'
+														? 'text-amber-700 dark:text-amber-400'
+														: 'text-muted-foreground'
+												]}
+											>
+												<span
+													class={[
+														'size-1.5 rounded-full',
+														step.state === 'review' ? 'svc-wait-dot bg-amber-500' : 'bg-emerald-500'
+													]}
+												></span>
+												{step.note}
+											</span>
+										</span>
+									</li>
+								{/each}
+							</ol>
 						</div>
 					</div>
 				</div>
@@ -451,75 +413,42 @@
 								</p>
 							</div>
 						</div>
-						<div
-							class="relative mt-6 before:absolute before:inset-0 before:mx-auto before:w-px before:bg-(--color-border) sm:-my-6 sm:-mr-6"
-						>
-							<div class="relative flex h-full flex-col justify-center space-y-4 py-6">
-								<div
-									class="svc-pill-wrap relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2"
-								>
-									<span
-										class="flex items-center gap-1.5 rounded border bg-background px-2 py-1 text-xs shadow-sm"
+						<div class="relative mt-8 flex items-center sm:mt-0 sm:pl-6">
+							<ol
+								class="svc-chain relative grid w-full gap-3 lg:grid-cols-3"
+								aria-label="Example outbound pipeline"
+							>
+								{#each [{ tool: 'clay', title: 'Signal found, contact enriched', note: 'Hiring for SDRs' }, { tool: 'instantly', title: 'Sent from warmed domains', note: 'DMARC passing' }, { tool: 'hubspot', title: 'Positive reply routed', note: 'Owner notified' }] as step, i (step.title)}
+									<li
+										class="svc-pill-wrap relative flex items-start gap-3 rounded-lg border bg-background p-3 shadow-sm lg:flex-col lg:gap-2"
 									>
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											viewBox="0 0 24 24"
-											fill="none"
-											stroke="currentColor"
-											stroke-width="2"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											class="size-3.5 text-rose-600"
+										<span
+											class="flex size-8 shrink-0 items-center justify-center rounded-full border bg-card"
 										>
-											<circle cx="12" cy="12" r="10" />
-											<path d="m9 12 2 2 4-4" />
-										</svg>
-										Domain warmed, DMARC passing
-									</span>
-								</div>
-								<div class="svc-pill-wrap relative ml-[calc(50%-1rem)] flex items-center gap-2">
-									<span
-										class="flex items-center gap-1.5 rounded border bg-background px-2 py-1 text-xs shadow-sm"
-									>
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											viewBox="0 0 24 24"
-											fill="none"
-											stroke="currentColor"
-											stroke-width="2"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											class="size-3.5 text-rose-600"
-										>
-											<circle cx="12" cy="12" r="10" />
-											<path d="m9 12 2 2 4-4" />
-										</svg>
-										Sequence live across 3 domains
-									</span>
-								</div>
-								<div
-									class="svc-pill-wrap relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2"
-								>
-									<span
-										class="flex items-center gap-1.5 rounded border bg-background px-2 py-1 text-xs shadow-sm"
-									>
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											viewBox="0 0 24 24"
-											fill="none"
-											stroke="currentColor"
-											stroke-width="2"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											class="size-3.5 text-rose-600"
-										>
-											<circle cx="12" cy="12" r="10" />
-											<path d="m9 12 2 2 4-4" />
-										</svg>
-										Qualified reply routed to CRM
-									</span>
-								</div>
-							</div>
+											<ToolLogo name={step.tool} class="size-4" />
+										</span>
+										<span class="min-w-0">
+											<span class="block text-sm leading-snug font-medium text-foreground"
+												>{step.title}</span
+											>
+											<span class="mt-0.5 block text-xs text-muted-foreground">{step.note}</span>
+										</span>
+										{#if i < 2}
+											<span
+												aria-hidden="true"
+												class="absolute top-1/2 -right-3 z-10 hidden size-3 -translate-y-1/2 text-muted-foreground lg:block"
+											>
+												<svg
+													viewBox="0 0 12 12"
+													fill="none"
+													stroke="currentColor"
+													stroke-width="1.5"><path d="m4 2 4 4-4 4" /></svg
+												>
+											</span>
+										{/if}
+									</li>
+								{/each}
+							</ol>
 						</div>
 					</div>
 				</div>
@@ -659,6 +588,19 @@
 		animation: svc-hub-ping 1.4s cubic-bezier(0, 0, 0.2, 1) 2;
 	}
 
+	.svc-run::before {
+		content: '';
+		position: absolute;
+		top: 1rem;
+		bottom: 1rem;
+		left: 1rem;
+		width: 1px;
+		background: var(--color-border);
+	}
+	.svc-wait-dot {
+		animation: svc-live-pulse 2s ease-out infinite;
+	}
+
 	/* cards 5 & 6: the status pills are always fully shown at rest -- the
 	   play trigger replays their arrival as a staggered cascade, landing
 	   back on the exact same resting state every time */
@@ -696,7 +638,8 @@
 		.svc-hub,
 		.svc-hub-ping,
 		.svc-pill-wrap,
-		.svc-live-dot {
+		.svc-live-dot,
+		.svc-wait-dot {
 			animation: none !important;
 		}
 		.svc-chart-line {
