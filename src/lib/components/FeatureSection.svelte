@@ -1,15 +1,8 @@
 <script>
 	import { reveal } from '#lib/actions/reveal.js';
 	import { playOnView } from '#lib/actions/playOnView.js';
-	import ToolLogo from '#lib/components/ToolLogo.svelte';
 
-	// the tools around the hub, laid out as two short rows above and below a
-	// middle row that holds the hub itself
-	const rows = [
-		['hubspot', 'salesforce'],
-		['clay', null, 'n8n'],
-		['claude', 'instantly']
-	];
+	import BeforeAfterSlider from '#lib/components/BeforeAfterSlider.svelte';
 </script>
 
 <section>
@@ -19,9 +12,9 @@
 				<div
 					use:reveal={{ delay: 0 }}
 					use:playOnView={{ class: 'feat-play', enterDelay: 600 }}
-					class="feat-card col-span-full grid overflow-hidden rounded-xl bg-foreground/5 text-card-foreground opacity-0 md:grid-cols-2 dark:bg-muted/80"
+					class="feat-card col-span-full overflow-hidden rounded-xl bg-foreground/5 text-card-foreground opacity-0 dark:bg-muted/80"
 				>
-					<div class="flex flex-col justify-center p-6 md:p-10">
+					<div class="p-6 md:p-8">
 						<div
 							class="feat-icon-badge flex size-10 items-center justify-center rounded-lg bg-blue-500/10 text-blue-600 ring-1 ring-blue-500/20 dark:text-blue-400"
 						>
@@ -42,46 +35,14 @@
 						<h3 class="mt-4 font-heading text-xl font-medium text-foreground">
 							One System, Any Starting Point
 						</h3>
-						<p class="mt-3 text-base/normal text-muted-foreground">
+						<p class="mt-3 max-w-2xl text-base/normal text-muted-foreground">
 							Whether you already run a revenue system or need one process automated somewhere in
 							the business, I start with what you have and build from there.
 						</p>
 					</div>
 
-					<div
-						class="feat-hub relative flex items-center justify-center border-t px-6 py-10 md:border-t-0 md:border-l"
-						role="img"
-						aria-label="HubSpot, Salesforce, Clay, n8n, Claude and Instantly connected to one system"
-					>
-						<div class="feat-hub-glow pointer-events-none absolute inset-0"></div>
-						<div class="relative flex flex-col items-center gap-3">
-							{#each rows as row, r (r)}
-								<div class="flex gap-3">
-									{#each row as tool, c (c)}
-										{#if tool}
-											<div
-												class="feat-tile flex size-16 items-center justify-center rounded-2xl border bg-card shadow-sm sm:size-20"
-												style="--tile-i: {r * 3 + c};"
-											>
-												<ToolLogo name={tool} class="size-7 sm:size-8" />
-											</div>
-										{:else}
-											<div
-												class="feat-tile feat-tile-hub flex size-16 items-center justify-center rounded-2xl bg-foreground text-background shadow-md sm:size-20"
-												style="--tile-i: 0;"
-											>
-												<svg viewBox="0 0 24 24" class="size-7 sm:size-8" aria-hidden="true">
-													<path
-														d="M14.5 2 5 13.5h5.2L9 22l10-12h-5.6L14.5 2Z"
-														fill="currentColor"
-													/>
-												</svg>
-											</div>
-										{/if}
-									{/each}
-								</div>
-							{/each}
-						</div>
+					<div class="border-t">
+						<BeforeAfterSlider />
 					</div>
 				</div>
 
@@ -188,16 +149,6 @@
 </section>
 
 <style>
-	.feat-hub-glow {
-		background-image: radial-gradient(
-			circle at center,
-			color-mix(in oklab, var(--foreground) 9%, transparent) 1px,
-			transparent 1.5px
-		);
-		background-size: 18px 18px;
-		mask-image: radial-gradient(circle at center, black 30%, transparent 75%);
-	}
-
 	@keyframes feat-icon-pop {
 		0% {
 			transform: scale(1);
@@ -213,28 +164,8 @@
 		animation: feat-icon-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 	}
 
-	/* the tiles settle in around the hub, hub first, then the tools */
-	@keyframes feat-tile-in {
-		from {
-			opacity: 0;
-			transform: translateY(8px) scale(0.92);
-		}
-		to {
-			opacity: 1;
-			transform: none;
-		}
-	}
-	.feat-card:global(.feat-play) .feat-tile {
-		animation: feat-tile-in 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
-		animation-delay: calc(var(--tile-i) * 70ms + 80ms);
-	}
-	.feat-card:global(.feat-play) .feat-tile-hub {
-		animation-delay: 0ms;
-	}
-
 	@media (prefers-reduced-motion: reduce) {
-		.feat-icon-badge,
-		.feat-tile {
+		.feat-icon-badge {
 			animation: none !important;
 		}
 	}
