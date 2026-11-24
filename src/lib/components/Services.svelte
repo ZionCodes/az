@@ -349,9 +349,9 @@
 						<div class="relative mt-8 flex items-center sm:mt-0 sm:pl-6">
 							<ol
 								class="svc-run relative w-full space-y-4"
-								aria-label="Example automation run: an ad spend watchdog"
+								aria-label="Example AI workflow run: order form to billing"
 							>
-								{#each [{ tool: 'n8n', title: 'Meta ad data pulled', note: 'Every 6 hours', state: 'done' }, { tool: 'supabase', title: 'CPM spike caught against client rules', note: 'Rule check', state: 'done' }, { tool: 'slack', title: "Alert posted to the client's channel", note: 'Waiting for the media buyer', state: 'review' }] as step (step.title)}
+								{#each [{ tool: 'n8n', title: 'Signed order form received', note: 'Trigger', state: 'done' }, { tool: 'claude', title: 'Plan, seats and start date extracted', note: 'AI step', state: 'done' }, { tool: 'stripe', title: 'Subscription drafted', note: 'Waiting for finance approval', state: 'review' }] as step (step.title)}
 									<li class="svc-pill-wrap relative flex items-start gap-3">
 										<span
 											class="relative z-10 flex size-8 shrink-0 items-center justify-center rounded-full border bg-background shadow-sm"

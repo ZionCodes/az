@@ -5,42 +5,70 @@
 		{
 			number: '01',
 			title: 'Map the Process',
+			deliverable: 'Process map',
 			description:
 				'You get a map of where data breaks, where handoffs fail and where the team is doing work a system should.',
-			card: 'bg-blue-700'
+			accent: 'blue'
 		},
 		{
 			number: '02',
 			title: 'Design the Architecture',
+			deliverable: 'System design',
 			description:
 				'You see the full design before anything is built: data model, workflow logic, integrations and what happens when something fails.',
-			card: 'bg-violet-700'
+			accent: 'violet'
 		},
 		{
 			number: '03',
 			title: 'Build and Ship',
+			deliverable: 'Working v1',
 			description:
 				'A working v1 goes live fast, tested on real data, then improved by what breaks in production.',
-			card: 'bg-orange-700'
+			accent: 'orange'
 		},
 		{
 			number: '04',
 			title: 'Own and Improve',
+			deliverable: 'Docs and ongoing fixes',
 			description:
 				'I document everything and keep improving the system after launch as the business grows.',
-			card: 'bg-emerald-700'
+			accent: 'emerald'
 		}
 	];
 
-	const scrollVh = steps.length * 30;
+	// full class strings so Tailwind generates them
+	const accents = {
+		blue: {
+			text: 'text-blue-700 dark:text-blue-400',
+			soft: 'bg-blue-500/10',
+			dot: 'bg-blue-600',
+			bar: 'bg-blue-600'
+		},
+		violet: {
+			text: 'text-violet-700 dark:text-violet-400',
+			soft: 'bg-violet-500/10',
+			dot: 'bg-violet-600',
+			bar: 'bg-violet-600'
+		},
+		orange: {
+			text: 'text-orange-700 dark:text-orange-400',
+			soft: 'bg-orange-500/10',
+			dot: 'bg-orange-600',
+			bar: 'bg-orange-600'
+		},
+		emerald: {
+			text: 'text-emerald-700 dark:text-emerald-400',
+			soft: 'bg-emerald-500/10',
+			dot: 'bg-emerald-600',
+			bar: 'bg-emerald-600'
+		}
+	};
+
+	// how much page scroll each step gets while the section is pinned
+	const stepVh = 45;
 
 	let wrapper = $state();
-	let contentEl = $state();
-	let listEl = $state();
 	let progress = $state(0);
-	let listHeight = $state(0);
-	let fillLeft = $state(0);
-	let fillTop = $state(0);
 
 	$effect(() => {
 		function update() {
@@ -48,18 +76,9 @@
 			const scrollable = wrapper.offsetHeight - window.innerHeight;
 			const scrolled = -wrapper.getBoundingClientRect().top;
 			progress = scrollable > 0 ? Math.min(1, Math.max(0, scrolled / scrollable)) : 0;
-
-			if (contentEl && listEl) {
-				const listRect = listEl.getBoundingClientRect();
-				const contentRect = contentEl.getBoundingClientRect();
-				fillLeft = listRect.left - contentRect.left - 10;
-				fillTop = listRect.top - contentRect.top;
-			}
 		}
 
-		// Scroll fires far more often than the display can paint; without this, every
-		// tick forces a synchronous layout read (getBoundingClientRect x3) even though
-		// only one of them can actually show up on screen. Coalesce to one update per frame.
+		// one layout read per frame, however often scroll fires
 		let ticking = false;
 		function onScrollOrResize() {
 			if (ticking) return;
@@ -73,7 +92,6 @@
 		update();
 		window.addEventListener('scroll', onScrollOrResize, { passive: true });
 		window.addEventListener('resize', onScrollOrResize);
-
 		return () => {
 			window.removeEventListener('scroll', onScrollOrResize);
 			window.removeEventListener('resize', onScrollOrResize);
@@ -81,7 +99,18 @@
 	});
 
 	let activeIndex = $derived(Math.min(steps.length - 1, Math.floor(progress * steps.length)));
-	let fillScale = $derived(1 / steps.length + (1 - 1 / steps.length) * progress);
+
+	// scroll the page to the middle of a step's share of the pinned range
+	function goTo(i) {
+		if (!wrapper) return;
+		const scrollable = wrapper.offsetHeight - window.innerHeight;
+		const top = wrapper.getBoundingClientRect().top + window.scrollY;
+		const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		window.scrollTo({
+			top: top + scrollable * ((i + 0.5) / steps.length),
+			behavior: reduce ? 'auto' : 'smooth'
+		});
+	}
 </script>
 
 <div class="mx-auto max-w-2xl space-y-4 px-6 pt-16 text-center opacity-0 md:pt-24" use:reveal>
@@ -100,100 +129,219 @@
 	</p>
 </div>
 
-<div class="pin-wrapper" bind:this={wrapper} style="height: calc(100vh + {scrollVh}vh)">
-	<section class="pin-section">
-		<div class="content" bind:this={contentEl}>
-			<ul class="list" bind:this={listEl} bind:clientHeight={listHeight}>
-				{#each steps as item, i (item.title)}
-					<li class:active={i === activeIndex}>{item.title}</li>
-				{/each}
-			</ul>
-			<div
-				class="fill"
-				style="left: {fillLeft}px; top: {fillTop}px; height: {listHeight}px; transform: scaleY({fillScale})"
-			></div>
-			<div class="right">
-				{#each steps as item, i (item.title)}
-					<div class="slide" class:visible={i === activeIndex}>
-						<div class="card {item.card}">
-							<div class="card-header">
-								<span class="card-label">Step</span>
-								<span class="card-number">{item.number}</span>
-							</div>
-
-							<div class="card-illustration">
-								{#if i === 0}
-									<svg viewBox="0 0 160 160" fill="none">
-										<g stroke="#fff" stroke-width="2" stroke-linecap="round">
-											<line x1="80" y1="80" x2="32" y2="42" opacity="0.6" />
-											<line x1="80" y1="80" x2="128" y2="42" opacity="0.6" />
-											<line x1="80" y1="80" x2="32" y2="118" opacity="0.6" />
-											<line x1="80" y1="80" x2="128" y2="118" opacity="0.6" />
-										</g>
-										<g stroke="#fff" stroke-width="2" fill="#fff" fill-opacity="0.15">
-											<circle cx="80" cy="80" r="16" />
-											<circle cx="32" cy="42" r="9" />
-											<circle cx="128" cy="42" r="9" />
-											<circle cx="32" cy="118" r="9" />
-											<circle cx="128" cy="118" r="9" />
-										</g>
-									</svg>
-								{:else if i === 1}
-									<svg viewBox="0 0 160 160" fill="none">
-										<g
-											stroke="#fff"
-											stroke-width="2"
-											stroke-linejoin="round"
-											fill="#fff"
-											fill-opacity="0.12"
-										>
-											<path d="M80 24 138 52 80 80 22 52Z" />
-											<path d="M80 64 138 92 80 120 22 92Z" fill-opacity="0.18" />
-											<path d="M80 104 138 132 80 160 22 132Z" fill-opacity="0.24" />
-										</g>
-									</svg>
-								{:else if i === 2}
-									<svg viewBox="0 0 160 160" fill="none">
-										<circle cx="34" cy="30" r="2.5" fill="#fff" opacity="0.6" />
-										<circle cx="24" cy="60" r="1.5" fill="#fff" opacity="0.5" />
-										<circle cx="46" cy="18" r="1.5" fill="#fff" opacity="0.5" />
-										<g transform="translate(30 8) scale(5.4)">
-											<path
-												d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2zM9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"
-												stroke="#fff"
-												stroke-width="2"
-												vector-effect="non-scaling-stroke"
-												stroke-linecap="round"
-												stroke-linejoin="round"
-											/>
-										</g>
-									</svg>
-								{:else}
-									<svg viewBox="0 0 160 160" fill="none">
-										<g transform="translate(20 30) scale(5.4)">
-											<path
-												d="M3 3v16a2 2 0 0 0 2 2h16M7 16l4-4 3 3 5-6"
-												stroke="#fff"
-												stroke-width="2"
-												vector-effect="non-scaling-stroke"
-												stroke-linecap="round"
-												stroke-linejoin="round"
-											/>
-										</g>
-										<g fill="#fff">
-											<circle cx="57.8" cy="116.4" r="4" />
-											<circle cx="79.6" cy="94.6" r="4" />
-											<circle cx="96.2" cy="110.2" r="4" />
-											<circle cx="123" cy="78.4" r="4" />
-										</g>
-									</svg>
+<div class="relative" bind:this={wrapper} style="height: calc(100vh + {steps.length * stepVh}vh)">
+	<section class="sticky top-0 flex h-screen items-center">
+		<div
+			class="mx-auto grid w-full max-w-5xl items-center gap-8 px-6 md:grid-cols-[1fr_minmax(0,22rem)] md:gap-16"
+		>
+			<!-- step list with a progress rail -->
+			<ol class="relative hidden md:block">
+				<span class="absolute top-3 bottom-3 left-[0.6875rem] w-px bg-border" aria-hidden="true"
+				></span>
+				<span
+					class="rail-fill absolute top-3 left-[0.6875rem] w-px origin-top bg-foreground"
+					style="height: calc((100% - 1.5rem) * {activeIndex / (steps.length - 1)});"
+					aria-hidden="true"
+				></span>
+				{#each steps as step, i (step.title)}
+					<li class="relative">
+						<button
+							type="button"
+							onclick={() => goTo(i)}
+							aria-current={i === activeIndex ? 'step' : undefined}
+							class="group flex w-full items-start gap-5 rounded-lg py-4 pr-3 text-left"
+						>
+							<span
+								class={[
+									'step-dot relative z-10 mt-1 flex size-6 shrink-0 items-center justify-center rounded-full border-2 transition-colors duration-300',
+									i <= activeIndex
+										? 'border-foreground bg-foreground'
+										: 'border-border bg-background'
+								]}
+							>
+								{#if i < activeIndex}
+									<svg
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="3"
+										class="size-3 text-background"
+										aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg
+									>
+								{:else if i === activeIndex}
+									<span class="size-2 rounded-full bg-background"></span>
 								{/if}
-							</div>
+							</span>
+							<span class="min-w-0">
+								<span
+									class={[
+										'block font-heading text-2xl transition-colors duration-300 lg:text-3xl',
+										i === activeIndex
+											? 'text-foreground'
+											: 'text-muted-foreground/60 group-hover:text-muted-foreground'
+									]}>{step.title}</span
+								>
+								<span
+									class={[
+										'mt-1 block text-sm transition-colors duration-300',
+										i === activeIndex ? accents[step.accent].text : 'text-muted-foreground/60'
+									]}>{step.number} · {step.deliverable}</span
+								>
+							</span>
+						</button>
+					</li>
+				{/each}
+			</ol>
 
-							<h3 class="card-title">{item.title}</h3>
-							<p class="card-description">{item.description}</p>
+			<!-- compact step switcher for small screens -->
+			<div class="flex items-center justify-center gap-2 md:hidden">
+				{#each steps as step, i (step.title)}
+					<button
+						type="button"
+						onclick={() => goTo(i)}
+						aria-label="Step {step.number}: {step.title}"
+						aria-current={i === activeIndex ? 'step' : undefined}
+						class={[
+							'h-1.5 rounded-full transition-all duration-300',
+							i === activeIndex ? 'w-10 bg-foreground' : 'w-5 bg-border'
+						]}
+					></button>
+				{/each}
+			</div>
+
+			<!-- card deck -->
+			<div class="relative mx-auto h-[26rem] w-full max-w-[22rem] md:h-[28rem]">
+				{#each steps as step, i (step.title)}
+					{@const a = accents[step.accent]}
+					<article
+						class={[
+							'deck-card absolute inset-0 flex flex-col overflow-hidden rounded-2xl border bg-card p-6 shadow-lg',
+							i < activeIndex && 'is-past',
+							i === activeIndex && 'is-active',
+							i > activeIndex && 'is-next'
+						]}
+						aria-hidden={i !== activeIndex}
+					>
+						<span class="absolute inset-x-0 top-0 h-1 {a.bar}"></span>
+						<div class="flex items-baseline justify-between">
+							<span class="text-xs tracking-[0.2em] text-muted-foreground uppercase">Step</span>
+							<span class="font-heading text-4xl font-bold {a.text}">{step.number}</span>
 						</div>
-					</div>
+
+						<!-- a small example of what this step produces -->
+						<div class="my-5 flex flex-1 items-center">
+							{#if i === 0}
+								<div class="w-full space-y-2.5 text-xs">
+									{#each [{ from: 'Form', to: 'CRM', ok: true }, { from: 'CRM', to: 'Finance sheet', ok: false, note: 'Copied by hand' }, { from: 'Finance sheet', to: 'Invoice', ok: false, note: 'Retyped' }] as edge, k (k)}
+										<div class="art-row flex items-center gap-2" style="--k: {k};">
+											<span class="rounded-md border bg-background px-2 py-1">{edge.from}</span>
+											<span
+												class={[
+													'h-px flex-1',
+													edge.ok ? 'bg-border' : 'border-t border-dashed border-red-500'
+												]}
+											></span>
+											<span class="rounded-md border bg-background px-2 py-1">{edge.to}</span>
+										</div>
+										{#if !edge.ok}
+											<p
+												class="art-row -mt-1 text-right text-[11px] text-red-600 dark:text-red-400"
+												style="--k: {k};"
+											>
+												{edge.note}
+											</p>
+										{/if}
+									{/each}
+								</div>
+							{:else if i === 1}
+								<div class="w-full space-y-2 text-xs">
+									<div class="art-row flex items-center gap-2" style="--k: 0;">
+										<span class="rounded-md border bg-background px-2 py-1">Order form</span>
+										<span class="text-muted-foreground">→</span>
+										<span class="rounded-md px-2 py-1 font-medium {a.soft} {a.text}">Workflow</span>
+										<span class="text-muted-foreground">→</span>
+										<span class="rounded-md border bg-background px-2 py-1">Billing</span>
+									</div>
+									<div class="art-row ml-[5.5rem] flex items-center gap-2" style="--k: 1;">
+										<span class="text-muted-foreground">↳ if it fails</span>
+										<span class="rounded-md border border-dashed bg-background px-2 py-1"
+											>Retry, then alert</span
+										>
+									</div>
+									<div
+										class="art-row mt-3 rounded-md border bg-background p-2 font-mono text-[11px] text-muted-foreground"
+										style="--k: 2;"
+									>
+										order: plan, seats, start_date<br />
+										owner: billing team
+									</div>
+								</div>
+							{:else if i === 2}
+								<ul class="w-full space-y-2.5 text-xs">
+									{#each ['Tested on real records', 'Edge cases handled', 'Errors alert the team'] as check, k (check)}
+										<li class="art-row flex items-center gap-2" style="--k: {k};">
+											<span
+												class="flex size-4 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-700 dark:text-emerald-400"
+											>
+												<svg
+													viewBox="0 0 24 24"
+													fill="none"
+													stroke="currentColor"
+													stroke-width="3"
+													class="size-2.5"
+													aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg
+												>
+											</span>
+											{check}
+										</li>
+									{/each}
+									<li class="art-row pt-1" style="--k: 3;">
+										<span
+											class="inline-flex items-center gap-1.5 rounded-full border bg-background px-2.5 py-1 font-medium"
+										>
+											<span class="size-1.5 rounded-full bg-emerald-500"></span>
+											v1 live
+										</span>
+									</li>
+								</ul>
+							{:else}
+								<ul class="w-full space-y-2 text-xs">
+									{#each [{ icon: 'doc', label: 'Handover doc' }, { icon: 'play', label: 'Recorded walkthrough' }, { icon: 'cal', label: 'Regular check-ins as the business grows' }] as item, k (item.label)}
+										<li
+											class="art-row flex items-center gap-2.5 rounded-md border bg-background px-2.5 py-2"
+											style="--k: {k};"
+										>
+											<svg
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="1.75"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+												class="size-4 shrink-0 {a.text}"
+												aria-hidden="true"
+											>
+												{#if item.icon === 'doc'}
+													<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+													<path d="M14 2v4a2 2 0 0 0 2 2h4M8 13h8M8 17h5" />
+												{:else if item.icon === 'play'}
+													<rect width="20" height="14" x="2" y="5" rx="2" />
+													<path d="m10 9 5 3-5 3Z" />
+												{:else}
+													<rect width="18" height="18" x="3" y="4" rx="2" />
+													<path d="M16 2v4M8 2v4M3 10h18" />
+												{/if}
+											</svg>
+											{item.label}
+										</li>
+									{/each}
+								</ul>
+							{/if}
+						</div>
+
+						<h3 class="font-heading text-xl font-semibold">{step.title}</h3>
+						<p class="mt-2 text-sm leading-relaxed text-muted-foreground">{step.description}</p>
+					</article>
 				{/each}
 			</div>
 		</div>
@@ -201,198 +349,63 @@
 </div>
 
 <style>
-	* {
-		box-sizing: border-box;
+	.rail-fill {
+		transition: height 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 
-	.pin-wrapper {
-		position: relative;
-	}
-
-	.pin-section {
-		width: 100%;
-		height: 100vh;
-		height: 100dvh;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		color: var(--foreground);
-		position: sticky;
-		top: 0;
-		border-bottom: dashed 2px var(--border);
-	}
-
-	.content {
-		width: 100%;
-		max-width: 1200px;
-		margin: 0 auto;
-		display: flex;
-		padding: 0 10px;
-		position: relative;
-	}
-
-	.list {
-		font-size: 26px;
-		color: var(--muted-foreground);
-		margin: 0;
-		padding: 0;
-		padding-right: 10px;
-		list-style: none;
-		flex-grow: 0;
-	}
-
-	.list li {
-		transition: color 0.2s ease;
-	}
-
-	.list li.active {
-		color: var(--primary);
-	}
-
-	.fill {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 2px;
-		background-color: var(--primary);
-		transform-origin: top left;
-		transition: transform 0.1s linear;
-	}
-
-	.right {
-		flex-grow: 1;
-		position: relative;
-	}
-
-	.right .slide {
-		position: absolute;
-		width: 300px;
-		top: 50%;
-		right: 1rem;
-		transform: translateY(-50%);
-		opacity: 0;
-		visibility: hidden;
+	/* the deck: the outgoing card lifts and shrinks back, the incoming one
+	   slides up from below; a firm ease-out so each change reads as one move */
+	.deck-card {
 		transition:
-			opacity 0.2s ease,
-			visibility 0.2s ease;
+			transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+			opacity 0.45s ease;
+		will-change: transform, opacity;
 	}
-
-	.right .slide.visible {
+	.deck-card.is-active {
+		transform: none;
 		opacity: 1;
-		visibility: visible;
+		z-index: 3;
+	}
+	.deck-card.is-past {
+		transform: translateY(-1.5rem) scale(0.9);
+		opacity: 0;
+		z-index: 1;
+		pointer-events: none;
+	}
+	.deck-card.is-next {
+		transform: translateY(3rem) rotate(2.5deg);
+		opacity: 0;
+		z-index: 2;
+		pointer-events: none;
 	}
 
-	.card {
-		width: 300px;
-		height: 450px;
-		border-radius: var(--radius);
-		padding: 1.75rem;
-		display: flex;
-		flex-direction: column;
-		color: #fff;
-		box-shadow:
-			0 20px 25px -5px rgb(0 0 0 / 0.15),
-			0 8px 10px -6px rgb(0 0 0 / 0.15);
-	}
-
-	.card-header {
-		flex-shrink: 0;
-		display: flex;
-		align-items: baseline;
-		gap: 0.5rem;
-	}
-
-	.card-label {
-		font-size: 0.75rem;
-		letter-spacing: 0.2em;
-		text-transform: uppercase;
-		color: #fff;
-	}
-
-	.card-number {
-		font-family: var(--font-heading);
-		font-size: 2.5rem;
-		font-weight: 700;
-		line-height: 1;
-	}
-
-	.card-illustration {
-		flex-grow: 1;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		min-height: 0;
-		padding: 0.5rem 0;
-	}
-
-	.card-illustration svg {
-		width: 100%;
-		max-width: 150px;
-		height: auto;
-	}
-
-	.card-title {
-		flex-shrink: 0;
-		font-family: var(--font-heading);
-		font-size: 1.375rem;
-		font-weight: 600;
-		color: #fff;
-		line-height: 1.25;
-	}
-
-	.card-description {
-		flex-shrink: 0;
-		font-size: 0.9375rem;
-		line-height: 1.6;
-		color: #fff;
-		margin: 0.75rem 0 0;
-	}
-
-	@media (max-width: 1023px) {
-		.list {
-			font-size: 21px;
+	/* the example inside the active card builds itself line by line */
+	@keyframes art-in {
+		from {
+			opacity: 0;
+			transform: translateY(6px);
+		}
+		to {
+			opacity: 1;
+			transform: none;
 		}
 	}
+	.deck-card.is-active .art-row {
+		animation: art-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+		animation-delay: calc(0.25s + var(--k) * 0.1s);
+	}
 
-	@media (max-width: 640px) {
-		.content {
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			gap: 2rem;
-			height: 100%;
+	@media (prefers-reduced-motion: reduce) {
+		.deck-card,
+		.rail-fill {
+			transition: none;
 		}
-
-		.list {
-			font-size: 18px;
-			padding-right: 0;
-			text-align: center;
+		.deck-card.is-past,
+		.deck-card.is-next {
+			transform: none;
 		}
-
-		.right {
-			flex-grow: 0;
-			width: min(85vw, 280px);
-			aspect-ratio: 2 / 3;
-			margin: 0 auto;
-		}
-
-		.right .slide {
-			width: 100%;
-			right: 0;
-		}
-
-		.card {
-			width: 100%;
-			height: 100%;
-			padding: 1.25rem;
-		}
-
-		.card-illustration svg {
-			max-width: 120px;
-		}
-
-		.card-description {
-			font-size: 0.875rem;
+		.deck-card.is-active .art-row {
+			animation: none;
 		}
 	}
 </style>
