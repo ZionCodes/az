@@ -1,6 +1,6 @@
 <script>
 	import CallToAction from '#lib/components/CallToAction.svelte';
-	import automationzion from '#lib/assets/images/automationzion-profile.webp';
+	import automationzion from '#lib/assets/images/ZG Passport.jpg';
 
 	let { post, backHref, backLabel } = $props();
 </script>
@@ -44,7 +44,7 @@
 			alt="Zion Gonet"
 			width="40"
 			height="40"
-			class="size-10 rounded-full object-cover"
+			class="size-10 rounded-full object-cover object-[50%_35%]"
 		/>
 		<div>
 			<p class="text-sm font-semibold text-foreground">Zion Gonet</p>

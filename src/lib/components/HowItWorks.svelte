@@ -69,7 +69,7 @@
 
 	// background treatment behind the pinned section; the preview page renders
 	// each one so they can be compared side by side
-	let { background = 'flow' } = $props();
+	let { background = 'grid' } = $props();
 
 	const accentHex = { blue: '#2563eb', violet: '#7c3aed', orange: '#ea580c', emerald: '#059669' };
 
@@ -145,7 +145,10 @@
 
 <div class="relative" bind:this={wrapper} style="height: calc(100vh + {steps.length * stepVh}vh)">
 	<section
-		class="sticky top-0 flex h-screen items-center overflow-hidden"
+		class={[
+			'sticky top-0 flex h-screen items-center overflow-hidden',
+			background === 'grid' && 'bg-background'
+		]}
 		style="--accent: {accentHex[steps[activeIndex].accent]};"
 	>
 		{#if background === 'glow'}
@@ -455,8 +458,8 @@
 		right: 0;
 		height: 1px;
 		background: linear-gradient(90deg, transparent, var(--accent), transparent);
-		opacity: 0.55;
-		box-shadow: 0 0 18px 2px color-mix(in oklab, var(--accent) 45%, transparent);
+		opacity: 0.4;
+		box-shadow: 0 0 14px 1px color-mix(in oklab, var(--accent) 45%, transparent);
 		transition:
 			top 0.3s linear,
 			background 0.6s ease;

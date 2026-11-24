@@ -62,11 +62,12 @@
 	>
 		<a
 			href="/"
-			aria-label="AutomationZion home"
-			class="rounded-md p-2 text-foreground hover:bg-muted"
+			aria-label="Zion Gonet, home"
+			class="flex items-center gap-2 rounded-md p-2 text-foreground hover:bg-muted"
 		>
 			<!-- eslint-disable-next-line svelte/no-at-html-tags -- static inline SVG import, not user data -->
 			{@html logoMarkup}
+			<span class="font-heading text-sm font-semibold tracking-tight">Zion Gonet</span>
 		</a>
 
 		<div class="flex items-center gap-2">
@@ -174,10 +175,7 @@
 </header>
 
 {#if mobileOpen}
-	<div
-		id="mobile-menu"
-		class="fixed inset-0 top-14 z-40 flex flex-col bg-background/95 p-4 backdrop-blur-sm supports-[backdrop-filter]:bg-background/60 md:hidden"
-	>
+	<div id="mobile-menu" class="fixed inset-0 top-14 z-40 flex flex-col bg-background p-4 md:hidden">
 		<div class="grid gap-y-2">
 			{#each navLinks as { label, href } (href)}
 				<a

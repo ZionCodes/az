@@ -90,13 +90,6 @@
 	<section class="overflow-hidden py-16 md:py-24">
 		<div class="mx-auto max-w-5xl px-6">
 			<div class="mx-auto max-w-xl space-y-4 text-center opacity-0" use:reveal>
-				<p
-					class="flex items-center justify-center gap-2 text-xs tracking-[0.2em] text-muted-foreground uppercase"
-				>
-					<span class="inline-block h-px w-8 bg-foreground/30"></span>
-					In Their Words
-					<span class="inline-block h-px w-8 bg-foreground/30"></span>
-				</p>
 				<h2 class="font-heading text-3xl font-semibold lg:text-4xl">
 					From the People I've Built For
 				</h2>
