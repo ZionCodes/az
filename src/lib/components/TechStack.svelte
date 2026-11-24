@@ -8,8 +8,7 @@
 			area: 'CRM',
 			tools: [
 				{ id: 'salesforce', name: 'Salesforce' },
-				{ id: 'hubspot', name: 'HubSpot' },
-				{ id: 'monday', name: 'Monday' }
+				{ id: 'hubspot', name: 'HubSpot' }
 			]
 		},
 		{
@@ -23,7 +22,8 @@
 			area: 'Automation',
 			tools: [
 				{ id: 'n8n', name: 'n8n' },
-				{ id: 'make', name: 'Make' }
+				{ id: 'make', name: 'Make' },
+				{ id: 'zapier', name: 'Zapier' }
 			]
 		},
 		{
