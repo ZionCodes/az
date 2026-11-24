@@ -7,32 +7,32 @@
 			title: 'Map the Process',
 			description:
 				'You get a map of where data breaks, where handoffs fail and where the team is doing work a system should.',
-			card: 'bg-gradient-to-br from-blue-500 to-sky-600'
+			card: 'bg-blue-700'
 		},
 		{
 			number: '02',
 			title: 'Design the Architecture',
 			description:
 				'You see the full design before anything is built: data model, workflow logic, integrations and what happens when something fails.',
-			card: 'bg-gradient-to-br from-violet-500 to-purple-600'
+			card: 'bg-violet-700'
 		},
 		{
 			number: '03',
 			title: 'Build and Ship',
 			description:
 				'A working v1 goes live fast, tested on real data, then improved by what breaks in production.',
-			card: 'bg-gradient-to-br from-orange-500 to-red-500'
+			card: 'bg-orange-700'
 		},
 		{
 			number: '04',
 			title: 'Own and Improve',
 			description:
 				'I document everything and keep improving the system after launch as the business grows.',
-			card: 'bg-gradient-to-br from-emerald-500 to-teal-600'
+			card: 'bg-emerald-700'
 		}
 	];
 
-	const scrollVh = steps.length * 50;
+	const scrollVh = steps.length * 30;
 
 	let wrapper = $state();
 	let contentEl = $state();
@@ -306,7 +306,7 @@
 		font-size: 0.75rem;
 		letter-spacing: 0.2em;
 		text-transform: uppercase;
-		color: rgb(255 255 255 / 0.7);
+		color: #fff;
 	}
 
 	.card-number {
@@ -344,7 +344,7 @@
 		flex-shrink: 0;
 		font-size: 0.9375rem;
 		line-height: 1.6;
-		color: rgb(255 255 255 / 0.85);
+		color: #fff;
 		margin: 0.75rem 0 0;
 	}
 

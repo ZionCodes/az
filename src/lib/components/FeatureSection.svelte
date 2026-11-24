@@ -1,37 +1,15 @@
 <script>
-	import { Spring } from 'svelte/motion';
 	import { reveal } from '#lib/actions/reveal.js';
 	import { playOnView } from '#lib/actions/playOnView.js';
-	import siteLight from '#lib/assets/images/site-light.webp';
-	import siteDark from '#lib/assets/images/site-dark.webp';
-	import siteLightMobile from '#lib/assets/images/site-light-mobile.webp';
-	import siteDarkMobile from '#lib/assets/images/site-dark-mobile.webp';
+	import ToolLogo from '#lib/components/ToolLogo.svelte';
 
-	const initialSliderPercentage = 46;
-	const sliderXPercent = new Spring(initialSliderPercentage, { stiffness: 0.15 });
-
-	let sliderRef = $state(null);
-
-	function pointerLeaveHandler() {
-		sliderXPercent.set(initialSliderPercentage);
-	}
-
-	function handlePointerMove(e) {
-		if (!sliderRef) return;
-		const rect = sliderRef.getBoundingClientRect();
-		const percent = ((e.clientX - rect.left) / rect.width) * 100;
-		sliderXPercent.set(Math.max(0, Math.min(100, percent)));
-	}
-
-	function handleKeydown(e) {
-		if (e.key === 'ArrowLeft') {
-			e.preventDefault();
-			sliderXPercent.set(Math.max(0, sliderXPercent.current - 5));
-		} else if (e.key === 'ArrowRight') {
-			e.preventDefault();
-			sliderXPercent.set(Math.min(100, sliderXPercent.current + 5));
-		}
-	}
+	// the tools around the hub, laid out as two short rows above and below a
+	// middle row that holds the hub itself
+	const rows = [
+		['hubspot', 'salesforce'],
+		['clay', null, 'n8n'],
+		['claude', 'instantly']
+	];
 </script>
 
 <section>
@@ -41,116 +19,68 @@
 				<div
 					use:reveal={{ delay: 0 }}
 					use:playOnView={{ class: 'feat-play', enterDelay: 600 }}
-					class="feat-card col-span-full overflow-hidden rounded-xl border-b border-none border-secondary bg-foreground/5 pt-6 pl-6 text-card-foreground opacity-0 dark:bg-muted/80"
+					class="feat-card col-span-full grid overflow-hidden rounded-xl bg-foreground/5 text-card-foreground opacity-0 md:grid-cols-2 dark:bg-muted/80"
 				>
-					<div
-						class="feat-icon-badge relative flex aspect-square size-12 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-sky-600 shadow-sm"
-					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="1.5"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							class="m-auto size-6 text-white"
-						>
-							<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-							<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-						</svg>
-					</div>
-					<h3 class="mt-4 text-lg font-semibold text-foreground">One System, Any Starting Point</h3>
-					<p class="mt-3 max-w-2xl text-base/normal text-muted-foreground">
-						Whether you already run a revenue system or need one process automated somewhere in the
-						business, I start with what you have and build from there.
-					</p>
-					<div class="-mt-2.5 mr-0.5 -ml-2 pt-2 pl-2">
+					<div class="flex flex-col justify-center p-6 md:p-10">
 						<div
-							class="relative mx-auto mt-8 aspect-350/512 overflow-hidden rounded-tl-3xl sm:aspect-auto sm:h-96"
+							class="feat-icon-badge flex size-10 items-center justify-center rounded-lg bg-blue-500/10 text-blue-600 ring-1 ring-blue-500/20 dark:text-blue-400"
 						>
-							<div
-								bind:this={sliderRef}
-								class="relative h-full w-full cursor-col-resize overflow-hidden"
-								role="slider"
-								tabindex="0"
-								aria-label="Drag or use arrow keys to compare light and dark mode"
-								aria-valuenow={Math.round(sliderXPercent.current)}
-								aria-valuemin="0"
-								aria-valuemax="100"
-								onpointermove={handlePointerMove}
-								onpointerleave={pointerLeaveHandler}
-								onkeydown={handleKeydown}
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="1.75"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="size-5"
 							>
-								<div
-									class="absolute top-0 z-40 m-auto h-full w-px bg-gradient-to-b from-transparent from-[5%] via-indigo-500 to-transparent to-[95%]"
-									style="left: {sliderXPercent.current}%;"
-								>
-									<div
-										class="absolute top-1/2 -right-2.5 z-30 flex h-5 w-5 -translate-y-1/2 items-center justify-center rounded-md bg-white shadow-[0px_-1px_0px_0px_#FFFFFF40]"
-									>
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											width="24"
-											height="24"
-											viewBox="0 0 24 24"
-											fill="none"
-											stroke="currentColor"
-											stroke-width="2"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											class="h-4 w-4 text-black"
-											><circle cx="12" cy="12" r="1" /><circle cx="12" cy="5" r="1" /><circle
-												cx="12"
-												cy="19"
-												r="1"
-											/></svg
-										>
-									</div>
-								</div>
+								<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+								<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+							</svg>
+						</div>
+						<h3 class="mt-4 font-heading text-xl font-medium text-foreground">
+							One System, Any Starting Point
+						</h3>
+						<p class="mt-3 text-base/normal text-muted-foreground">
+							Whether you already run a revenue system or need one process automated somewhere in
+							the business, I start with what you have and build from there.
+						</p>
+					</div>
 
-								<div class="pointer-events-none relative z-20 h-full w-full overflow-hidden">
-									<div
-										class="absolute inset-0 z-20 h-full w-full overflow-hidden rounded-tl-2xl select-none sm:hidden"
-										style="clip-path: inset(0 {100 - sliderXPercent.current}% 0 0);"
-									>
-										<img
-											alt="AutomationZion's integration stack in light mode"
-											src={siteLightMobile}
-											loading="lazy"
-											class="absolute inset-0 z-20 h-full w-full object-cover object-top select-none dark:bg-black"
-											draggable="false"
-										/>
-									</div>
-									<div
-										class="absolute inset-0 z-20 hidden h-full w-full overflow-hidden rounded-tl-2xl select-none sm:block"
-										style="clip-path: inset(0 {100 - sliderXPercent.current}% 0 0);"
-									>
-										<img
-											alt="AutomationZion's integration stack in light mode"
-											src={siteLight}
-											loading="lazy"
-											class="absolute inset-0 z-20 h-full w-full object-cover object-top select-none dark:bg-black"
-											draggable="false"
-										/>
-									</div>
+					<div
+						class="feat-hub relative flex items-center justify-center border-t px-6 py-10 md:border-t-0 md:border-l"
+						role="img"
+						aria-label="HubSpot, Salesforce, Clay, n8n, Claude and Instantly connected to one system"
+					>
+						<div class="feat-hub-glow pointer-events-none absolute inset-0"></div>
+						<div class="relative flex flex-col items-center gap-3">
+							{#each rows as row, r (r)}
+								<div class="flex gap-3">
+									{#each row as tool, c (c)}
+										{#if tool}
+											<div
+												class="feat-tile flex size-16 items-center justify-center rounded-2xl border bg-card shadow-sm sm:size-20"
+												style="--tile-i: {r * 3 + c};"
+											>
+												<ToolLogo name={tool} class="size-7 sm:size-8" />
+											</div>
+										{:else}
+											<div
+												class="feat-tile feat-tile-hub flex size-16 items-center justify-center rounded-2xl bg-foreground text-background shadow-md sm:size-20"
+												style="--tile-i: 0;"
+											>
+												<svg viewBox="0 0 24 24" class="size-7 sm:size-8" aria-hidden="true">
+													<path
+														d="M14.5 2 5 13.5h5.2L9 22l10-12h-5.6L14.5 2Z"
+														fill="currentColor"
+													/>
+												</svg>
+											</div>
+										{/if}
+									{/each}
 								</div>
-
-								<img
-									class="absolute top-0 left-0 z-[19] h-full w-full rounded-tl-3xl object-cover object-top select-none sm:hidden"
-									alt="AutomationZion's integration stack in dark mode"
-									src={siteDarkMobile}
-									loading="lazy"
-									draggable="false"
-								/>
-								<img
-									class="absolute top-0 left-0 z-[19] hidden h-full w-full rounded-tl-3xl object-cover object-top select-none sm:block"
-									alt="AutomationZion's integration stack in dark mode"
-									src={siteDark}
-									loading="lazy"
-									draggable="false"
-								/>
-							</div>
+							{/each}
 						</div>
 					</div>
 				</div>
@@ -158,29 +88,28 @@
 				<div
 					use:reveal={{ delay: 80 }}
 					use:playOnView={{ class: 'feat-play', enterDelay: 680 }}
-					class="feat-card rounded-xl border-none bg-foreground/5 p-6 text-card-foreground opacity-0 dark:bg-muted/80"
+					class="feat-card rounded-xl bg-foreground/5 p-6 text-card-foreground opacity-0 dark:bg-muted/80"
 				>
 					<div
-						class="feat-icon-badge relative flex aspect-square size-12 items-center justify-center rounded-full bg-gradient-to-br from-violet-500 to-purple-600 shadow-sm"
+						class="feat-icon-badge flex size-10 items-center justify-center rounded-lg bg-violet-500/10 text-violet-600 ring-1 ring-violet-500/20 dark:text-violet-400"
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
-							class="m-auto size-6 text-white"
 							viewBox="0 0 24 24"
-							><g fill="none"
-								><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" /><path
-									stroke="currentColor"
-									stroke-linecap="round"
-									stroke-width="1.5"
-									d="M9 16c.85.63 1.885 1 3 1s2.15-.37 3-1"
-								/><path
-									fill="currentColor"
-									d="M16 10.5c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5s.448-1.5 1-1.5s1 .672 1 1.5"
-								/><ellipse cx="9" cy="10.5" fill="currentColor" rx="1" ry="1.5" /></g
-							></svg
+							fill="none"
+							stroke="currentColor"
+							stroke-width="1.75"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="size-5"
 						>
+							<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+							<path d="M8 12h.01" />
+							<path d="M12 12h.01" />
+							<path d="M16 12h.01" />
+						</svg>
 					</div>
-					<h3 class="mt-4 text-lg font-semibold text-foreground">Straight Answers</h3>
+					<h3 class="mt-4 font-heading text-lg font-medium text-foreground">Straight Answers</h3>
 					<p class="mt-3 text-base/normal text-muted-foreground">
 						Steady updates while it's being built and a plain warning when a fix you want would
 						break something else.
@@ -190,26 +119,31 @@
 				<div
 					use:reveal={{ delay: 160 }}
 					use:playOnView={{ class: 'feat-play', enterDelay: 760 }}
-					class="feat-card rounded-xl border-none bg-foreground/5 p-6 text-card-foreground opacity-0 dark:bg-muted/80"
+					class="feat-card rounded-xl bg-foreground/5 p-6 text-card-foreground opacity-0 dark:bg-muted/80"
 				>
 					<div
-						class="feat-icon-badge relative flex aspect-square size-12 items-center justify-center rounded-full bg-gradient-to-br from-orange-500 to-red-500 shadow-sm"
+						class="feat-icon-badge flex size-10 items-center justify-center rounded-lg bg-orange-500/10 text-orange-600 ring-1 ring-orange-500/20 dark:text-orange-400"
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
-							class="m-auto size-6 text-white"
 							viewBox="0 0 24 24"
-							><g fill="none" stroke="currentColor" stroke-width="1.5"
-								><path
-									d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10Z"
-								/><path
-									stroke-linecap="round"
-									d="m15.5 9l.172.172c1.333 1.333 2 2 2 2.828s-.667 1.495-2 2.828L15.5 15m-2.206-7.83L12 12l-1.294 4.83M8.5 9l-.172.172c-1.333 1.333-2 2-2 2.828s.667 1.495 2 2.828L8.5 15"
-								/></g
-							></svg
+							fill="none"
+							stroke="currentColor"
+							stroke-width="1.75"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="size-5"
 						>
+							<path
+								d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"
+							/>
+							<path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65" />
+							<path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65" />
+						</svg>
 					</div>
-					<h3 class="mt-4 text-lg font-semibold text-foreground">Start With One Workflow</h3>
+					<h3 class="mt-4 font-heading text-lg font-medium text-foreground">
+						Start With One Workflow
+					</h3>
 					<p class="mt-3 text-base/normal text-muted-foreground">
 						The first build solves one problem. Everything after it builds on the same foundation.
 					</p>
@@ -218,26 +152,31 @@
 				<div
 					use:reveal={{ delay: 240 }}
 					use:playOnView={{ class: 'feat-play', enterDelay: 840 }}
-					class="feat-card rounded-xl border-none bg-foreground/5 p-6 text-card-foreground opacity-0 dark:bg-muted/80"
+					class="feat-card rounded-xl bg-foreground/5 p-6 text-card-foreground opacity-0 dark:bg-muted/80"
 				>
 					<div
-						class="feat-icon-badge relative flex aspect-square size-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 shadow-sm"
+						class="feat-icon-badge flex size-10 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-600 ring-1 ring-emerald-500/20 dark:text-emerald-400"
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
-							class="m-auto size-6 text-white"
 							viewBox="0 0 24 24"
 							fill="none"
 							stroke="currentColor"
-							stroke-width="1.5"
+							stroke-width="1.75"
 							stroke-linecap="round"
 							stroke-linejoin="round"
+							class="size-5"
 						>
-							<rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
-							<path d="M7 11V7a5 5 0 0 1 9.9-1" />
+							<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+							<path d="M14 2v4a2 2 0 0 0 2 2h4" />
+							<path d="M10 13H8" />
+							<path d="M16 17H8" />
+							<path d="M16 13h-2" />
 						</svg>
 					</div>
-					<h3 class="mt-4 text-lg font-semibold text-foreground">Documented and Handed Over</h3>
+					<h3 class="mt-4 font-heading text-lg font-medium text-foreground">
+						Documented and Handed Over
+					</h3>
 					<p class="mt-3 text-base/normal text-muted-foreground">
 						Documentation, walkthroughs and a clean handover, so the next person to touch the system
 						isn't working from guesswork.
@@ -249,23 +188,53 @@
 </section>
 
 <style>
+	.feat-hub-glow {
+		background-image: radial-gradient(
+			circle at center,
+			color-mix(in oklab, var(--foreground) 9%, transparent) 1px,
+			transparent 1.5px
+		);
+		background-size: 18px 18px;
+		mask-image: radial-gradient(circle at center, black 30%, transparent 75%);
+	}
+
 	@keyframes feat-icon-pop {
 		0% {
-			transform: scale(1) rotate(0deg);
+			transform: scale(1);
 		}
 		50% {
-			transform: scale(1.12) rotate(8deg);
+			transform: scale(1.1);
 		}
 		100% {
-			transform: scale(1) rotate(0deg);
+			transform: scale(1);
 		}
 	}
 	.feat-card:global(.feat-play) .feat-icon-badge {
-		animation: feat-icon-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+		animation: feat-icon-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+	}
+
+	/* the tiles settle in around the hub, hub first, then the tools */
+	@keyframes feat-tile-in {
+		from {
+			opacity: 0;
+			transform: translateY(8px) scale(0.92);
+		}
+		to {
+			opacity: 1;
+			transform: none;
+		}
+	}
+	.feat-card:global(.feat-play) .feat-tile {
+		animation: feat-tile-in 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+		animation-delay: calc(var(--tile-i) * 70ms + 80ms);
+	}
+	.feat-card:global(.feat-play) .feat-tile-hub {
+		animation-delay: 0ms;
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.feat-icon-badge {
+		.feat-icon-badge,
+		.feat-tile {
 			animation: none !important;
 		}
 	}
