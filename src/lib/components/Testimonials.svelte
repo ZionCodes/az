@@ -73,7 +73,12 @@
 				<span class="font-heading text-xl font-semibold {accents[i % accents.length]}">
 					{item.result.value}
 				</span>
-				<span class={['text-muted-foreground', item.href && 'link-fill']}>
+				<span
+					class={[
+						'text-muted-foreground',
+						item.href && 'underline-offset-4 hover:text-foreground hover:underline'
+					]}
+				>
 					{item.result.label}
 				</span>
 			</svelte:element>

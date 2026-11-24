@@ -67,7 +67,10 @@
 			</div>
 			<nav aria-label="Footer" class="flex flex-wrap gap-x-8 gap-y-3">
 				{#each navLinks as link (link.href)}
-					<a href={link.href} class="link-fill text-sm text-muted-foreground">
+					<a
+						href={link.href}
+						class="text-sm text-muted-foreground transition-colors hover:text-foreground"
+					>
 						{link.label}
 					</a>
 				{/each}
