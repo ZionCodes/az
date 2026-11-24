@@ -8,27 +8,39 @@
 			area: 'CRM',
 			tools: [
 				{ id: 'salesforce', name: 'Salesforce' },
-				{ id: 'hubspot', name: 'HubSpot' }
+				{ id: 'hubspot', name: 'HubSpot' },
+				{ id: 'monday', name: 'Monday' }
 			]
 		},
 		{
 			area: 'Data and enrichment',
 			tools: [
 				{ id: 'clay', name: 'Clay' },
-				{ id: null, name: 'Apollo' },
-				{ id: 'supabase', name: 'Supabase' }
+				{ id: 'apollo', name: 'Apollo' }
 			]
 		},
 		{
 			area: 'Automation',
 			tools: [
 				{ id: 'n8n', name: 'n8n' },
-				{ id: 'make', name: 'Make' },
-				{ id: 'python', name: 'Python' }
+				{ id: 'make', name: 'Make' }
+			]
+		},
+		{
+			area: 'Code',
+			tools: [
+				{ id: 'python', name: 'Python' },
+				{ id: 'sql', name: 'SQL' }
 			]
 		},
 		{ area: 'AI', tools: [{ id: 'claude', name: 'Claude' }] },
-		{ area: 'Outbound', tools: [{ id: 'instantly', name: 'Instantly' }] }
+		{
+			area: 'Outbound',
+			tools: [
+				{ id: 'instantly', name: 'Instantly' },
+				{ id: 'smartlead', name: 'Smartlead' }
+			]
+		}
 	];
 </script>
 
@@ -41,7 +53,7 @@
 	</div>
 
 	<div
-		class="mx-auto mt-12 grid max-w-5xl gap-3 px-6 opacity-0 sm:grid-cols-2 lg:grid-cols-5"
+		class="mx-auto mt-12 grid max-w-5xl gap-3 px-6 opacity-0 sm:grid-cols-2 lg:grid-cols-3"
 		use:reveal={{ delay: 150 }}
 	>
 		{#each groups as group (group.area)}
