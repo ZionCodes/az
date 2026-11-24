@@ -67,6 +67,20 @@
 	// how much page scroll each step gets while the section is pinned
 	const stepVh = 45;
 
+	// background treatment behind the pinned section; the preview page renders
+	// each one so they can be compared side by side
+	let { background = 'flow' } = $props();
+
+	const accentHex = { blue: '#2563eb', violet: '#7c3aed', orange: '#ea580c', emerald: '#059669' };
+
+	// curved connector paths that run behind the content in the "flow" variant
+	const flowPaths = [
+		'M-50 70 C 260 10, 470 190, 780 110 S 1160 20, 1500 90',
+		'M-50 150 C 320 230, 560 60, 900 150 S 1240 230, 1500 140',
+		'M-50 700 C 260 640, 560 790, 860 700 S 1220 630, 1500 740',
+		'M-50 770 C 340 830, 620 700, 940 780 S 1260 820, 1500 760'
+	];
+
 	let wrapper = $state();
 	let progress = $state(0);
 
@@ -130,7 +144,38 @@
 </div>
 
 <div class="relative" bind:this={wrapper} style="height: calc(100vh + {steps.length * stepVh}vh)">
-	<section class="sticky top-0 flex h-screen items-center">
+	<section
+		class="sticky top-0 flex h-screen items-center overflow-hidden"
+		style="--accent: {accentHex[steps[activeIndex].accent]};"
+	>
+		{#if background === 'glow'}
+			<div class="bg-layer" aria-hidden="true">
+				<div
+					class="glow glow-a"
+					style="--x: {58 + activeIndex * 4}%; --y: {30 + activeIndex * 10}%;"
+				></div>
+				<div class="glow glow-b"></div>
+			</div>
+		{:else if background === 'grid'}
+			<div class="bg-layer" aria-hidden="true">
+				<div class="blueprint"></div>
+				<div class="scan" style="top: {8 + progress * 84}%;"></div>
+			</div>
+		{:else if background === 'flow'}
+			<div class="bg-layer" aria-hidden="true">
+				<div class="glow glow-a soft" style="--x: 72%; --y: {35 + activeIndex * 8}%;"></div>
+				<svg class="flow" viewBox="0 0 1440 820" preserveAspectRatio="xMidYMid slice">
+					{#each flowPaths as d, p (p)}
+						<path {d} class="flow-path" />
+						<circle
+							r="3.5"
+							class="flow-dot"
+							style="offset-path: path('{d}'); animation-delay: {p * -2.6}s;"
+						/>
+					{/each}
+				</svg>
+			</div>
+		{/if}
 		<div
 			class="mx-auto grid w-full max-w-5xl items-center gap-8 px-6 md:grid-cols-[1fr_minmax(0,22rem)] md:gap-16"
 		>
@@ -349,6 +394,103 @@
 </div>
 
 <style>
+	.bg-layer {
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		z-index: 0;
+	}
+	section > :global(div:not(.bg-layer)) {
+		position: relative;
+		z-index: 1;
+	}
+
+	/* variant: a soft colour field that follows the active step */
+	.glow {
+		position: absolute;
+		width: 44rem;
+		height: 44rem;
+		border-radius: 9999px;
+		filter: blur(90px);
+		opacity: 0.16;
+		transition:
+			background-color 0.8s ease,
+			left 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+			top 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+	.glow-a {
+		left: var(--x);
+		top: var(--y);
+		transform: translate(-50%, -50%);
+		background-color: var(--accent);
+	}
+	.glow-a.soft {
+		opacity: 0.1;
+	}
+	.glow-b {
+		left: 15%;
+		top: 85%;
+		transform: translate(-50%, -50%);
+		background-color: var(--foreground);
+		opacity: 0.05;
+	}
+
+	/* variant: an engineering grid with a line that tracks scroll progress */
+	.blueprint {
+		position: absolute;
+		inset: 0;
+		background-image:
+			linear-gradient(color-mix(in oklab, var(--foreground) 7%, transparent) 1px, transparent 1px),
+			linear-gradient(
+				90deg,
+				color-mix(in oklab, var(--foreground) 7%, transparent) 1px,
+				transparent 1px
+			);
+		background-size: 56px 56px;
+		mask-image: radial-gradient(ellipse 70% 65% at 60% 50%, black, transparent);
+	}
+	.scan {
+		position: absolute;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: linear-gradient(90deg, transparent, var(--accent), transparent);
+		opacity: 0.55;
+		box-shadow: 0 0 18px 2px color-mix(in oklab, var(--accent) 45%, transparent);
+		transition:
+			top 0.3s linear,
+			background 0.6s ease;
+	}
+
+	/* variant: faint connector lines with signals travelling along them */
+	.flow {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		mask-image: linear-gradient(90deg, transparent, black 15%, black 85%, transparent);
+	}
+	.flow-path {
+		fill: none;
+		stroke: color-mix(in oklab, var(--foreground) 9%, transparent);
+		stroke-width: 1.5;
+	}
+	.flow-dot {
+		fill: var(--accent);
+		offset-rotate: 0deg;
+		animation: flow-move 7.8s linear infinite;
+		filter: drop-shadow(0 0 6px var(--accent));
+		transition: fill 0.6s ease;
+	}
+	@keyframes flow-move {
+		from {
+			offset-distance: 0%;
+		}
+		to {
+			offset-distance: 100%;
+		}
+	}
+
 	.rail-fill {
 		transition: height 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 	}
@@ -397,8 +539,14 @@
 
 	@media (prefers-reduced-motion: reduce) {
 		.deck-card,
-		.rail-fill {
+		.rail-fill,
+		.glow,
+		.scan {
 			transition: none;
+		}
+		.flow-dot {
+			animation: none;
+			display: none;
 		}
 		.deck-card.is-past,
 		.deck-card.is-next {
