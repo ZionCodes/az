@@ -62,8 +62,8 @@
 					</div>
 					<h3 class="mt-4 text-lg font-semibold text-foreground">One System, Any Starting Point</h3>
 					<p class="mt-3 max-w-2xl text-base/normal text-muted-foreground">
-						Whether you're already running a revenue system or need a process automated somewhere in
-						the business, I build the systems that carry work from first signal to final outcome.
+						Whether you already run a revenue system or need one process automated somewhere in the
+						business, I start with what you have and build from there.
 					</p>
 					<div class="-mt-2.5 mr-0.5 -ml-2 pt-2 pl-2">
 						<div
@@ -211,8 +211,7 @@
 					</div>
 					<h3 class="mt-4 text-lg font-semibold text-foreground">Start With One Workflow</h3>
 					<p class="mt-3 text-base/normal text-muted-foreground">
-						The first build solves one problem. Everything after it plugs into the same foundation
-						instead of starting over.
+						The first build solves one problem. Everything after it builds on the same foundation.
 					</p>
 				</div>
 
@@ -238,7 +237,7 @@
 							<path d="M7 11V7a5 5 0 0 1 9.9-1" />
 						</svg>
 					</div>
-					<h3 class="mt-4 text-lg font-semibold text-foreground">Documented, Not Dependent</h3>
+					<h3 class="mt-4 text-lg font-semibold text-foreground">Documented and Handed Over</h3>
 					<p class="mt-3 text-base/normal text-muted-foreground">
 						Documentation, walkthroughs and a clean handover, so the next person to touch the system
 						isn't working from guesswork.

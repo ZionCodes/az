@@ -28,7 +28,7 @@
 			</p>
 
 			<h1 class="font-heading text-2xl font-medium text-foreground md:text-3xl md:leading-tight">
-				I build systems.<br />Not just workflows.
+				I build the systems<br />your work runs on.
 			</h1>
 
 			<p class="text-base leading-relaxed text-muted-foreground">
@@ -42,13 +42,12 @@
 			</p>
 
 			<p class="text-base leading-relaxed text-muted-foreground">
-				I've worked inside agencies and directly with clients, which means I'm used to owning a
-				project end to end, scoping it and building the thing itself.
+				I've worked inside agencies and directly with clients, so I'm used to owning a project from
+				the first scoping call to building the thing itself.
 			</p>
 
 			<p class="text-base leading-relaxed text-muted-foreground">
-				Outside of work, I enjoy the outdoors and I'm an avid reader, constantly exploring new
-				ideas, technologies, and the principles and laws that govern our lives.
+				Outside work I'm outdoors when I can be and reading when I can't.
 			</p>
 
 			<div class="mt-2 origin-left scale-75 sm:scale-100">

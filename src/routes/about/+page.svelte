@@ -9,7 +9,7 @@
 	const description =
 		"I'm Zion Gonet, an Automation Engineer and GTM Engineer. I've worked inside agencies and directly with clients, owning projects from scoping to the build itself.";
 	const imageAlt =
-		'I build systems. Not just workflows. Zion Gonet, Automation Engineer and GTM Engineer.';
+		'I build the systems your work runs on. Zion Gonet, Automation Engineer and GTM Engineer.';
 
 	const jsonLd = JSON.stringify({
 		'@context': 'https://schema.org',

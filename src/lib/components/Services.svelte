@@ -443,7 +443,7 @@
 								<h3 class="font-heading text-lg font-medium transition">Outbound Engineering</h3>
 								<p class="text-sm text-muted-foreground">
 									Signal-based prospecting, enrichment waterfalls and deliverability infrastructure,
-									measured in pipeline and revenue, not emails sent.
+									judged by the pipeline and revenue they bring in.
 								</p>
 							</div>
 						</div>

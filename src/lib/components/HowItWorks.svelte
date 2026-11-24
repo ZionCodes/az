@@ -27,7 +27,7 @@
 			number: '04',
 			title: 'Own and Improve',
 			description:
-				'I document everything and stay close to the system as the business grows, not just until launch.',
+				'I document everything and keep improving the system after launch as the business grows.',
 			card: 'bg-gradient-to-br from-emerald-500 to-teal-600'
 		}
 	];
