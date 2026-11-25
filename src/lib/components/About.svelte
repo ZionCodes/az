@@ -52,8 +52,6 @@
 
 			<div class="mt-2 origin-left scale-75 sm:scale-100">
 				<Signature
-					text="Zion Gonet"
-					fontSize={32}
 					color="var(--foreground)"
 					duration={1.8}
 					inView

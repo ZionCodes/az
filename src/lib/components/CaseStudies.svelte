@@ -20,7 +20,7 @@
 	];
 </script>
 
-<section class="py-16 md:py-32">
+<section class="cv-auto py-16 md:py-32">
 	<div class="mx-auto max-w-5xl px-6">
 		<div class="mx-auto max-w-xl space-y-4 text-center opacity-0" use:reveal>
 			<p

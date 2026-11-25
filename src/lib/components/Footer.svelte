@@ -34,7 +34,7 @@
 	const year = new Date().getFullYear();
 </script>
 
-<footer class="border-t py-12">
+<footer class="cv-auto border-t py-12">
 	<div class="@container mx-auto max-w-3xl px-6">
 		<div class="grid gap-8">
 			<div class="col-span-full border-b pb-8">

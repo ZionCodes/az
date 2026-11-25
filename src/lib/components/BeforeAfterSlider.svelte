@@ -42,6 +42,7 @@
 
 	let box = $state();
 	let dragging = $state(false);
+	let live = $state(false);
 
 	function setFromPointer(e) {
 		if (!box) return;
@@ -77,6 +78,14 @@
 		else return;
 		e.preventDefault();
 	}
+
+	// the looping illustration animations run only while the panel is visible
+	$effect(() => {
+		if (!box) return;
+		const observer = new IntersectionObserver((entries) => (live = entries[0].isIntersecting));
+		observer.observe(box);
+		return () => observer.disconnect();
+	});
 
 	// a short sweep the first time it scrolls into view, so visitors see that
 	// the divider moves before they touch it
@@ -303,6 +312,7 @@
 
 <div
 	bind:this={box}
+	class:is-live={live}
 	class="relative h-96 w-full cursor-col-resize touch-pan-y overflow-hidden select-none sm:h-96"
 	role="slider"
 	tabindex="0"
@@ -354,7 +364,7 @@
 </div>
 
 <style>
-	.caret {
+	.is-live :global(.caret) {
 		animation: caret-blink 1s steps(1) infinite;
 	}
 	@keyframes caret-blink {
@@ -362,7 +372,7 @@
 			opacity: 0;
 		}
 	}
-	.cell-flag {
+	.is-live :global(.cell-flag) {
 		animation: cell-flag 2.4s ease-in-out infinite;
 	}
 	@keyframes cell-flag {
@@ -371,7 +381,7 @@
 		}
 	}
 	/* the pointer drifts between the spreadsheet and the form, copying by hand */
-	.cursor-run {
+	.is-live :global(.cursor-run) {
 		animation: cursor-run 4s ease-in-out infinite;
 	}
 	@keyframes cursor-run {
@@ -396,6 +406,8 @@
 		vector-effect: non-scaling-stroke;
 		stroke-dasharray: 8 92;
 		stroke-dashoffset: 100;
+	}
+	.is-live :global(.wire-pulse) {
 		animation: wire-run 1.8s linear infinite;
 	}
 	@keyframes wire-run {
@@ -403,13 +415,25 @@
 			stroke-dashoffset: 0;
 		}
 	}
-	.hub {
-		box-shadow: 0 0 0 0 rgb(52 211 153 / 0.5);
-		animation: hub-glow 1.8s ease-out infinite;
+	.hub::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border-radius: inherit;
+		box-shadow: 0 0 0 2px rgb(52 211 153 / 0.6);
+		opacity: 0;
 	}
-	@keyframes hub-glow {
-		70% {
-			box-shadow: 0 0 0 10px rgb(52 211 153 / 0);
+	.is-live :global(.hub::after) {
+		animation: hub-ring 1.8s ease-out infinite;
+	}
+	@keyframes hub-ring {
+		from {
+			transform: scale(1);
+			opacity: 0.8;
+		}
+		to {
+			transform: scale(1.45);
+			opacity: 0;
 		}
 	}
 
@@ -418,7 +442,7 @@
 		.cell-flag,
 		.cursor-run,
 		.wire-pulse,
-		.hub {
+		.hub::after {
 			animation: none;
 		}
 		.wire-pulse {

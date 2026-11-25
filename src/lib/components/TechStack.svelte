@@ -44,7 +44,7 @@
 	];
 </script>
 
-<section class="py-16 md:py-28">
+<section class="cv-auto py-16 md:py-28">
 	<div class="mx-auto max-w-2xl space-y-4 px-6 text-center opacity-0" use:reveal>
 		<h2 class="font-heading text-3xl font-semibold lg:text-4xl">Tools I Work With</h2>
 		<p class="text-muted-foreground">

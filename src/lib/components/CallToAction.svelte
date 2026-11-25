@@ -6,7 +6,7 @@
 	let { location = 'call_to_action' } = $props();
 </script>
 
-<section class="@container py-24">
+<section class="cv-auto @container py-24">
 	<div class="mx-auto max-w-2xl px-6">
 		<div class="text-center opacity-0" use:reveal>
 			<span

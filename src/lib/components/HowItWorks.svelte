@@ -162,7 +162,7 @@
 		{:else if background === 'grid'}
 			<div class="bg-layer" aria-hidden="true">
 				<div class="blueprint"></div>
-				<div class="scan" style="top: {8 + progress * 84}%;"></div>
+				<div class="scan" style="transform: translateY({8 + progress * 84}vh);"></div>
 			</div>
 		{:else if background === 'flow'}
 			<div class="bg-layer" aria-hidden="true">
@@ -454,6 +454,7 @@
 	}
 	.scan {
 		position: absolute;
+		top: 0;
 		left: 0;
 		right: 0;
 		height: 1px;
@@ -461,7 +462,7 @@
 		opacity: 0.4;
 		box-shadow: 0 0 14px 1px color-mix(in oklab, var(--accent) 45%, transparent);
 		transition:
-			top 0.3s linear,
+			transform 0.3s linear,
 			background 0.6s ease;
 	}
 

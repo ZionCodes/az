@@ -20,11 +20,10 @@ export function playOnView(
 	let hasEnteredBefore = false;
 
 	function play() {
-		// remove + force reflow + re-add so the browser treats this as a new
-		// animation run even if the class was already present (replay)
+		// remove, then re-add two frames later, so the browser treats it as a
+		// new animation run without forcing a synchronous layout
 		node.classList.remove(className);
-		void node.offsetWidth;
-		node.classList.add(className);
+		requestAnimationFrame(() => requestAnimationFrame(() => node.classList.add(className)));
 	}
 
 	const observer = new IntersectionObserver(

@@ -5,7 +5,7 @@
 	import BeforeAfterSlider from '#lib/components/BeforeAfterSlider.svelte';
 </script>
 
-<section>
+<section class="cv-auto">
 	<div class="py-16 md:py-24">
 		<div class="mx-auto w-full max-w-5xl px-2 md:px-6">
 			<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">

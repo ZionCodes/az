@@ -4,7 +4,7 @@
 	import ToolLogo from '#lib/components/ToolLogo.svelte';
 </script>
 
-<section class="bg-gray-50 py-16 md:py-32 dark:bg-transparent">
+<section class="cv-auto bg-gray-50 py-16 md:py-32 dark:bg-transparent">
 	<div class="mx-auto max-w-5xl px-6">
 		<div class="mx-auto mb-12 max-w-2xl space-y-4 text-center opacity-0" use:reveal>
 			<p

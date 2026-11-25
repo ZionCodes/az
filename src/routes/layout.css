@@ -158,6 +158,13 @@
 		pointer;
 }
 
+/* sections further down the page are not laid out or painted until the
+   visitor scrolls near them; the intrinsic size keeps the scrollbar stable */
+.cv-auto {
+	content-visibility: auto;
+	contain-intrinsic-size: auto 900px;
+}
+
 .hl-sweep {
 	padding: 0.05em 0.2em;
 	border-radius: 0.25em;
