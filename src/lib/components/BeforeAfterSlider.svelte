@@ -87,22 +87,40 @@
 		return () => observer.disconnect();
 	});
 
-	// a short sweep the first time it scrolls into view, so visitors see that
-	// the divider moves before they touch it
+	// a short sweep every time the panel comes back into view, so visitors see
+	// that the divider moves; it waits until the panel has fully left first, and
+	// never interrupts someone who is dragging
 	$effect(() => {
 		if (!box || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+		let timers = [];
+		let armed = true;
+		const clear = () => {
+			timers.forEach(clearTimeout);
+			timers = [];
+		};
 		const observer = new IntersectionObserver(
 			(entries) => {
-				if (!entries[0].isIntersecting) return;
-				observer.disconnect();
+				const entry = entries[0];
+				if (entry.intersectionRatio === 0) {
+					armed = true;
+					clear();
+					position.set(resting, { instant: true });
+					return;
+				}
+				if (!armed || entry.intersectionRatio < 0.6 || dragging) return;
+				armed = false;
+				clear();
 				position.set(78);
-				setTimeout(() => position.set(22), 600);
-				setTimeout(() => position.set(resting), 1200);
+				timers.push(setTimeout(() => !dragging && position.set(22), 600));
+				timers.push(setTimeout(() => !dragging && position.set(resting), 1200));
 			},
-			{ threshold: 0.6 }
+			{ threshold: [0, 0.6] }
 		);
 		observer.observe(box);
-		return () => observer.disconnect();
+		return () => {
+			observer.disconnect();
+			clear();
+		};
 	});
 </script>
 
