@@ -9,8 +9,7 @@
 	// /case-studies page, which uses h1 here vs h2 on the homepage section).
 	let cardHeadingTag = $derived(headingTag === 'h1' ? 'h2' : 'h3');
 
-	// same five color families used across Services/Stats, so every section
-	// of the site reads as one system
+	// one accent color per card, cycled through the list
 	const caseAccents = [
 		{ num: 'text-blue-600', arrow: 'group-hover:text-blue-600' },
 		{ num: 'text-violet-600', arrow: 'group-hover:text-violet-600' },

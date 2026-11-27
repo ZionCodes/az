@@ -68,13 +68,7 @@
 								class="flex size-8 shrink-0 items-center justify-center rounded-lg border bg-background"
 								aria-hidden="true"
 							>
-								{#if tool.id}
-									<ToolLogo name={tool.id} class="size-4.5" />
-								{:else}
-									<span class="text-xs font-semibold text-muted-foreground" aria-hidden="true"
-										>{tool.name[0]}</span
-									>
-								{/if}
+								<ToolLogo name={tool.id} class="size-4.5" />
 							</span>
 							{tool.name}
 						</li>

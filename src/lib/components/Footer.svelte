@@ -8,8 +8,7 @@
 		{ label: 'Blog', href: '/blog' }
 	];
 
-	// same five color families used across the rest of the site, cycled
-	// across the three social icons so the footer picks up the same system
+	// each icon takes its own hover color
 	const social = [
 		{
 			label: 'GitHub',
@@ -94,10 +93,7 @@
 </footer>
 
 <style>
-	/* the giant background wordmark fades from the page surface into a single
-	   accent color (left to right) and crops into the bottom edge, so it
-	   reads as part of the background rather than a loud color band -- a
-	   restrained two-tone fade instead of the earlier multi-hue sweep */
+	/* the large wordmark fades into the background toward the bottom edge */
 	.footer-mark-wrap {
 		-webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
 		mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
