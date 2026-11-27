@@ -40,6 +40,7 @@
 	<title>{post.title} | AutomationZion</title>
 	<meta name="description" content={post.introduction} />
 	<link rel="canonical" href={canonicalUrl} />
+	{#if post.draft}<meta name="robots" content="noindex, nofollow" />{/if}
 	<meta property="og:title" content={post.title} />
 	<meta property="og:site_name" content="AutomationZion" />
 	<meta property="og:description" content={post.introduction} />

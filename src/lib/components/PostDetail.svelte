@@ -153,4 +153,66 @@
 		color: var(--foreground);
 		font-weight: 600;
 	}
+	.article-content :global(figure) {
+		margin-top: 1.5rem;
+	}
+	.article-content :global(figure img) {
+		width: 100%;
+		height: auto;
+		border: 1px solid var(--border);
+		background: #fff;
+	}
+	.article-content :global(figcaption) {
+		margin-top: 0.5rem;
+		font-size: 0.875rem;
+		font-style: italic;
+		color: var(--muted-foreground);
+	}
+	.article-content :global(.img-pending-box) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 0.25rem;
+		aspect-ratio: 16 / 9;
+		border: 1px dashed var(--border);
+		border-radius: 0.75rem;
+		background: var(--muted);
+		padding: 1rem;
+		text-align: center;
+		font-size: 0.875rem;
+		font-weight: 500;
+		color: var(--muted-foreground);
+	}
+	.article-content :global(.img-pending-box span) {
+		font-size: 0.75rem;
+		font-weight: 400;
+	}
+	.article-content :global(.table-scroll) {
+		margin-top: 1.25rem;
+		overflow-x: auto;
+		border: 1px solid var(--border);
+		border-radius: 0.75rem;
+	}
+	.article-content :global(table) {
+		width: 100%;
+		border-collapse: collapse;
+		font-size: 0.875rem;
+		line-height: 1.5;
+	}
+	.article-content :global(th),
+	.article-content :global(td) {
+		padding: 0.625rem 0.875rem;
+		text-align: left;
+		vertical-align: top;
+	}
+	.article-content :global(th) {
+		background: var(--muted);
+		font-weight: 600;
+		color: var(--foreground);
+	}
+	.article-content :global(tr + tr td),
+	.article-content :global(tbody tr:first-child td) {
+		border-top: 1px solid var(--border);
+	}
 </style>

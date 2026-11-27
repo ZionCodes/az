@@ -80,6 +80,8 @@ export async function getPostBySlug(pb, slug) {
 
 	return {
 		...toSummary(post, pb, '800x450'),
-		article: post.article
+		article: post.article,
+		// no category = a draft: reachable by its link, listed nowhere, kept out of search
+		draft: !post.category
 	};
 }
